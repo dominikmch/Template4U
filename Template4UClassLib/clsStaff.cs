@@ -1,11 +1,13 @@
-﻿using System;
-
-public class clsStaff
+﻿namespace Template4UClassLib
 {
-	public void Delete(int StaffID) 
-	{
-		clsDataConnection DB = new clsDataConnection();
-		DB.AddParameter("@StaffID", StaffID);
-		DB.Execute("sproc_tblStaff_Delete");
-	}
+    public class clsStaff
+    {
+        public void Delete(int StaffID)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@StaffID", StaffID);
+            DB.Execute("sproc_tblStaff_Delete");
+        }
+    }
 }
+
