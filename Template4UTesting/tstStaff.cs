@@ -7,8 +7,8 @@
 
 	public InstanceOK()
 	{
-    clsStaff AStaff = new clsStaff();
-    Assert.IsNotNull(AStaff);
+    clsReview review = new clsReview();
+    Assert.IsNotNull(review);
 	}
 
 [TestMethod]
@@ -35,7 +35,7 @@ public StaffRolePropertyOK()
 
 public StartingDatePropertyOK()
 {
-    clsStaff AStaff = new clsStaff;
+    clsStaff AStaff = new clsStaff();
     DateTime TestData = DateTime.Now.Date;
     AStaff.StartingDate = TestData;
     Assert.AreEqual(AStaff.StartingDate, TestData);
@@ -45,7 +45,7 @@ public StartingDatePropertyOK()
 
 public SalaryPropertyOK()
 {
-    clsStaff AStaff = new clsStaff;
+    clsStaff AStaff = new clsStaff();
     double TestData = 0;
     AStaff.Salary = TestData;
     Assert.AreEqual(AStaff.Salary, TestData);
@@ -55,7 +55,7 @@ public SalaryPropertyOK()
 
 public isEmployedPropertyOK()
 {
-    clsStaff AStaff = new clsStaff;
+    clsStaff AStaff = new clsStaff();
     Boolean TestData = true;
     AStaff.isEmployed = TestData;
     Assert.AreEqual(AStaff.isEmployed, TestData);
