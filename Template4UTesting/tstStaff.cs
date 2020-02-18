@@ -6,11 +6,9 @@ namespace Template4UTesting
     [TestClass]
     public class tstStaff
     {
-
-
         [TestMethod]
 
-        public InstanceOK()
+        public void InstanceOK()
         {
             clsStaff AStaff = new clsStaff();
             Assert.IsNotNull(AStaff);
@@ -18,7 +16,7 @@ namespace Template4UTesting
 
         [TestMethod]
 
-        public StaffIDPropertyOK()
+        public void StaffIDPropertyOK()
         {
             clsStaff AStaff = new clsStaff();
             Int32 TestData = 1;
@@ -28,7 +26,7 @@ namespace Template4UTesting
 
         [TestMethod]
 
-        public StaffRolePropertyOK()
+        public void StaffRolePropertyOK()
         {
             clsStaff AStaff = new clsStaff();
             string TestData = "Manager";
@@ -38,7 +36,7 @@ namespace Template4UTesting
 
         [TestMethod]
 
-        public StartingDatePropertyOK()
+        public void StartingDatePropertyOK()
         {
             clsStaff AStaff = new clsStaff();
             DateTime TestData = DateTime.Now.Date;
@@ -48,7 +46,7 @@ namespace Template4UTesting
 
         [TestMethod]
 
-        public SalaryPropertyOK()
+        public void SalaryPropertyOK()
         {
             clsStaff AStaff = new clsStaff();
             double TestData = 0;
@@ -58,7 +56,7 @@ namespace Template4UTesting
 
         [TestMethod]
 
-        public isEmployedPropertyOK()
+        public void isEmployedPropertyOK()
         {
             clsStaff AStaff = new clsStaff();
             Boolean TestData = true;
