@@ -61,5 +61,15 @@ public isEmployedPropertyOK()
     Assert.AreEqual(AStaff.isEmployed, TestData);
 }
 
+[TestMethod]
+
+public FindMethodOK()
+{
+    clsStaff AStaff = new clsStaff();
+    Boolean Found = false;
+    Int32 StaffID = 1;
+    Found =  AStaff.Find(StaffID);
+}
+
 
 
