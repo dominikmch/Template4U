@@ -65,7 +65,5 @@ namespace Template4UTesting
         }
 
 
-    }
-
 }
 
