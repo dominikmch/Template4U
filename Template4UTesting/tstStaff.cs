@@ -71,5 +71,21 @@ public FindMethodOK()
     Found =  AStaff.Find(StaffID);
 }
 
+[TestMethod]
+
+public void TestStaffIDFound()
+{
+    clsStaff AStaff = new clsStaff();
+    Boolean Found = false;
+    Boolean OK = true;
+    Int32 StaffID = 21;
+    Found = AStaff.Find(StaffID);
+    if (AStaff.StaffID != 21)
+    {
+        OK = false;
+    }
+    Assert.IsTrue(OK);
+}
+
 
 
