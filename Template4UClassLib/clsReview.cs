@@ -1,4 +1,4 @@
-﻿namespace Template4UBackend
+﻿namespace Template4UClassLib
 {
     public class clsReview
     {

@@ -61,6 +61,10 @@
       <Project>{253FE168-7D30-4F36-9BDF-FC75A6A41D12}</Project>
       <Name>Template4UBackend</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Template4UClassLib\Template4UClassLib.csproj">
+      <Project>{5FFACAA6-8CF0-4777-B402-8938D2B956F5}</Project>
+      <Name>Template4UClassLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
