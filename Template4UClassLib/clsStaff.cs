@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Class_Library
+namespace Template4UClassLib
 
 {
     public int StaffID
