@@ -65,5 +65,30 @@ namespace Template4UTesting
         }
 
 
-}
+        [TestMethod]
+
+        public void FindMethodOK()
+        {
+            clsStaff AStaff = new clsStaff();
+            Boolean Found = false;
+            Int32 StaffID = 1;
+            Found = AStaff.Find(StaffID);
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+
+        public void TestStaffIDFound()
+        {
+            clsStaff AStaff = new clsStaff();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 StaffID = 21;
+            Found = AStaff.Find(StaffID);
+            if (AStaff.StaffID != 21)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
 
