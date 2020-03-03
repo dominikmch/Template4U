@@ -51,12 +51,16 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="tstReview.cs" />
-
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Template4UBackend\Template4UBackend.csproj">
+      <Project>{253FE168-7D30-4F36-9BDF-FC75A6A41D12}</Project>
+      <Name>Template4UBackend</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
