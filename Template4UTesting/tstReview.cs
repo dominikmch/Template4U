@@ -16,8 +16,8 @@ namespace Template4UTesting
             Assert.IsNotNull(Review);
         }
 
-    [TestMethod]
-    public void EditedPropertyOK()
+        [TestMethod]
+        public void EditedPropertyOK()
         {
             clsReview Review = new clsReview();
             Boolean TestData = true;
@@ -84,9 +84,9 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int ReviewId = 21;
+            int ReviewId = 2;
             Found = Review.find(ReviewId);
-            if(Review.ReviewId != 21)
+            if (Review.ReviewId != 21)
             {
                 OK = false;
             }
@@ -100,7 +100,7 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int ReviewId = 21;
+            int ReviewId = 2;
             Found = Review.find(ReviewId);
             if (Review.DateAdded != Convert.ToDateTime("04/03/2020"))
             {
@@ -116,7 +116,7 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int ReviewId = 21;
+            int ReviewId = 2;
             Found = Review.find(ReviewId);
             if (Review.Grade != 4)
             {
@@ -131,7 +131,7 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int ReviewId = 21;
+            int ReviewId = 2;
             Found = Review.find(ReviewId);
             if (Review.Description != "Very goood template")
             {
@@ -140,26 +140,37 @@ namespace Template4UTesting
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
         public void TestEditedFound()
         {
             clsReview Review = new clsReview();
 
             Boolean Found = false;
             Boolean OK = true;
-            int ReviewId = 21;
+            int ReviewId = 2;
             Found = Review.find(ReviewId);
             if (!Review.Edited)
             {
                 OK = false;
             }
             Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestUserIdFound()
+        {
+            clsReview Review = new clsReview();
 
-
-
-
-
-
+            Boolean Found = false;
+            Boolean OK = true;
+            int ReviewId = 2;
+            Found = Review.find(ReviewId);
+            if (Review.UserId != 123)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
         }
 
 
     }
+}

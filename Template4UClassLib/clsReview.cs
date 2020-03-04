@@ -8,6 +8,7 @@ namespace Template4UClassLib
         private String mDescription;
         private int mGrade;
         private int mReviewId;
+        private int mUserId;
         private DateTime mDateAdded;
         public string Description
         {
@@ -54,7 +55,7 @@ namespace Template4UClassLib
             }
         }
 
-        public int ReviewId
+        public int  ReviewId
         {
             get
             {
@@ -65,15 +66,39 @@ namespace Template4UClassLib
                 mReviewId = value;
             }
         }
-
-        public bool find(int ReviewId)
+        public int UserId
         {
-            mEdited = false;
-            mDescription = "Very goood template";
-            mGrade = 4;
-            mDateAdded = Convert.ToDateTime("04/03/2020");
-            mReviewId = 21;
-            return true;
+            get
+            {
+                return mUserId;
+            }
+            set
+            {
+                mUserId = value;
+            }
         }
+
+            public bool find(int ReviewId)
+            {
+                clsDataConnection DB = new clsDataConnection();
+                DB.AddParameter("@ReviewId", ReviewId);
+                DB.Execute("sproc_tblReview_SelectId");
+                if (DB.Count == 1)
+                {
+                mReviewId= Convert.ToInt32(DB.DataTable.Rows[0]["ReviewID"]);
+                mUserId = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
+                mEdited = Convert.ToBoolean(DB.DataTable.Rows[0]["Edited"]);
+                mDescription = Convert.ToString(DB.DataTable.Rows[0]["Description"]);
+                mGrade = Convert.ToInt32(DB.DataTable.Rows[0]["Grade"]);
+                mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateAdded"]);
+
+                return true;
+                }
+            else{
+                return false; }
+
+            }
+
+        
     }
 }
