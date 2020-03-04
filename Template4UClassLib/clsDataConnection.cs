@@ -220,6 +220,7 @@ namespace Template4UClassLib
                 //set the query results
                 dataTable = value;
             }
+        }
+
     }
-    
 }
