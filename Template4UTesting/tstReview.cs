@@ -64,7 +64,102 @@ namespace Template4UTesting
             Review.ReviewId = TestData;
             Assert.AreEqual(Review.ReviewId, TestData);
         }
-    }
 
-    
-}
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            clsReview Review = new clsReview();
+
+            Boolean Found = false;
+            int ReviewId = 1;
+            Found = Review.find(ReviewId);
+            Assert.IsTrue(Found);
+        }
+
+
+        [TestMethod]
+        public void TestReviewFound()
+        {
+            clsReview Review = new clsReview();
+
+            Boolean Found = false;
+            Boolean OK = true;
+            int ReviewId = 21;
+            Found = Review.find(ReviewId);
+            if(Review.ReviewId != 21)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestDateAddedFound()
+        {
+            clsReview Review = new clsReview();
+
+            Boolean Found = false;
+            Boolean OK = true;
+            int ReviewId = 21;
+            Found = Review.find(ReviewId);
+            if (Review.DateAdded != Convert.ToDateTime("04/03/2020"))
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestGradeFound()
+        {
+            clsReview Review = new clsReview();
+
+            Boolean Found = false;
+            Boolean OK = true;
+            int ReviewId = 21;
+            Found = Review.find(ReviewId);
+            if (Review.Grade != 4)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestDescriptionFound()
+        {
+            clsReview Review = new clsReview();
+
+            Boolean Found = false;
+            Boolean OK = true;
+            int ReviewId = 21;
+            Found = Review.find(ReviewId);
+            if (Review.Description != "Very goood template")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        public void TestEditedFound()
+        {
+            clsReview Review = new clsReview();
+
+            Boolean Found = false;
+            Boolean OK = true;
+            int ReviewId = 21;
+            Found = Review.find(ReviewId);
+            if (!Review.Edited)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+
+
+
+
+
+
+        }
+
+
+    }
