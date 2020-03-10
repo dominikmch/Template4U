@@ -5,20 +5,20 @@ namespace Template4UClassLib
     public class clsReview
     {       
         private Boolean mEdited;
-        private String mDescription;
+        private String mReviewComment;
         private int mGrade;
         private int mReviewId;
         private int mUserId;
         private DateTime mDateAdded;
-        public string Description
+        public string ReviewComment
         {
             get
             {
-                return mDescription;
+                return mReviewComment;
             }
             set
             {
-                mDescription = value;
+                mReviewComment = value;
             }
         }
         public bool Edited
@@ -88,7 +88,7 @@ namespace Template4UClassLib
                 mReviewId= Convert.ToInt32(DB.DataTable.Rows[0]["ReviewID"]);
                 mUserId = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
                 mEdited = Convert.ToBoolean(DB.DataTable.Rows[0]["Edited"]);
-                mDescription = Convert.ToString(DB.DataTable.Rows[0]["Description"]);
+                mReviewComment = Convert.ToString(DB.DataTable.Rows[0]["ReviewComment"]);
                 mGrade = Convert.ToInt32(DB.DataTable.Rows[0]["Grade"]);
                 mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateAdded"]);
 

@@ -7,7 +7,7 @@ using Template4UClassLib;
 namespace Template4UTesting
 {
     [TestClass]
-    public class tstReview
+    public class TstReview
     {
         [TestMethod]
         public void InstanceOK()
@@ -46,13 +46,13 @@ namespace Template4UTesting
         }
 
         [TestMethod]
-        public void DescriptionPropertyOK()
+        public void ReviewCommentPropertyOK()
         {
             clsReview Review = new clsReview();
 
             String TestData = "Perfect Widget, good customer service";
-            Review.Description = TestData;
-            Assert.AreEqual(Review.Description, TestData);
+            Review.ReviewComment = TestData;
+            Assert.AreEqual(Review.ReviewComment, TestData);
         }
 
         [TestMethod]
@@ -71,7 +71,7 @@ namespace Template4UTesting
             clsReview Review = new clsReview();
 
             Boolean Found = false;
-            int ReviewId = 1;
+            int ReviewId = 6;
             Found = Review.find(ReviewId);
             Assert.IsTrue(Found);
         }
@@ -84,9 +84,9 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int ReviewId = 2;
+            int ReviewId = 6;
             Found = Review.find(ReviewId);
-            if (Review.ReviewId != 21)
+            if (Review.ReviewId != 6)
             {
                 OK = false;
             }
@@ -100,7 +100,7 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int ReviewId = 2;
+            int ReviewId = 6;
             Found = Review.find(ReviewId);
             if (Review.DateAdded != Convert.ToDateTime("04/03/2020"))
             {
@@ -116,7 +116,7 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int ReviewId = 2;
+            int ReviewId = 6;
             Found = Review.find(ReviewId);
             if (Review.Grade != 4)
             {
@@ -131,9 +131,9 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int ReviewId = 2;
+            int ReviewId = 6;
             Found = Review.find(ReviewId);
-            if (Review.Description != "Very goood template")
+            if (Review.ReviewComment != "Very good template")
             {
                 OK = false;
             }
@@ -147,7 +147,7 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int ReviewId = 2;
+            int ReviewId = 6;
             Found = Review.find(ReviewId);
             if (!Review.Edited)
             {
@@ -162,9 +162,9 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int ReviewId = 2;
+            int ReviewId = 6;
             Found = Review.find(ReviewId);
-            if (Review.UserId != 123)
+            if (Review.UserId != 10)
             {
                 OK = false;
             }
