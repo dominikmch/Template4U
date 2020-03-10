@@ -7,11 +7,19 @@ namespace Template4UTesting
     [TestClass]
     public class tstCustomer
     {
+        clsCustomer Customer;
+
         [TestMethod]
         public void InstanceOK()
         {
-            clsCustomer customer = new clsCustomer();
-            Assert.IsNotNull(customer);
+            Customer = new clsCustomer();
+            Assert.IsNotNull(Customer);
+        }
+
+        [TestMethod]
+        public void TestFindAllMethod_OK()
+        {
+            Customer.FindAll();
         }
     }
 }
