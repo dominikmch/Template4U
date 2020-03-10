@@ -18,7 +18,7 @@ namespace Template4UClassLib
         {
             clsDataConnection DB = new clsDataConnection();
             DB.Execute("sproc_tblCustomer_SelectAll");
-            if (DB.Count == 1)
+            if (DB.Count > 0)
             {
                 mCustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
                 mCustomerEmail = Convert.ToString(DB.DataTable.Rows[0]["CustomerEmail"]);
