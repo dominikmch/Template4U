@@ -102,7 +102,7 @@ namespace Template4UTesting
             Boolean OK = true;
             int ReviewId = 6;
             Found = Review.find(ReviewId);
-            if (Review.DateAdded != Convert.ToDateTime("04/03/2020"))
+            if (Review.DateAdded != Convert.ToDateTime("03/04/2020"))
             {
                 OK = false;
             }
@@ -149,7 +149,7 @@ namespace Template4UTesting
             Boolean OK = true;
             int ReviewId = 6;
             Found = Review.find(ReviewId);
-            if (!Review.Edited)
+            if (Review.Edited)
             {
                 OK = false;
             }
