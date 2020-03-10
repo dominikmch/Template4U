@@ -41,6 +41,17 @@ namespace Template4UClassLib
                 mIsCompleted = value;
             }
         }
+        public string PromoCode
+        {
+            get
+            {
+                return mPromoCode;
+            }
+            set
+            {
+                mPromoCode = value;
+            }
+        }
 
     }
 }
