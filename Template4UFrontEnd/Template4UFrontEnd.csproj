@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Review.aspx" />
+    <Content Include="ReviewViewer.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -86,9 +87,29 @@
     <Compile Include="Review.aspx.designer.cs">
       <DependentUpon>Review.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReviewViewer.aspx.cs">
+      <DependentUpon>ReviewViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReviewViewer.aspx.designer.cs">
+      <DependentUpon>ReviewViewer.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Template4UClassLib\Template4UClassLib.csproj">
+      <Project>{5ffacaa6-8cf0-4777-b402-8938d2b956f5}</Project>
+      <Name>Template4UClassLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

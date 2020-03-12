@@ -8,26 +8,33 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="height: 260px; width: 231px">
+        <div style="height: 260px; width: 286px">
+            ReviewId&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextReviewId" runat="server" OnTextChanged="TextReviewId_TextChanged"></asp:TextBox>
+            <asp:Button ID="ButtonFind" runat="server" OnClick="ButtonFind_Click" Text="Find" />
+            <br />
             Grade&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged" style="margin-left: 14px" Width="111px"></asp:TextBox>
+            <asp:TextBox ID="TextGrade" runat="server" OnTextChanged="TextGrade_TextChanged" style="margin-left: 14px" Width="111px"></asp:TextBox>
 &nbsp;&nbsp;
             <br />
             Description
-            <asp:TextBox ID="TextBox2" runat="server" style="margin-left: 9px" Width="115px"></asp:TextBox>
+            <asp:TextBox ID="TextReviewComment" runat="server" OnTextChanged="TextReviewComment_TextChanged"></asp:TextBox>
             <br />
             Date Added
-            <asp:TextBox ID="TextBox3" runat="server" Height="22px" Width="128px"></asp:TextBox>
+            <asp:TextBox ID="TextDateAdded" runat="server" Height="22px" Width="128px" OnTextChanged="TextDateAdded_TextChanged"></asp:TextBox>
+            <br />
+            UserId&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextUserId" runat="server" Height="19px" Width="126px" OnTextChanged="TextUserId_TextChanged"></asp:TextBox>
             <br />
             <asp:CheckBox ID="Edited" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged1" />
             <br />
             <br />
             <br />
+            [ErrorLabel]<br />
             <br />
             <br />
             <br />
-            <br />
-            <asp:Button ID="OkButton" runat="server" OnClick="Button1_Click" style="margin-top: 0px" Text="OK" Width="56px" />
+            <asp:Button ID="OkButton" runat="server" OnClick="ButtonOK_Click" style="margin-top: 0px" Text="OK" Width="56px" />
             <asp:Button ID="Button1" runat="server" Text="Cancel" />
         </div>
     </form>
