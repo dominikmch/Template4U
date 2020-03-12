@@ -12,9 +12,7 @@ namespace Template4UFrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            clsReview AnReview = new clsReview();
-            AnReview = (clsReview)Session["AnReview"];
-            Response.Write(AnReview.ReviewId);
+        
         }
 
 
@@ -70,13 +68,14 @@ namespace Template4UFrontEnd
             Boolean Found = false;
             ReviewId = Convert.ToInt32(TextReviewId.Text);
             Found = AnReview.find(ReviewId);
-            if(Found)
+            if (Found)
             {
                 TextGrade.Text = AnReview.Grade.ToString();
                 TextReviewComment.Text = AnReview.ReviewComment;
                 TextDateAdded.Text = AnReview.DateAdded.ToString();
                 TextUserId.Text = AnReview.UserId.ToString();
             }
+            else { }
 
         }
 
