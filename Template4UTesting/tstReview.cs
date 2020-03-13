@@ -9,6 +9,13 @@ namespace Template4UTesting
     [TestClass]
     public class TstReview
     {
+
+        String tstReviewId = "10";
+        String tstGrade = "4";
+        String tstReviewComment = "Very good";
+        String tstDateAdded = DateTime.Now.Date.ToString();
+        String tstUserId = "78";
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -63,6 +70,16 @@ namespace Template4UTesting
             int TestData = 1;
             Review.ReviewId = TestData;
             Assert.AreEqual(Review.ReviewId, TestData);
+        }
+
+        [TestMethod]
+        public void UserIdPropertyOK()
+        {
+            clsReview Review = new clsReview();
+
+            int TestData = 1;
+            Review.UserId = TestData;
+            Assert.AreEqual(Review.UserId, TestData);
         }
 
         [TestMethod]
@@ -170,6 +187,181 @@ namespace Template4UTesting
             }
             Assert.IsTrue(OK);
         }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment,tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+        [TestMethod]
+        public void GradeEmpty()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            string Grade = "";
+            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+        [TestMethod]
+        public void GradeMinLessZero()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            string Grade = "-1";
+            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+
+        [TestMethod]
+        public void GradeMin()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            string Grade = "0";
+            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+
+        [TestMethod]
+        public void GradeMinPlusOne()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            string Grade = "1";
+            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+
+        [TestMethod]
+        public void GradeMaxLessOne()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            string Grade = "4";
+            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+
+        [TestMethod]
+        public void GradeMedium()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            string Grade = "3";
+            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+
+
+        [TestMethod]
+        public void GradeMax()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            string Grade = "5";
+            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+        [TestMethod]
+        public void GradeMaxPlusOne()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            string Grade = "6";
+            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+        [TestMethod]
+        public void GradeNotInt()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            string Grade = "1b";
+            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+
+        [TestMethod]
+        public void DateAddedExtremeMin()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            DateTime Date=DateTime.Now.Date;
+            Date = Date.AddYears(-100);
+            tstDateAdded = Date.ToString();
+            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+        public void DateAddedMinLessOne()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            DateTime Date = DateTime.Now.Date;
+            Date = Date.AddYears(-1);
+            tstDateAdded = Date.ToString();
+            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+        public void DateAddedMin()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            DateTime Date = DateTime.Now.Date;
+            tstDateAdded = Date.ToString();
+            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+
+        public void DateAddedMinPlusOne()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            DateTime Date = DateTime.Now.Date;
+            Date = Date.AddYears(1);
+            tstDateAdded = Date.ToString();
+            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+        public void DateAddedMinExtreme()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            DateTime Date = DateTime.Now.Date;
+            Date = Date.AddYears(100);
+            tstDateAdded = Date.ToString();
+            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+
+        public void DateAddedWrongFormat()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            tstDateAdded = "Definately not a date";
+            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+
+
 
 
     }

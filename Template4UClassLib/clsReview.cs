@@ -99,6 +99,45 @@ namespace Template4UClassLib
 
             }
 
-        
+        public string valid(String reviewId, String grade, String reviewComment, String dateAdded, String userId)
+        {
+            String Error = "";
+            DateTime DateTemp;
+            try
+            { 
+                //Grade validating
+                if (grade.ToString().Length == 0)
+                { Error += "Grade may not be empty"; }
+                Int32 value;
+                if (!int.TryParse(grade, out value))
+                {
+                    Error += "Grade must be a number";
+
+                }
+                if (int.Parse(grade) < 0)
+                {
+                    Error += "Grade cannot be smaller than 0, was your tamplate that bad?";
+                }
+                if (int.Parse(grade) > 5)
+                {
+                    Error += "Thats really kind, but greatest grade you can give us is 5";
+                }
+                //date validating
+                DateTemp = Convert.ToDateTime(dateAdded);
+                if (DateTemp < DateTime.Now.Date)
+                { Error += "The date cannot be in the past"; }
+                if (DateTemp > DateTime.Now.Date)
+                { Error += "The date cannot be in the future"; }
+            }
+            catch
+            {
+                Error += "The date was not a valid date";
+            }
+            //ReviewComment validation
+            string[] words = reviewComment.Split(' ');
+            if (words.Length>2000)
+                Error += "Comment is too long, max 200 words";
+            return Error;   
+        }
     }
 }

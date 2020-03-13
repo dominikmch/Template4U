@@ -32,7 +32,7 @@ namespace Template4UClassLib
         private string GetConnectionString()
         {
             System.Net.WebClient client = new System.Net.WebClient();
-            string downloadString = client.DownloadString("http://localhost:5000/");
+            string downloadString = "Server=tcp:a1template4u.database.windows.net,1433;Initial Catalog=A1 Template4u;Persist Security Info=False;User ID=a1team;Password=#Templates123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             return downloadString;
         }
 
