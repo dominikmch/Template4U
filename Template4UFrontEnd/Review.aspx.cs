@@ -47,11 +47,29 @@ namespace Template4UFrontEnd
         }
 
         protected void ButtonOK_Click(object sender, EventArgs e)
-        {   
+        {
+          
             clsReview AnReview = new clsReview();
-            AnReview.ReviewComment =TextReviewComment.Text;
-            Session["AnReview"] = AnReview;
-            Response.Redirect("ReviewViewer.aspx");
+            string tstReviewId = TextReviewId.Text;
+            string tstGrade = TextGrade.Text;
+            string tstReviewComment = TextReviewComment.Text;
+            string tstDateAdded = TextDateAdded.Text;
+            string tstUserId = TextUserId.Text;
+            String Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            if (Error == "")
+            {
+                AnReview.ReviewId = int.Parse(tstReviewId);
+                AnReview.Grade = int.Parse(tstGrade);
+                AnReview.ReviewComment = tstReviewComment;
+                AnReview.DateAdded = Convert.ToDateTime(tstDateAdded);
+                AnReview.UserId = int.Parse(tstUserId);
+                Session["AnReview"] = AnReview;
+                Response.Redirect("ReviewViewer.aspx");
+            }
+            else
+            {
+                ErrorLabel.Text = Error;
+            }
 
 
         }

@@ -306,6 +306,7 @@ namespace Template4UTesting
             Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
             Assert.IsTrue(Error == "");
         }
+        [TestMethod]
         public void DateAddedMinLessOne()
         {
             clsReview AnReview = new clsReview();
@@ -317,6 +318,7 @@ namespace Template4UTesting
             Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
             Assert.IsTrue(Error == "");
         }
+        [TestMethod]
         public void DateAddedMin()
         {
             clsReview AnReview = new clsReview();
@@ -327,7 +329,7 @@ namespace Template4UTesting
             Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
             Assert.IsTrue(Error == "");
         }
-
+        [TestMethod]
         public void DateAddedMinPlusOne()
         {
             clsReview AnReview = new clsReview();
@@ -339,6 +341,7 @@ namespace Template4UTesting
             Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
             Assert.IsTrue(Error == "");
         }
+        [TestMethod]
         public void DateAddedMinExtreme()
         {
             clsReview AnReview = new clsReview();
@@ -350,7 +353,7 @@ namespace Template4UTesting
             Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
             Assert.IsTrue(Error == "");
         }
-
+        [TestMethod]
         public void DateAddedWrongFormat()
         {
             clsReview AnReview = new clsReview();
@@ -360,7 +363,61 @@ namespace Template4UTesting
             Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
             Assert.IsTrue(Error == "");
         }
+        [TestMethod]
+        public void ReviewCommentEmpty()
+        {
+            clsReview AnReview = new clsReview();
 
+            String Error = "";
+            tstReviewComment = "";
+            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+        [TestMethod]
+        public void ReviewCommentMax()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            tstReviewComment = "";
+            for (int i=0; i < 201; i++)
+            {
+                tstReviewComment += "Test ";
+            }
+            
+            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+        [TestMethod]
+        public void ReviewCommentMaxMinusOne()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            tstReviewComment = "";
+            for (int i = 0; i < 200; i++)
+            {
+                tstReviewComment += "Test ";
+            }
+
+            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
+        [TestMethod]
+        public void ReviewCommentMaxPlusOne()
+        {
+            clsReview AnReview = new clsReview();
+
+            String Error = "";
+            tstReviewComment = "";
+            for (int i = 0; i < 202; i++)
+            {
+                tstReviewComment += "Test ";
+            }
+
+            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Assert.IsTrue(Error == "");
+        }
 
 
 

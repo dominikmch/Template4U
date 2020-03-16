@@ -30,7 +30,7 @@
             <br />
             <br />
             <br />
-            [ErrorLabel]<br />
+            <asp:Label ID="ErrorLabel" runat="server"></asp:Label>
             <br />
             <br />
             <br />

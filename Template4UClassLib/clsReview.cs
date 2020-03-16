@@ -135,7 +135,7 @@ namespace Template4UClassLib
             }
             //ReviewComment validation
             string[] words = reviewComment.Split(' ');
-            if (words.Length>2000)
+            if (words.Length>200)
                 Error += "Comment is too long, max 200 words";
             return Error;   
         }
