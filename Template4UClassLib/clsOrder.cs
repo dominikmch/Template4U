@@ -86,6 +86,16 @@ namespace Template4UClassLib
             }
 
         }
+        public string validate( String promoCode)
+        {
+            String Error = "";
+            //promoCode validation
+            if(promoCode.Length > 0 && promoCode.Length < 4)
+            {
+                Error += "PromoCode has to be at least 4 characters long";
+            }
+            return Error;
+        }
 
     }
 }

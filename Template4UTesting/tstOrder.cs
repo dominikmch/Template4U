@@ -142,6 +142,16 @@ namespace Template4UTesting
             }
             Assert.IsTrue(OK);
         }
+        [TestMethod]
+        public void PromoCodeTooShort()
+        {
+            clsOrder Order = new clsOrder();
+
+            String Error = "";
+            String tstPromoCode = "VALENTINES";
+            Error = Order.validate(tstPromoCode);
+            Assert.IsTrue(Error == "");
+        }
 
 
     }
