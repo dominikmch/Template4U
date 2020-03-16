@@ -85,7 +85,7 @@ namespace Template4UTesting
         }
 
         [TestMethod]
-        public void FindMethodOk()
+        public void TestFindMethodOk()
         {
             clsCustomer customer = new clsCustomer();
 

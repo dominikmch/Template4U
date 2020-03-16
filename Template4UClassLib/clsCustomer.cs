@@ -57,5 +57,38 @@ namespace Template4UClassLib
                 return false;
             }
         }
+
+        public string ValidateFields(string customerEmail, string customerName)
+        {
+            var error = "";
+            try
+            {
+                if (customerEmail.Length == 0)
+                { error += "Email cannot be empty"; }
+                if (customerEmail.Length > 32)
+                {
+                    error += "Email cannot be longer than 32 characters";
+                }
+            }
+            catch (Exception e)
+            {
+                error += "\n" + e;
+            }
+
+            try
+            {
+                if (customerName.Length == 0)
+                { error += "Name cannot be empty"; }
+                if (customerName.Length > 32)
+                {
+                    error += "Name cannot be longer than 32 characters";
+                }
+            }
+            catch (Exception e)
+            {
+                error += "\n" + e;
+            }
+            return error;
+        }
     }
 }
