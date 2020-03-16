@@ -65,7 +65,7 @@ namespace Template4UClassLib
             }
         }
 
-        public bool find(int ReviewId)
+        public bool find(int OrderId)
         {
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@OrderId", OrderId);
