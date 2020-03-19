@@ -39,7 +39,7 @@ namespace Template4UFrontEnd
                 //customer.RegistrationDate = Convert.ToDateTime(tstCustomerDateTime);
                 //customer.IsBusinessCustomer = bool.Parse(tstCustomerIsBusiness);
 
-                Session["AnCustomer"] = customer;
+                Session["anCustomer"] = customer;
                 Response.Redirect("CustomerViewer.aspx");
             }
             else
