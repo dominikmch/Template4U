@@ -41,7 +41,7 @@ namespace Template4UClassLib
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@CustomerId", cId);
             DB.Execute("sproc_tblCustomer_SelectSingle");
-            if (DB.Count  == 1)
+            if (DB.Count == 1)
             {
                 CustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
                 CustomerEmail = Convert.ToString(DB.DataTable.Rows[0]["CustomerEmail"]);
@@ -52,10 +52,9 @@ namespace Template4UClassLib
 
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
+            
         }
 
         public void Add(string name, string password, string email, bool isBusiness)
@@ -71,6 +70,25 @@ namespace Template4UClassLib
             if (DB.Count != 0)
             {
 
+            }
+            else
+            {
+            }
+
+        }
+
+        public void Update(int id, string name, string password, string email, bool isBusiness)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@CustomerId", id);
+            DB.AddParameter("@CustomerEmail", email);
+            DB.AddParameter("@CustomerPassword", password);
+            DB.AddParameter("@CustomerName", name);
+            DB.AddParameter("@CustomerIsBussinessClient", isBusiness);
+
+            if (!Find(id))
+            {
+                DB.Execute("sproc_tblCustomer_UpdateCustomerDetails");
             }
             else
             {
@@ -140,11 +158,6 @@ namespace Template4UClassLib
                 if (customerId.Length > 32)
                 {
                     error = "Id max length is 32";
-                }
-
-                if (!Find(int.Parse(customerId)))
-                {
-                    error = "Id does not exist in the database";
                 }
             }
             catch (Exception e)

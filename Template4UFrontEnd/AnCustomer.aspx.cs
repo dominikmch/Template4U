@@ -48,6 +48,7 @@ namespace Template4UFrontEnd
                 CustomerDateTime.Text = customerClass.RegistrationDate.ToShortDateString();
                 TextCustomerID.Text = customerClass.CustomerId.ToString();
             }
+            else { }
         }
 
         private void AdminMode(clsCustomer customer)
@@ -63,7 +64,14 @@ namespace Template4UFrontEnd
 
             if (string.IsNullOrWhiteSpace(error))
             {
-                customer.Add(tstCustomerName, tstCustomerPassword, tstCustomerEmail, tstCustomerIsBusiness);
+                if (customer.Find(int.Parse(tstCustomerId)))
+                {
+                    customer.Add(tstCustomerName, tstCustomerPassword, tstCustomerEmail, tstCustomerIsBusiness);
+                }
+                else
+                {
+                    customer.Update(int.Parse(tstCustomerId), tstCustomerName, tstCustomerPassword, tstCustomerEmail, tstCustomerIsBusiness);
+                }
 
                 
                 Session["anCustomer"] = customer;
@@ -109,5 +117,14 @@ namespace Template4UFrontEnd
             CustomerBusiness.Enabled = editable;
 
         }
+
+        protected void TextCustomerID_OnTextChanged(object sender, EventArgs e)
+        {
+            var customer = new clsCustomer();
+            var error = customer.ValidateId(TextCustomerID.Text);
+
+            Find(customer, int.Parse(TextCustomerID.Text));
+        }
+
     }
 }

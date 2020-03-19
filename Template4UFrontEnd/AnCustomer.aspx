@@ -14,7 +14,7 @@
                 <label>CustomerID:</label>
             </div>
             <div class="col" style="margin: 10px">
-                <asp:TextBox ID="TextCustomerID" runat="server" placeholder="Customer ID number" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="TextCustomerID" runat="server" placeholder="Customer ID number" TextMode="Number" AutoPostBack="True" OnTextChanged="TextCustomerID_OnTextChanged"></asp:TextBox>
             </div>
         </div>
         <div class="form-row">
@@ -30,7 +30,7 @@
                 <label>Name:</label>
             </div>
             <div class="col" style="margin: 10px">
-                <asp:TextBox ID="TextCustomerName" runat="server" Enabled="False" placeholder="Customer name" ></asp:TextBox>
+                <asp:TextBox ID="TextCustomerName" runat="server" Enabled="False" placeholder="Customer name" TextMode="SingleLine"></asp:TextBox>
             </div>
         </div>
         <div class="form-row">
