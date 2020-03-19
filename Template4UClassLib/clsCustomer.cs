@@ -4,12 +4,12 @@ namespace Template4UClassLib
 {
     public class clsCustomer
     {
-        public int mCustomerId { get; set; }
-        public string mCustomerEmail { get; set; }
-        public string mCustomerPassword { get; set; }
-        public string mCustomerName { get; set; }
-        public DateTime mRegistrationDate { get; set; }
-        public bool mIsBusinessCustomer { get; set; }
+        public int CustomerId { get; set; }
+        public string CustomerEmail { get; set; }
+        public string CustomerPassword { get; set; }
+        public string CustomerName { get; set; }
+        public DateTime RegistrationDate { get; set; }
+        public bool IsBusinessCustomer { get; set; }
 
         public clsCustomer()
         {
@@ -43,12 +43,12 @@ namespace Template4UClassLib
             DB.Execute("sproc_tblCustomer_SelectSingle");
             if (DB.Count  == 1)
             {
-                mCustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
-                mCustomerEmail = Convert.ToString(DB.DataTable.Rows[0]["CustomerEmail"]);
-                mCustomerPassword = Convert.ToString(DB.DataTable.Rows[0]["CustomerPassword"]);
-                mCustomerName = Convert.ToString(DB.DataTable.Rows[0]["CustomerName"]);
-                mRegistrationDate = Convert.ToDateTime(DB.DataTable.Rows[0]["CustomerRegDate"]);
-                mIsBusinessCustomer = Convert.ToBoolean(DB.DataTable.Rows[0]["CustomerIsBussinessClient"]);
+                CustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
+                CustomerEmail = Convert.ToString(DB.DataTable.Rows[0]["CustomerEmail"]);
+                CustomerPassword = Convert.ToString(DB.DataTable.Rows[0]["CustomerPassword"]);
+                CustomerName = Convert.ToString(DB.DataTable.Rows[0]["CustomerName"]);
+                RegistrationDate = Convert.ToDateTime(DB.DataTable.Rows[0]["CustomerRegDate"]);
+                IsBusinessCustomer = Convert.ToBoolean(DB.DataTable.Rows[0]["CustomerIsBussinessClient"]);
 
                 return true;
             }

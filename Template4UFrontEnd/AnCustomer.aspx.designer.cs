@@ -11,7 +11,7 @@ namespace Template4UFrontEnd
 {
 
 
-    public partial class customer
+    public partial class AnCustomer
     {
 
         /// <summary>
@@ -24,57 +24,57 @@ namespace Template4UFrontEnd
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// TextBox1 control.
+        /// TextCustomerID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TextCustomerID;
 
         /// <summary>
-        /// TextBox2 control.
+        /// TextCustomerEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TextCustomerEmail;
 
         /// <summary>
-        /// TextBox3 control.
+        /// TextCustomerName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox TextCustomerName;
 
         /// <summary>
-        /// Edited control.
+        /// TextCustomerPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Edited;
+        protected global::System.Web.UI.WebControls.TextBox TextCustomerPassword;
 
         /// <summary>
-        /// OkButton control.
+        /// CustomerDateTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button OkButton;
+        protected global::System.Web.UI.WebControls.TextBox CustomerDateTime;
 
         /// <summary>
-        /// Button1 control.
+        /// CustomerBusiness control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.CheckBox CustomerBusiness;
     }
 }

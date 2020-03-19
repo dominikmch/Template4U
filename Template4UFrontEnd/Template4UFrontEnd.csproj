@@ -67,17 +67,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="customer.aspx" />
+    <Content Include="AnCustomer.aspx" />
+    <Content Include="CustomerViewer.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Review.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="customer.aspx.cs">
-      <DependentUpon>customer.aspx</DependentUpon>
+    <Compile Include="AnCustomer.aspx.cs">
+      <DependentUpon>AnCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="customer.aspx.designer.cs">
-      <DependentUpon>customer.aspx</DependentUpon>
+    <Compile Include="AnCustomer.aspx.designer.cs">
+      <DependentUpon>AnCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerViewer.aspx.cs">
+      <DependentUpon>CustomerViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerViewer.aspx.designer.cs">
+      <DependentUpon>CustomerViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

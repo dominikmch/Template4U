@@ -28,9 +28,9 @@ namespace Template4UTesting
         {
             clsCustomer customer = new clsCustomer();
             DateTime TestData = DateTime.Now;
-            customer.mRegistrationDate = TestData;
+            customer.RegistrationDate = TestData;
 
-            Assert.AreEqual(customer.mRegistrationDate, TestData);
+            Assert.AreEqual(customer.RegistrationDate, TestData);
         }
 
         [TestMethod]
@@ -39,9 +39,9 @@ namespace Template4UTesting
             clsCustomer customer = new clsCustomer();
 
             bool IsBusiness = true;
-            customer.mIsBusinessCustomer = IsBusiness;
+            customer.IsBusinessCustomer = IsBusiness;
 
-            Assert.AreEqual(customer.mIsBusinessCustomer, IsBusiness);
+            Assert.AreEqual(customer.IsBusinessCustomer, IsBusiness);
         }
 
         [TestMethod]
@@ -49,9 +49,9 @@ namespace Template4UTesting
         {
             clsCustomer customer = new clsCustomer();
             string customerName = "Andrew";
-            customer.mCustomerName = customerName;
+            customer.CustomerName = customerName;
 
-            Assert.AreEqual(customerName, customer.mCustomerName);
+            Assert.AreEqual(customerName, customer.CustomerName);
         }
 
         [TestMethod]
@@ -59,9 +59,9 @@ namespace Template4UTesting
         {
             clsCustomer customer = new clsCustomer();
             string customerPassword = "secret";
-            customer.mCustomerPassword = customerPassword;
+            customer.CustomerPassword = customerPassword;
 
-            Assert.AreEqual(customerPassword, customer.mCustomerPassword);
+            Assert.AreEqual(customerPassword, customer.CustomerPassword);
         }
 
         [TestMethod]
@@ -69,9 +69,9 @@ namespace Template4UTesting
         {
             clsCustomer customer = new clsCustomer();
             string customerEmail = "email@email.com";
-            customer.mCustomerEmail = customerEmail;
+            customer.CustomerEmail = customerEmail;
 
-            Assert.AreEqual(customerEmail, customer.mCustomerEmail);
+            Assert.AreEqual(customerEmail, customer.CustomerEmail);
         }
 
         [TestMethod]
@@ -79,9 +79,9 @@ namespace Template4UTesting
         {
             clsCustomer customer = new clsCustomer();
             int customerId = 71;
-            customer.mCustomerId = customerId;
+            customer.CustomerId = customerId;
 
-            Assert.AreEqual(customerId, customer.mCustomerId);
+            Assert.AreEqual(customerId, customer.CustomerId);
         }
 
         [TestMethod]
