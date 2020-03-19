@@ -46,15 +46,7 @@ namespace Template4UTesting
             Assert.AreEqual(Order.IsCompleted, TestData);
         }
 
-        [TestMethod]
-        public void FindMethodOK()
-        {
-            clsOrder Order = new clsOrder();
-
-            Boolean Found = false;
-            Found = Order.findAll();
-            Assert.IsTrue(Found);
-        }
+    
         [TestMethod]
         public void FindMethodOK()
         {
@@ -136,7 +128,7 @@ namespace Template4UTesting
             Boolean OK = true;
             int OrderId = 2;
             Found = Order.find(OrderId);
-            if (Order.DatePlaced != Convert.ToDateTime("10/03/2020"))
+            if (Order.DatePlaced != Convert.ToDateTime("19/03/2020"))
             {
                 OK = false;
             }
