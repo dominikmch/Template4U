@@ -58,7 +58,27 @@ namespace Template4UClassLib
             }
         }
 
-        public string ValidateFields(string customerEmail, string customerName)
+        public void Add(string name, string password, string email, bool isBusiness)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@CustomerEmail", email);
+            DB.AddParameter("@CustomerPassword", password);
+            DB.AddParameter("@CustomerName", name);
+            DB.AddParameter("@CustomerIsBussinessClient", isBusiness);
+            DB.AddParameter("@CustomerRegDate", DateTime.Today);
+            DB.Execute("sproc_tblCustomer_Insert");
+
+            if (DB.Count != 0)
+            {
+
+            }
+            else
+            {
+            }
+
+        }
+
+        public string ValidateFields(string customerId, string customerEmail, string customerName)
         {
             var error = "";
             try
@@ -87,6 +107,49 @@ namespace Template4UClassLib
             catch (Exception e)
             {
                 error += "\n" + e;
+            }
+
+            try
+            {
+                if (customerId.Length == 0)
+                { error += "Id cannot be empty"; }
+                if (customerName.Length > 32)
+                {
+                    error += "Id max length is 32";
+                }
+
+                if (Find(int.Parse(customerId)))
+                {
+                    error += "Id does not exist in the database";
+                }
+            }
+            catch (Exception e)
+            {
+                error += "\n" + e;
+            }
+            return error;
+        }
+
+        public string ValidateId(string customerId)
+        {
+            var error = "";
+            try
+            {
+                if (customerId.Length == 0)
+                { error = "Id cannot be empty"; }
+                if (customerId.Length > 32)
+                {
+                    error = "Id max length is 32";
+                }
+
+                if (!Find(int.Parse(customerId)))
+                {
+                    error = "Id does not exist in the database";
+                }
+            }
+            catch (Exception e)
+            {
+                error = "\n" + e;
             }
             return error;
         }

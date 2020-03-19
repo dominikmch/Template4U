@@ -12,8 +12,7 @@ namespace Template4UFrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            clsCustomer anCustomer = new clsCustomer();
-            anCustomer = (clsCustomer) Session["anCustomer"];
+            var anCustomer = (clsCustomer)Session["anCustomer"];
             Response.Write(anCustomer.CustomerId);
         }
     }
