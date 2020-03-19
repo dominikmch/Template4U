@@ -52,7 +52,6 @@ namespace Template4UFrontEnd
 
         private void AdminMode(clsCustomer customer)
         {
-            var customerClass = customer;
 
             var tstCustomerId = TextCustomerID.Text;
             var tstCustomerEmail = TextCustomerEmail.Text;
