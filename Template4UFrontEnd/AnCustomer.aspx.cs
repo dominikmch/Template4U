@@ -12,7 +12,8 @@ namespace Template4UFrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            clsCustomer anCustomer = new clsCustomer();
+            anCustomer = (clsCustomer)Session["anCustomer"];
         }
 
 
@@ -31,12 +32,12 @@ namespace Template4UFrontEnd
 
             if (string.IsNullOrWhiteSpace(error))
             {
-                customer.CustomerId = int.Parse(tstCustomerId);
+                //customer.CustomerId = int.Parse(tstCustomerId);
                 customer.CustomerEmail = tstCustomerEmail;
                 customer.CustomerName = tstCustomerName;
                 customer.CustomerPassword = tstCustomerPassword;
-                customer.RegistrationDate = Convert.ToDateTime(tstCustomerDateTime);
-                customer.IsBusinessCustomer = bool.Parse(tstCustomerIsBusiness);
+                //customer.RegistrationDate = Convert.ToDateTime(tstCustomerDateTime);
+                //customer.IsBusinessCustomer = bool.Parse(tstCustomerIsBusiness);
 
                 Session["AnCustomer"] = customer;
                 Response.Redirect("CustomerViewer.aspx");
