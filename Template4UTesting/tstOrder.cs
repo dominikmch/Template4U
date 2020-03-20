@@ -140,8 +140,10 @@ namespace Template4UTesting
             clsOrder Order = new clsOrder();
 
             String Error = "";
+            string tstOrderId = "1";
             String tstPromoCode = "VALENTINES";
-            Error = Order.validate(tstPromoCode);
+            String tstDatePlaced = Convert.ToString(DateTime.Now);
+            Error = Order.validate(tstOrderId, tstPromoCode, tstDatePlaced);
             Assert.IsTrue(Error == "");
         }
 

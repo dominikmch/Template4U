@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Order.aspx" />
+    <Content Include="OrderViewer.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Order.aspx.cs">
@@ -78,9 +79,22 @@
       <DependentUpon>Order.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OrderViewer.aspx.cs">
+      <DependentUpon>OrderViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderViewer.aspx.designer.cs">
+      <DependentUpon>OrderViewer.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Template4UClassLib\Template4UClassLib.csproj">
+      <Project>{5ffacaa6-8cf0-4777-b402-8938d2b956f5}</Project>
+      <Name>Template4UClassLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

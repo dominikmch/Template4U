@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+
 namespace Template4UClassLib
 {
     public class clsOrder
@@ -86,15 +88,35 @@ namespace Template4UClassLib
             }
 
         }
-        public string validate( String promoCode)
+        public string validate(String orderId, String promoCode, String datePlaced)
         {
             String Error = "";
+            //checking if order Id contains only allowed characters
+            if(!orderId.All(Char.IsDigit))
+            {
+                Error += "OrderId can only contain digits";
+            }
             //promoCode validation
-            if(promoCode.Length > 0 && promoCode.Length < 4)
+            if (promoCode.Length > 0 && promoCode.Length < 4)
             {
                 Error += "PromoCode has to be at least 4 characters long";
             }
+            //datePlaced validation
+            if (Convert.ToDateTime(datePlaced) < DateTime.Now.Date)
+            { Error += "The date appears to be in the past. It has to be today's date"; }
+            if (Convert.ToDateTime(datePlaced) > DateTime.Now.Date)
+            { Error += "The date appears to be in the future. It has to be today's date"; }
             return Error;
+        }
+        public void Add(string orderlineId, string promoCode, bool isCompleted)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@OrderLineId", orderlineId);
+            DB.AddParameter("@PromoCode", promoCode);
+            DB.AddParameter("@IsCompleted", isCompleted);
+            DB.Execute("sproc_tblOrder_Insert");
+
+
         }
 
     }
