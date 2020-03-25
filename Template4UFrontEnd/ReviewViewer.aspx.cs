@@ -14,7 +14,7 @@ namespace Template4UFrontEnd
         {
             clsReview AnReview = new clsReview();
             AnReview = (clsReview)Session["AnReview"];
-            Response.Write(AnReview.ReviewId);
+            Response.Write("Review is valid, thank you");
 
             
         }

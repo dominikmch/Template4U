@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Review.aspx" />
+    <Content Include="ReviewList.aspx" />
     <Content Include="ReviewViewer.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +87,13 @@
     </Compile>
     <Compile Include="Review.aspx.designer.cs">
       <DependentUpon>Review.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewList.aspx.cs">
+      <DependentUpon>ReviewList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReviewList.aspx.designer.cs">
+      <DependentUpon>ReviewList.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReviewViewer.aspx.cs">
       <DependentUpon>ReviewViewer.aspx</DependentUpon>

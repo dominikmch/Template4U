@@ -4,7 +4,7 @@ namespace Template4UClassLib
 {
     public class clsReview
     {       
-        private Boolean mEdited;
+        private  Boolean mEdited;
         private String mReviewComment;
         private int mGrade;
         private int mReviewId;
