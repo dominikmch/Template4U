@@ -5,13 +5,16 @@ namespace Template4UClassLib
     public class clsReviewCollection
     {
         List<clsReview> mReviewList = new List<clsReview>();
+        clsReview mThisReview = new clsReview();
         public List<clsReview> ReviewList{
         get { return mReviewList; }
         set { mReviewList = value; } }
         public int Count {
             get { return mReviewList.Count; }
             set { } }
-        public clsReview ThisReview { get; set; }
+        public clsReview ThisReview {
+            get { return mThisReview; }
+            set { mThisReview = value; } }
 
         public clsReviewCollection()
         {
@@ -41,5 +44,18 @@ namespace Template4UClassLib
             }
         }
 
+        public int Add()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@UserId", mThisReview.UserId);
+            DB.AddParameter("@Grade", mThisReview.Grade);
+            DB.AddParameter("@Edited", mThisReview.Edited);
+            DB.AddParameter("@ReviewComment", mThisReview.ReviewComment);
+            DB.AddParameter("@DateAdded", mThisReview.DateAdded);
+            DB.AddParameter("@ProductId", mThisReview.ProductId);
+
+            return DB.Execute("sproc_tblReview_InsertReview");
+        }
     }
 }

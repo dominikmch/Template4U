@@ -26,6 +26,9 @@
             UserId&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextUserId" runat="server" Height="19px" Width="126px" OnTextChanged="TextUserId_TextChanged"></asp:TextBox>
             <br />
+            ProductId&nbsp;&nbsp;
+            <asp:TextBox ID="TextProductId" runat="server"></asp:TextBox>
+            <br />
             <asp:CheckBox ID="Edited" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged1" />
             <br />
             <br />

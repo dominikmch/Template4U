@@ -10,6 +10,7 @@ namespace Template4UClassLib
         private int mReviewId;
         private int mUserId;
         private DateTime mDateAdded;
+        private int mProductId;
         public string ReviewComment
         {
             get
@@ -77,8 +78,21 @@ namespace Template4UClassLib
                 mUserId = value;
             }
         }
+        public int ProductId
+        {
+            get
+            {
+                return mProductId;
+            }
+            set
+            {
+                mProductId = value;
+            }
+        }
 
-            public bool find(int ReviewId)
+        
+
+        public bool find(int ReviewId)
             {
                 clsDataConnection DB = new clsDataConnection();
                 DB.AddParameter("@ReviewId", ReviewId);
@@ -91,6 +105,7 @@ namespace Template4UClassLib
                 mReviewComment = Convert.ToString(DB.DataTable.Rows[0]["ReviewComment"]);
                 mGrade = Convert.ToInt32(DB.DataTable.Rows[0]["Grade"]);
                 mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateAdded"]);
+                mProductId = Convert.ToInt32(DB.DataTable.Rows[0]["ProductId"]);
 
                 return true;
                 }
@@ -99,7 +114,7 @@ namespace Template4UClassLib
 
             }
 
-        public string valid(String reviewId, String grade, String reviewComment, String dateAdded, String userId)
+        public string valid( String grade, String reviewComment, String dateAdded, String userId, String ProductId)
         {
             String Error = "";
             DateTime DateTemp;

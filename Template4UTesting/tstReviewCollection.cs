@@ -83,5 +83,34 @@ namespace Template4UTesting
         }
 
 
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            clsReviewCollection AllReviews = new clsReviewCollection();
+
+            Int32 PrimaryKey=0;
+
+            clsReview TestItem = new clsReview();
+
+            TestItem.Grade = 4;
+            TestItem.Edited = false;
+            TestItem.ReviewId = 7;
+            TestItem.UserId = 10;
+            TestItem.DateAdded = DateTime.Now.Date;
+            TestItem.ReviewComment = "very good";
+            TestItem.ProductId = 69;
+
+            AllReviews.ThisReview = TestItem;
+
+            PrimaryKey = AllReviews.Add();
+
+            TestItem.ReviewId = PrimaryKey;
+
+            AllReviews.ThisReview.find(PrimaryKey);
+
+            Assert.AreEqual(AllReviews.ThisReview, TestItem);
+
+        }
+
     }
 }

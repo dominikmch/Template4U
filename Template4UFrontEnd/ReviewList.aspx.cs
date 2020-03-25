@@ -26,5 +26,11 @@ namespace Template4UFrontEnd
             ListReviews.DataBind();
 
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            Session["ReviewId"] = -1;
+            Response.Redirect("AnAddress.aspx");
+        }
     }
 }

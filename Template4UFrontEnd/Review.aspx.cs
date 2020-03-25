@@ -50,21 +50,29 @@ namespace Template4UFrontEnd
         {
           
             clsReview AnReview = new clsReview();
-            string tstReviewId = TextReviewId.Text;
-            string tstGrade = TextGrade.Text;
-            string tstReviewComment = TextReviewComment.Text;
-            string tstDateAdded = TextDateAdded.Text;
-            string tstUserId = TextUserId.Text;
-            String Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+  
+            string Grade = TextGrade.Text;
+            string ReviewComment = TextReviewComment.Text;
+            string DateAdded = TextDateAdded.Text;
+            string UserId = TextUserId.Text;
+            string ProductId = TextProductId.Text;
+            string Error = "";
+
+            Error = AnReview.valid(Grade, ReviewComment, DateAdded, UserId, ProductId);
             if (Error == "")
             {
-                AnReview.ReviewId = int.Parse(tstReviewId);
-                AnReview.Grade = int.Parse(tstGrade);
-                AnReview.ReviewComment = tstReviewComment;
-                AnReview.DateAdded = Convert.ToDateTime(tstDateAdded);
-                AnReview.UserId = int.Parse(tstUserId);
-                Session["AnReview"] = AnReview;
-                Response.Redirect("ReviewViewer.aspx");
+                AnReview.Grade = int.Parse(Grade);
+                AnReview.ReviewComment = ReviewComment;
+                AnReview.DateAdded = Convert.ToDateTime(DateAdded);
+                AnReview.UserId = int.Parse(UserId);
+                AnReview.Edited = false;
+                AnReview.ProductId = int.Parse(ProductId);
+
+                clsReviewCollection ReviewList = new clsReviewCollection();
+                ReviewList.ThisReview = AnReview;
+                ReviewList.Add();
+
+                Response.Redirect("ReviewList.aspx");
             }
             else
             {

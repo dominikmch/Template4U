@@ -81,6 +81,15 @@ namespace Template4UTesting
             Review.UserId = TestData;
             Assert.AreEqual(Review.UserId, TestData);
         }
+        [TestMethod]
+        public void ProductIdPropertyOK()
+        {
+            clsReview Review = new clsReview();
+
+            int TestData = 1;
+            Review.ProductId = TestData;
+            Assert.AreEqual(Review.ProductId, TestData);
+        }
 
         [TestMethod]
         public void FindMethodOK()
@@ -167,6 +176,21 @@ namespace Template4UTesting
             int ReviewId = 6;
             Found = Review.find(ReviewId);
             if (Review.Edited)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestProductIdFound()
+        {
+            clsReview Review = new clsReview();
+
+            Boolean Found = false;
+            Boolean OK = true;
+            int ReviewId = 6;
+            Found = Review.find(ReviewId);
+            if (Review.ProductId==69)
             {
                 OK = false;
             }
