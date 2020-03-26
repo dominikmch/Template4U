@@ -18,5 +18,10 @@ namespace Template4UFrontEnd
 
             
         }
+
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

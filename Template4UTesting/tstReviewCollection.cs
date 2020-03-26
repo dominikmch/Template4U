@@ -112,5 +112,42 @@ namespace Template4UTesting
 
         }
 
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            clsReviewCollection AllReviews = new clsReviewCollection();
+
+            clsReview TestItem = new clsReview();
+
+            Int32 PrimaryKey = 0;
+
+            
+
+            TestItem.Grade = 4;
+            TestItem.Edited = false;
+            TestItem.ReviewId = 7;
+            TestItem.UserId = 10;
+            TestItem.DateAdded = DateTime.Now.Date;
+            TestItem.ReviewComment = "very good";
+            TestItem.ProductId = 69;
+
+            AllReviews.ThisReview = TestItem;
+
+            PrimaryKey = AllReviews.Add();
+
+            TestItem.ReviewId = PrimaryKey;
+
+            AllReviews.ThisReview.find(PrimaryKey);
+
+            AllReviews.delete();
+
+            Boolean Found = AllReviews.ThisReview.find(PrimaryKey);
+
+            Assert.IsFalse(Found);
+
+        }
+
+
     }
 }

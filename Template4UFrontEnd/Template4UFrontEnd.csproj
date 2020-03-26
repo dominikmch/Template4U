@@ -71,6 +71,7 @@
     <Content Include="Review.aspx" />
     <Content Include="ReviewList.aspx" />
     <Content Include="ReviewViewer.aspx" />
+    <Content Include="DeleteReview.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -101,6 +102,13 @@
     </Compile>
     <Compile Include="ReviewViewer.aspx.designer.cs">
       <DependentUpon>ReviewViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteReview.aspx.cs">
+      <DependentUpon>DeleteReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteReview.aspx.designer.cs">
+      <DependentUpon>DeleteReview.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

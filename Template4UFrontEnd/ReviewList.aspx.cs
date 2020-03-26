@@ -30,7 +30,24 @@ namespace Template4UFrontEnd
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             Session["ReviewId"] = -1;
-            Response.Redirect("AnAddress.aspx");
+            Response.Redirect("Review.aspx");
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            Int32 ReviewId;
+
+            if (ListReviews.SelectedIndex != -1)
+            {
+                ReviewId = Convert.ToInt32(ListReviews.SelectedValue);
+                Session["ReviewId"] = ReviewId;
+                Response.Redirect("DeleteReview.aspx");
+            }
+            else
+            {
+                lblError.Text = "Please select a record to delete from the list";
+            }
+
         }
     }
 }

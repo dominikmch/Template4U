@@ -57,5 +57,14 @@ namespace Template4UClassLib
 
             return DB.Execute("sproc_tblReview_InsertReview");
         }
+
+        public void delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@ReviewId", mThisReview.ReviewId);
+
+            DB.Execute("sproc_tblReview_Delete");
+        }
     }
 }
