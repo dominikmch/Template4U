@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Template4UBackend
 {
-    public partial class Form1 : Form
+    public partial class Review : Form
     {
-        public Form1()
+        public Review()
         {
             InitializeComponent();
         }

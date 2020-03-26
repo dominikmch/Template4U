@@ -191,5 +191,46 @@ namespace Template4UTesting
         }
 
 
+        [TestMethod]
+        public void ReportByProductIdMethodOK()
+        {
+            clsReviewCollection AllReviews = new clsReviewCollection();
+            clsReviewCollection FilteredReviews = new clsReviewCollection();
+
+            FilteredReviews.ReportByProductId(0);
+
+            Assert.AreEqual(AllReviews.Count, FilteredReviews.Count);
+
+        }
+
+
+        [TestMethod]
+        public void ReportByProductIdNotFound()
+        {
+ 
+            clsReviewCollection FilteredReviews = new clsReviewCollection();
+
+            FilteredReviews.ReportByProductId(999999999);
+
+            Assert.AreEqual(0, FilteredReviews.Count);
+
+        }
+
+        [TestMethod]
+        public void ReportByProductIdDataFound()
+        {
+
+            clsReviewCollection FilteredReviews = new clsReviewCollection();
+
+
+            FilteredReviews.ReportByProductId(11);
+
+            Assert.AreEqual(2, FilteredReviews.Count);
+
+        }
+
+
+
+
     }
 }

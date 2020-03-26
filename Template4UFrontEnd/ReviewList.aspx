@@ -11,10 +11,21 @@
         <div>
             <asp:ListBox ID="ListReviews" runat="server" Height="482px" Width="502px"></asp:ListBox>
             <br />
+            <asp:Button ID="Button1" runat="server" Text="Button" />
         </div>
+        <br />
         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add" />
         <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" Text="Edit" />
         <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" Text="Delete" />
+        <br />
+        <br />
+        Enter a Product Id&nbsp;&nbsp;
+        <asp:TextBox ID="txtFilter" runat="server" Height="20px">0</asp:TextBox>
+        <br />
+        <br />
+        <asp:Button ID="btnApply" runat="server" OnClick="btnApply_Click" Text="Apply " />
+&nbsp;
+        <asp:Button ID="btnClear" runat="server" OnClick="btnClear_Click" Text="Clear" />
         <p>
             <asp:Label ID="lblError" runat="server" Text="."></asp:Label>
         </p>

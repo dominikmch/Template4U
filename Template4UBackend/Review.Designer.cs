@@ -1,6 +1,6 @@
 ﻿namespace Template4UBackend
 {
-    partial class Form1
+    partial class Review
     {
         /// <summary>
         /// Required designer variable.

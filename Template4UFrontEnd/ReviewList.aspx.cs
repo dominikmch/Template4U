@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Template4UClassLib;
 
 namespace Template4UFrontEnd
 {
@@ -63,6 +64,32 @@ namespace Template4UFrontEnd
             {
                 lblError.Text = "Please select a record to delete from the list";
             }
+        }
+
+        protected void btnApply_Click(object sender, EventArgs e)
+        {
+            clsReviewCollection Reviews = new clsReviewCollection();
+
+                Reviews.ReportByProductId(int.Parse(txtFilter.Text));
+                ListReviews.DataSource = Reviews.ReviewList;
+                ListReviews.DataValueField = "ReviewId";
+                ListReviews.DataTextField = "ReviewComment";
+                ListReviews.DataBind();
+            txtFilter.Text = int.Parse(txtFilter.Text).ToString(); ;
+
+
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            clsReviewCollection Reviews = new clsReviewCollection();
+            Reviews.ReportByProductId(0);
+            txtFilter.Text = "0";
+
+            ListReviews.DataSource = Reviews.ReviewList;
+            ListReviews.DataValueField = "ReviewId";
+            ListReviews.DataTextField = ("ReviewComment");
+            ListReviews.DataBind();
         }
     }
 }
