@@ -66,5 +66,21 @@ namespace Template4UClassLib
 
             DB.Execute("sproc_tblReview_Delete");
         }
+        public void update()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@ReviewId", mThisReview.ReviewId);
+            DB.AddParameter("@UserId", mThisReview.UserId);
+            DB.AddParameter("@Grade", mThisReview.Grade);
+            DB.AddParameter("@Edited", mThisReview.Edited);
+            DB.AddParameter("@ReviewComment", mThisReview.ReviewComment);
+            DB.AddParameter("@ProductId", mThisReview.ProductId);
+
+     
+
+            DB.Execute("sproc_tblReview_Update");
+        }
+
     }
 }

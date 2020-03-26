@@ -29,7 +29,6 @@
             ProductId&nbsp;&nbsp;
             <asp:TextBox ID="TextProductId" runat="server"></asp:TextBox>
             <br />
-            <asp:CheckBox ID="Edited" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged1" />
             <br />
             <br />
             <br />

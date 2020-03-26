@@ -9,13 +9,33 @@ using Template4UClassLib;
 namespace Template4UFrontEnd
 {
     public partial class Review : System.Web.UI.Page
-    {
+    { Int32 ReviewId;
         protected void Page_Load(object sender, EventArgs e)
         {
-        
+            ReviewId = Convert.ToInt32(Session["ReviewId"]);
+            if (!IsPostBack)
+            {
+                if (ReviewId != -1)
+                {
+                    DisplayReview();
+                }
+            }
+
+
         }
 
+        void DisplayReview()
+        {
+            Template4UClassLib.clsReviewCollection Reviews = new Template4UClassLib.clsReviewCollection();
+            Reviews.ThisReview.find(ReviewId);
+            TextReviewId.Text = Reviews.ThisReview.ReviewId.ToString();
+            TextGrade.Text = Reviews.ThisReview.Grade.ToString();
+            TextReviewComment.Text = Reviews.ThisReview.ReviewComment;
+            TextDateAdded.Text = Reviews.ThisReview.DateAdded.ToString();
+            TextUserId.Text = Reviews.ThisReview.UserId.ToString();
+            TextProductId.Text = Reviews.ThisReview.ProductId.ToString();
 
+        }
         protected void TextReviewId_TextChanged(object sender, EventArgs e)
         {
 
@@ -61,6 +81,7 @@ namespace Template4UFrontEnd
             Error = AnReview.valid(Grade, ReviewComment, DateAdded, UserId, ProductId);
             if (Error == "")
             {
+                AnReview.ReviewId = ReviewId;
                 AnReview.Grade = int.Parse(Grade);
                 AnReview.ReviewComment = ReviewComment;
                 AnReview.DateAdded = Convert.ToDateTime(DateAdded);
@@ -69,8 +90,18 @@ namespace Template4UFrontEnd
                 AnReview.ProductId = int.Parse(ProductId);
 
                 clsReviewCollection ReviewList = new clsReviewCollection();
-                ReviewList.ThisReview = AnReview;
-                ReviewList.Add();
+
+                if (ReviewId == -1)
+                {
+                    ReviewList.ThisReview = AnReview;
+                    ReviewList.Add();
+                }
+                else
+                {
+                    ReviewList.ThisReview.find(ReviewId);
+                    ReviewList.ThisReview = AnReview;
+                    ReviewList.update();
+                }
 
                 Response.Redirect("ReviewList.aspx");
             }
@@ -80,11 +111,6 @@ namespace Template4UFrontEnd
             }
 
 
-        }
-
-        protected void CheckBox1_CheckedChanged1(object sender, EventArgs e)
-        {
-        
         }
 
         protected void ButtonFind_Click(object sender, EventArgs e)
