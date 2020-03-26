@@ -114,7 +114,7 @@ namespace Template4UClassLib
 
             }
 
-        public string valid( String grade, String reviewComment, String dateAdded, String userId, String ProductId)
+        public string valid(String grade, String reviewComment, String dateAdded, String userId, String ProductId)
         {
             String Error = "";
             DateTime DateTemp;

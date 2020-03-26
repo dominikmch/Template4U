@@ -15,6 +15,7 @@ namespace Template4UTesting
         String tstReviewComment = "Very good";
         String tstDateAdded = DateTime.Now.Date.ToString();
         String tstUserId = "78";
+        String tstProductId = "69";
 
         [TestMethod]
         public void InstanceOK()
@@ -218,7 +219,7 @@ namespace Template4UTesting
             clsReview AnReview = new clsReview();
 
             String Error = "";
-            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment,tstDateAdded, tstUserId);
+            Error = AnReview.valid(tstGrade, tstReviewComment,tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -228,7 +229,7 @@ namespace Template4UTesting
 
             String Error = "";
             string Grade = "";
-            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(Grade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -238,7 +239,7 @@ namespace Template4UTesting
 
             String Error = "";
             string Grade = "-1";
-            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(Grade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
 
@@ -249,7 +250,7 @@ namespace Template4UTesting
 
             String Error = "";
             string Grade = "0";
-            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(Grade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
 
@@ -260,7 +261,7 @@ namespace Template4UTesting
 
             String Error = "";
             string Grade = "1";
-            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(Grade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
 
@@ -271,7 +272,7 @@ namespace Template4UTesting
 
             String Error = "";
             string Grade = "4";
-            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(Grade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
 
@@ -282,7 +283,7 @@ namespace Template4UTesting
 
             String Error = "";
             string Grade = "3";
-            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(Grade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
 
@@ -294,7 +295,7 @@ namespace Template4UTesting
 
             String Error = "";
             string Grade = "5";
-            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(Grade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -304,7 +305,7 @@ namespace Template4UTesting
 
             String Error = "";
             string Grade = "6";
-            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(Grade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -314,7 +315,7 @@ namespace Template4UTesting
 
             String Error = "";
             string Grade = "1b";
-            Error = AnReview.valid(tstReviewId, Grade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(Grade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
 
@@ -327,7 +328,7 @@ namespace Template4UTesting
             DateTime Date=DateTime.Now.Date;
             Date = Date.AddYears(-100);
             tstDateAdded = Date.ToString();
-            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(tstGrade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -339,7 +340,7 @@ namespace Template4UTesting
             DateTime Date = DateTime.Now.Date;
             Date = Date.AddYears(-1);
             tstDateAdded = Date.ToString();
-            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(tstGrade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -350,7 +351,7 @@ namespace Template4UTesting
             String Error = "";
             DateTime Date = DateTime.Now.Date;
             tstDateAdded = Date.ToString();
-            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(tstGrade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -362,7 +363,7 @@ namespace Template4UTesting
             DateTime Date = DateTime.Now.Date;
             Date = Date.AddYears(1);
             tstDateAdded = Date.ToString();
-            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(tstGrade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -374,7 +375,7 @@ namespace Template4UTesting
             DateTime Date = DateTime.Now.Date;
             Date = Date.AddYears(100);
             tstDateAdded = Date.ToString();
-            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(tstGrade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -384,7 +385,7 @@ namespace Template4UTesting
 
             String Error = "";
             tstDateAdded = "Definately not a date";
-            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(tstGrade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -394,7 +395,7 @@ namespace Template4UTesting
 
             String Error = "";
             tstReviewComment = "";
-            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(tstGrade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -409,7 +410,7 @@ namespace Template4UTesting
                 tstReviewComment += "Test ";
             }
             
-            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(tstGrade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -424,7 +425,7 @@ namespace Template4UTesting
                 tstReviewComment += "Test ";
             }
 
-            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(tstGrade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -439,7 +440,7 @@ namespace Template4UTesting
                 tstReviewComment += "Test ";
             }
 
-            Error = AnReview.valid(tstReviewId, tstGrade, tstReviewComment, tstDateAdded, tstUserId);
+            Error = AnReview.valid(tstGrade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
 
