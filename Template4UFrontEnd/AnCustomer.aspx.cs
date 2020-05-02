@@ -53,6 +53,7 @@ namespace Template4UFrontEnd
 
         private void AdminMode(clsCustomer customer)
         {
+            clsCustomerCollection customerCollection = new clsCustomerCollection();
 
             var tstCustomerId = TextCustomerID.Text;
             var tstCustomerEmail = TextCustomerEmail.Text;
@@ -60,17 +61,17 @@ namespace Template4UFrontEnd
             var tstCustomerPassword = TextCustomerPassword.Text;
             var tstCustomerIsBusiness = CustomerBusiness.Checked;
 
-            var error = customer.ValidateFields(tstCustomerId, tstCustomerEmail, tstCustomerName);
+            var error = customer.ValidateFields(tstCustomerId, tstCustomerEmail, tstCustomerName, tstCustomerPassword,  tstCustomerIsBusiness.ToString());
 
             if (string.IsNullOrWhiteSpace(error))
             {
                 if (customer.Find(int.Parse(tstCustomerId)))
                 {
-                    customer.Add(tstCustomerName, tstCustomerPassword, tstCustomerEmail, tstCustomerIsBusiness);
+                    customerCollection.Add(tstCustomerName, tstCustomerPassword, tstCustomerEmail, tstCustomerIsBusiness);
                 }
                 else
                 {
-                    customer.Update(int.Parse(tstCustomerId), tstCustomerName, tstCustomerPassword, tstCustomerEmail, tstCustomerIsBusiness);
+                    customerCollection.Update(int.Parse(tstCustomerId), tstCustomerName, tstCustomerPassword, tstCustomerEmail, tstCustomerIsBusiness);
                 }
 
                 

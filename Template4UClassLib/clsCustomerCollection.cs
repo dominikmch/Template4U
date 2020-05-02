@@ -4,7 +4,7 @@ using System.Runtime.Remoting.Messaging;
 
 namespace Template4UClassLib
 {
-    class clsCustomerCollection
+    public class clsCustomerCollection
     {
         // Fields
         List<clsCustomer> mCustomerList = new List<clsCustomer>();

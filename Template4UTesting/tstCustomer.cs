@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Template4UClassLib;
@@ -8,20 +9,20 @@ namespace Template4UTesting
     [TestClass]
     public class tstCustomer
     {
+        //Test Data
+        private string _customerId = "555";
+        private string _customerEmail = "aaa@bbb.com";
+        private string _customerPassword = "Password";
+        private string _customerName = "SuperUser";
+        private string _customerRegistrationDate = DateTime.Now.ToString(CultureInfo.CurrentCulture);
+        private string _customerIsBusinessClient = "true";
+
         [TestMethod]
         public void InstanceOK()
         {
             clsCustomer Customer = new clsCustomer();
             Assert.IsNotNull(Customer);
         }
-
-        //[TestMethod]
-        //public void FindAllMethod_OK()
-        //{
-        //    clsCustomer customer = new clsCustomer();
-        //    Console.WriteLine(customer.FindAll().ToString());
-        //    Assert.IsTrue(customer.FindAll());
-        //}
 
         [TestMethod]
         public void RegistrationDateProperyOk()
@@ -93,6 +94,30 @@ namespace Template4UTesting
             var customerId = 8;
             found = customer.Find(customerId);
             Assert.IsTrue(found);
+        }
+
+        [TestMethod]
+        public void TestFindMethodNotFound()
+        {
+            clsCustomer customer = new clsCustomer();
+
+            var found = false;
+            var customerId = 999;
+            found = customer.Find(customerId);
+            Assert.IsFalse(found);
+        }
+
+        [TestMethod]
+        public void TestFindMethodFound()
+        {
+            clsCustomer customer = new clsCustomer
+            {
+                CustomerId = int.Parse(_customerId)
+            };
+
+            var customerId = 555;
+
+            Assert.IsFalse(customer.Find(customerId));
         }
     }
 }

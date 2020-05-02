@@ -14,27 +14,6 @@ namespace Template4UClassLib
         public clsCustomer()
         {
         }
-        //public bool FindAll()
-        //{
-        //    clsDataConnection DB = new clsDataConnection();
-        //    DB.Execute("sproc_tblCustomer_SelectAll");
-        //    if (DB.Count > 0)
-        //    {
-        //        mCustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
-        //        mCustomerEmail = Convert.ToString(DB.DataTable.Rows[0]["CustomerEmail"]);
-        //        mCustomerPassword = Convert.ToString(DB.DataTable.Rows[0]["CustomerPassword"]);
-        //        mCustomerName = Convert.ToString(DB.DataTable.Rows[0]["CustomerName"]);
-        //        mRegistrationDate = Convert.ToDateTime(DB.DataTable.Rows[0]["CustomerRegDate"]);
-        //        mIsBusinessCustomer = Convert.ToBoolean(DB.DataTable.Rows[0]["CustomerIsBussinessClient"]);
-
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-
-        //}
 
         public bool Find(int cId)
         {
@@ -57,7 +36,7 @@ namespace Template4UClassLib
             
         }
 
-        public string ValidateFields(string customerId, string customerEmail, string customerName)
+        public string ValidateFields(string customerId, string customerEmail, string customerName, string customerPassword, string customerIsBusiness)
         {
             var error = "";
             try
