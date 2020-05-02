@@ -57,45 +57,6 @@ namespace Template4UClassLib
             
         }
 
-        public void Add(string name, string password, string email, bool isBusiness)
-        {
-            clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@CustomerEmail", email);
-            DB.AddParameter("@CustomerPassword", password);
-            DB.AddParameter("@CustomerName", name);
-            DB.AddParameter("@CustomerIsBussinessClient", isBusiness);
-            DB.AddParameter("@CustomerRegDate", DateTime.Today);
-            DB.Execute("sproc_tblCustomer_Insert");
-
-            if (DB.Count != 0)
-            {
-
-            }
-            else
-            {
-            }
-
-        }
-
-        public void Update(int id, string name, string password, string email, bool isBusiness)
-        {
-            clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@CustomerId", id);
-            DB.AddParameter("@CustomerEmail", email);
-            DB.AddParameter("@CustomerPassword", password);
-            DB.AddParameter("@CustomerName", name);
-            DB.AddParameter("@CustomerIsBussinessClient", isBusiness);
-
-            if (!Find(id))
-            {
-                DB.Execute("sproc_tblCustomer_UpdateCustomerDetails");
-            }
-            else
-            {
-            }
-
-        }
-
         public string ValidateFields(string customerId, string customerEmail, string customerName)
         {
             var error = "";
