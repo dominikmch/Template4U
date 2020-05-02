@@ -104,5 +104,18 @@ namespace Template4UClassLib
             //Execute
             DB.Execute("sproc_tblCustomer_Delete");
         }
+
+        public void ReportByType(bool isBusiness)
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            //Set parameters
+            DB.AddParameter("@CustomerIsBussinessClient", isBusiness);
+
+            //Execute
+            DB.Execute("sproc_tblCustomer_FilterByType");
+
+            PopulateArray(DB);
+        }
     }
 }
