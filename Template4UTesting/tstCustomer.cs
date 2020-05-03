@@ -119,5 +119,76 @@ namespace Template4UTesting
 
             Assert.IsFalse(customer.Find(customerId));
         }
+
+        [TestMethod]
+        public void TestCustomerIdFound()
+        {
+            clsCustomer customer = new clsCustomer();
+
+            customer.Find(1);
+
+            Assert.IsTrue(customer.CustomerId == 1);
+        }
+
+        [TestMethod]
+        public void TestCustomerEmailFound()
+        {
+            clsCustomer customer = new clsCustomer();
+
+            customer.Find(1);
+
+            Assert.AreEqual("test@test.co.uk", customer.CustomerEmail);
+        }
+
+        [TestMethod]
+        public void TestCustomerPasswordFound()
+        {
+            clsCustomer customer = new clsCustomer();
+
+            customer.Find(1);
+
+            Assert.AreEqual("TestPassword", customer.CustomerPassword );
+        }
+
+        [TestMethod]
+        public void TestCustomerNameFound()
+        {
+            clsCustomer customer = new clsCustomer();
+
+            customer.Find(1);
+
+            Assert.AreEqual("TestUser", customer.CustomerName );
+        }
+
+        [TestMethod]
+        public void TestCustomerRegistrationDateFound()
+        {
+            clsCustomer customer = new clsCustomer();
+
+            customer.Find(1);
+
+            Assert.AreNotEqual(DateTime.Now, customer.RegistrationDate);
+        }
+
+        [TestMethod]
+        public void TestCustomerIsBusinessFound()
+        {
+            clsCustomer customer = new clsCustomer();
+
+            customer.Find(1);
+
+            Assert.AreEqual(true,customer.IsBusinessCustomer);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            var customer = new clsCustomer();
+
+            var Error = customer.ValidateFields(_customerId, _customerEmail, _customerName, _customerPassword,
+                _customerIsBusinessClient);
+
+            Assert.AreEqual("", Error);
+        }
     }
 }
