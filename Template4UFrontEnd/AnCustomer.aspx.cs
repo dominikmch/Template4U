@@ -65,7 +65,7 @@ namespace Template4UFrontEnd
 
             if (string.IsNullOrWhiteSpace(error))
             {
-                if (customer.Find(int.Parse(tstCustomerId)))
+                if (!customer.Find(int.Parse(tstCustomerId)))
                 {
                     customerCollection.Add(tstCustomerName, tstCustomerPassword, tstCustomerEmail, tstCustomerIsBusiness);
                 }
@@ -127,5 +127,9 @@ namespace Template4UFrontEnd
             Find(customer, int.Parse(TextCustomerID.Text));
         }
 
+        protected void ButtonDelete_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

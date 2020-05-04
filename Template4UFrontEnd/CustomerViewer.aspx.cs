@@ -13,7 +13,7 @@ namespace Template4UFrontEnd
         protected void Page_Load(object sender, EventArgs e)
         {
             var anCustomer = (clsCustomer)Session["anCustomer"];
-            Response.Write(anCustomer.CustomerId);
+            Response.Write(anCustomer);
         }
     }
 }

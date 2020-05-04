@@ -67,7 +67,12 @@
         </div>
         <div class="form-row" align="right">
             <div class="col" style="margin: 10px">
-                <asp:Button runat="server" class="btn btn-primary" OnClick="ButtonOk_Click" Text="Submit"/>
+                <asp:Button runat="server" class="btn btn-primary" OnClick="ButtonDelete_Click" Text="Delete"/>
+            </div>
+        </div>
+        <div class="form-row" align="right">
+            <div class="col" style="margin: 10px">
+                <asp:Button runat="server" class="btn btn-primary" OnClick="ButtonOk_Click" Text="Add/Update"/>
             </div>
         </div>
         <div class="form-row" align="center" >
