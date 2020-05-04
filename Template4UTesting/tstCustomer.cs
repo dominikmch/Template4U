@@ -190,5 +190,38 @@ namespace Template4UTesting
 
             Assert.AreEqual("", Error);
         }
+
+        [TestMethod]
+        public void StandardValuesAreValid() 
+        {
+            var customer = new clsCustomer();
+
+            var Error = customer.ValidateFields(_customerId, _customerEmail, _customerName, _customerPassword,
+                _customerIsBusinessClient);
+
+            Assert.AreEqual("", Error);
+        }
+
+        [TestMethod]
+        public void ValuesBelowMinimumAreNotValid()
+        {
+            var customer = new clsCustomer();
+
+            var Error = customer.ValidateFields("", "", "", "", "");
+
+            Assert.AreNotEqual("", Error);
+        }
+
+        [TestMethod]
+        public void ValuesAboveMaximumAreNotValid()
+        {
+            var customer = new clsCustomer();
+
+            var maxValue = "".PadRight(500, 'x');
+
+            var Error = customer.ValidateFields(maxValue, maxValue, maxValue, maxValue, maxValue);
+
+            Assert.AreNotEqual("", Error);
+        }
     }
 }
