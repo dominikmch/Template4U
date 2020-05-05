@@ -6,19 +6,27 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="background-color:burlywood">
     <form id="form1" runat="server">
-        <div style="height: 260px; width: 286px">
+        <h1 style="color: blue; text-align:center;">Add or search for review here!</h1>
+        <div style="text-align:center ;">
+        <div style="height: 260px; width: 402px; position: center; display:inline-block">
             ReviewId&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextReviewId" runat="server" OnTextChanged="TextReviewId_TextChanged"></asp:TextBox>
-            <asp:Button ID="ButtonFind" runat="server" OnClick="ButtonFind_Click" Text="Find" />
+            <asp:Button ID="ButtonFind" runat="server" OnClick="ButtonFind_Click" Text="Find" style="margin-left:5px;"/>
+            <br />
+            <br />
+            Add a review below.<br />
             <br />
             Grade&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextGrade" runat="server" OnTextChanged="TextGrade_TextChanged" style="margin-left: 14px" Width="111px"></asp:TextBox>
-&nbsp;&nbsp;
             <br />
-            Description
-            <asp:TextBox ID="TextReviewComment" runat="server" OnTextChanged="TextReviewComment_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="TextGrade" runat="server" OnTextChanged="TextGrade_TextChanged" style="margin-left: 14px" Width="111px"></asp:TextBox>
+
+            <br />
+            Description<br />
+
+            <asp:TextBox ID="TextReviewComment" runat="server" OnTextChanged="TextReviewComment_TextChanged" Height="126px" Width="185px"></asp:TextBox>
+            <br />
             <br />
             Date Added
             <asp:TextBox ID="TextDateAdded" runat="server" Height="22px" Width="128px" OnTextChanged="TextDateAdded_TextChanged"></asp:TextBox>
@@ -30,15 +38,13 @@
             <asp:TextBox ID="TextProductId" runat="server"></asp:TextBox>
             <br />
             <br />
+            <asp:Button ID="OkButton" runat="server" OnClick="ButtonOK_Click" style="margin-top: 0px" Text="OK" Width="56px" />
+            <asp:Button ID="Button1" runat="server" Text="Cancel" />
             <br />
             <br />
             <asp:Label ID="ErrorLabel" runat="server"></asp:Label>
-            <br />
-            <br />
-            <br />
-            <asp:Button ID="OkButton" runat="server" OnClick="ButtonOK_Click" style="margin-top: 0px" Text="OK" Width="56px" />
-            <asp:Button ID="Button1" runat="server" Text="Cancel" />
         </div>
+            </div>
     </form>
 </body>
 </html>

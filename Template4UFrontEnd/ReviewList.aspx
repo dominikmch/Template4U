@@ -6,12 +6,13 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+            <h1 style="color:blue; text-align: center;">All available reviews</h1>
+<body style="background-color:burlywood">
     <form id="form1" runat="server">
         <div>
             <asp:ListBox ID="ListReviews" runat="server" Height="482px" Width="502px"></asp:ListBox>
             <br />
-            <asp:Button ID="Button1" runat="server" Text="Button" />
+            <asp:Button ID="viewReview" runat="server" Text="View Review" OnClick="Button1_Click" />
         </div>
         <br />
         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add" />

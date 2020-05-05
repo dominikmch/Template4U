@@ -12,11 +12,28 @@ namespace Template4UFrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            clsReview AnReview = new clsReview();
-            AnReview = (clsReview)Session["AnReview"];
-            Response.Write("Review is valid, thank you");
+            Int32 ReviewId;
+            ReviewId = Convert.ToInt32(Session["ReviewId"]);
+            if (!IsPostBack)
+            {
+                if (ReviewId != -1)
+                {
+                    DisplayReview();
+                }
+            }
+            void DisplayReview()
+            {
+                Template4UClassLib.clsReviewCollection Reviews = new Template4UClassLib.clsReviewCollection();
+                Reviews.ThisReview.find(ReviewId);
+                productId.Text ="Product Id : "+ Reviews.ThisReview.ReviewId.ToString();
+                grade.Text = "Grade : "+Reviews.ThisReview.Grade.ToString();
+                description.Text = "Comment : "+Reviews.ThisReview.ReviewComment;
+                date.Text = "Date Added: "+Reviews.ThisReview.DateAdded.ToString();
+                userId.Text = "User Id : "+ Reviews.ThisReview.UserId.ToString();
 
-            
+            }
+
+
         }
 
         protected void btnNo_Click(object sender, EventArgs e)

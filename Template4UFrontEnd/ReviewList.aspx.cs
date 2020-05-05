@@ -91,5 +91,22 @@ namespace Template4UFrontEnd
             ListReviews.DataTextField = ("ReviewComment");
             ListReviews.DataBind();
         }
+
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Int32 ReviewId;
+
+            if (ListReviews.SelectedIndex != -1)
+            {
+                ReviewId = Convert.ToInt32(ListReviews.SelectedValue);
+                Session["ReviewId"] = ReviewId;
+                Response.Redirect("ReviewViewer.aspx");
+            }
+            else
+            {
+                lblError.Text = "Please select a record to delete from the list";
+            }
+        }
     }
 }
