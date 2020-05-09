@@ -34,5 +34,47 @@ namespace Template4UTesting
             Assert.AreEqual(AllStaff.StaffList, tstList);
         
         }
+
+        [TestMethod]
+
+        public void ThisStaffOK()
+        {
+            clsStaffCollection AllStaff = new clsStaffCollection();
+
+            clsStaff tstItem = new clsStaff();
+
+            tstItem.StaffID = 12;
+            tstItem.StaffRole = "Manager";
+            tstItem.StartingDate = DateTime.Now.Date;
+            tstItem.Salary = 10;
+            tstItem.isEmployed = true;
+
+            AllStaff.ThisStaff = tstItem;
+            Assert.AreEqual(AllStaff.ThisStaff, tstItem);
+
+        }
+
+        [TestMethod]
+
+        public void ListAndCountOK()
+        {
+            clsStaffCollection AllStaff = new clsStaffCollection();
+            List<clsStaff> tstList = new List<clsStaff>();
+            clsStaff tstItem = new clsStaff();
+
+            tstItem.StaffID = 12;
+            tstItem.StaffRole = "Manager";
+            tstItem.StartingDate = DateTime.Now.Date;
+            tstItem.Salary = 10;
+            tstItem.isEmployed = true;
+
+            tstList.Add(tstItem);
+            AllStaff.StaffList = tstList;
+            Assert.AreEqual(AllStaff.Count, tstList.Count);
+
+        }
+
+
+
     }
 }

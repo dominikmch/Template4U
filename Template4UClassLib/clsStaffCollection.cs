@@ -37,10 +37,7 @@ namespace Template4UClassLib
             }
         }
 
-            public clsStaffCollection()
-        {
-            clsDataConnection DB = clsDataConnection();
-        }
+        
         }
     }
 }
