@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Template4UClassLib
 {
@@ -37,7 +38,71 @@ namespace Template4UClassLib
             }
         }
 
-        
+        public int Add()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@StaffID", mThisStaff.StaffID);
+            DB.AddParameter("@StaffRole", mThisStaff.StaffRole);
+            DB.AddParameter("@StartingDate", mThisStaff.StartingDate);
+            DB.AddParameter("@Salary", mThisStaff.Salary);
+            DB.AddParameter("@isEmployed", mThisStaff.isEmployed);
+
+            return DB.Execute("sproc_tblStaff_Add");
         }
+
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@StaffID", mThisStaff.StaffID);
+            DB.Execute("sproc_tblStaff_Delete");
+        }
+
+        public void Update()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@StaffID", mThisStaff.StaffID);
+            DB.AddParameter("@StaffRole", mThisStaff.StaffRole);
+            DB.AddParameter("@StartingDate", mThisStaff.StartingDate);
+            DB.AddParameter("@Salary", mThisStaff.Salary);
+            DB.AddParameter("@isEmployed", mThisStaff.isEmployed);
+
+            DB.Execute("sproc_tblStaff_Update");
+
+        }
+
+        public void FilterBySalary(double Salary )
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Salary", Salary);
+            DB.Execute("sproc_tblStaff_FilterBySalary");
+            PopulateArray(DB);
+        }
+
+        private void PopulateArray(clsDataConnection DB)
+        {
+            int index = 0;
+            int recordCount = 0;
+            recordCount = DB.Count;
+
+            while (index < recordCount)
+            {
+                clsStaff AStaff = new clsStaff();
+
+                AStaff.StaffID = Convert.ToInt32(DB.DataTable.Rows[index]["StaffID"]);
+                AStaff.StaffRole = Convert.ToString(DB.DataTable.Rows[index]["StaffRole"]);
+                AStaff.StartingDate = Convert.ToDateTime(DB.DataTable.Rows[index]["StartingDate"]);
+                AStaff.Salary = Convert.ToDouble(DB.DataTable.Rows[index]["Salary"]);
+                AStaff.isEmployed = Convert.ToBoolean(DB.DataTable.Rows[index]["isEmployed"]);
+
+                mStaffList.Add(AStaff);
+
+                index++;
+
+            }
+        }
+    }
     }
 }

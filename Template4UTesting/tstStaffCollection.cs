@@ -74,6 +74,103 @@ namespace Template4UTesting
 
         }
 
+        [TestMethod]
+
+        public void AddMethodOK()
+        {
+            clsStaffCollection AllStaff = new clsStaffCollection();
+
+            Int32 PrimaryKey = 0;
+
+            clsStaff tstItem = new clsStaff();
+
+            tstItem.StaffID = 12;
+            tstItem.StaffRole = "Manager";
+            tstItem.StartingDate = DateTime.Now.Date;
+            tstItem.Salary = 10;
+            tstItem.isEmployed = true;
+
+            AllStaff.ThisStaff = tstItem;
+
+            PrimaryKey = AllStaff.Add();
+
+            tstItem.StaffID = PrimaryKey;
+            AllStaff.ThisStaff.Find(PrimaryKey);
+            Assert.AreEqual(AllStaff.ThisStaff, tstItem);
+
+
+        }
+
+        [TestMethod]
+
+        public void DeleteMethodOK()
+        {
+            clsStaffCollection AllStaff = new clsStaffCollection();
+            clsStaff tstItem = new clsStaff();
+
+            Int32 PrimaryKey = 0;
+
+            tstItem.StaffID = 12;
+            tstItem.StaffRole = "Manager";
+            tstItem.StartingDate = DateTime.Now.Date;
+            tstItem.Salary = 10;
+            tstItem.isEmployed = true;
+
+            AllStaff.ThisStaff = tstItem;
+
+            PrimaryKey = AllStaff.Add();
+
+            tstItem.StaffID = PrimaryKey;
+            AllStaff.ThisStaff.Find(PrimaryKey);
+            AllStaff.Delete();
+            Boolean Found = AllStaff.ThisStaff.Find(PrimaryKey);
+            Assert.IsFalse(Found);
+
+
+        }
+
+        [TestMethod]
+
+        public void UpdateMethodOK()
+        {
+            clsStaffCollection AllStaff = new clsStaffCollection();
+            clsStaff tstItem = new clsStaff();
+            Int32 PrimaryKey = 0;
+
+            tstItem.StaffID = 12;
+            tstItem.StaffRole = "Manager";
+            tstItem.StartingDate = DateTime.Now.Date;
+            tstItem.Salary = 10;
+            tstItem.isEmployed = true;
+
+            AllStaff.ThisStaff = tstItem;
+            PrimaryKey = AllStaff.Add();
+
+            tstItem.StaffID = 10;
+            tstItem.StaffRole = "Technician";
+            tstItem.StartingDate = DateTime.Now.Date;
+            tstItem.Salary = 13;
+            tstItem.isEmployed = false;
+
+            AllStaff.ThisStaff.Find(PrimaryKey);
+            AllStaff.Update();
+            Boolean Found = AllStaff.ThisStaff.Find(PrimaryKey);
+            Assert.IsFalse(Found);
+
+
+        }
+
+        [TestMethod]
+
+        public void FilterBySalaryMethodOK()
+        {
+            clsStaffCollection AllStaff = new clsStaffCollection();
+            clsStaffCollection FilteredStaff = new clsStaffCollection();
+            FilteredStaff.FilterBySalary(0);
+            Assert.AreEqual(AllStaff.Count, FilteredStaff.Count);
+          
+        }
+
 
 
     }
