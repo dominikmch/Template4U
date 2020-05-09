@@ -91,18 +91,10 @@ namespace Template4UClassLib
                 return false;
             }
 
-            public string Valid(string staffID, string staffRole, string salary, string startingDate)
-            {
-                
-            }
+            
 
 
-            public void Delete(int StaffID)
-            {
-                clsDataConnection DB = new clsDataConnection();
-                DB.AddParameter("@StaffID", StaffID);
-                DB.Execute("sproc_tblStaff_Delete");
-            }
+    
 
 
         }
