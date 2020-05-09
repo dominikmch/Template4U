@@ -6,11 +6,23 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="height: 429px; width: 566px">
     <form id="form1" runat="server">
         <div>
-            <asp:ListBox ID="lstStaffList" runat="server" Height="497px" Width="561px"></asp:ListBox>
+            <asp:ListBox ID="lstStaffList" runat="server" Height="445px" Width="561px"></asp:ListBox>
         </div>
-    </form>
+        <asp:Button ID="btnAdd" runat="server" Text="Add" />
+        <asp:Button ID="btnEdit" runat="server" Text="Edit" />
+        <asp:Button ID="btnDelete" runat="server" Text="Delete" />
+        <br />
+        <br />
+        Enter a salary
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <br />
+        <asp:Button ID="btnApply" runat="server" Text="Apply" />
+        <asp:Button ID="btnClear" runat="server" Text="Clear" />
+        <br />
+        <br />
+        [lblError]</form>
 </body>
 </html>
