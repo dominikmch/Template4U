@@ -151,10 +151,10 @@ namespace Template4UTesting
         {
             clsStaff AStaff = new clsStaff();
             String Error = "";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
         }
-
+        /*
         [TestMethod]
 
         public void StaffIDEmpty()
@@ -162,7 +162,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstStaffID = "";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
         }
 
@@ -173,7 +173,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstStaffID = "Fourteen";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
 
         }
@@ -185,7 +185,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstStaffID = "1234";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
 
         }
@@ -197,7 +197,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstStaffID = "12345";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
 
         }
@@ -212,7 +212,7 @@ namespace Template4UTesting
             Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
 
-        }
+        } */
 
 
 
@@ -223,7 +223,7 @@ namespace Template4UTesting
             String Error = "";
             DateTime Date = DateTime.Now.Date;
             tstStartingDate = Date.ToString();
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
         }
 
@@ -235,7 +235,7 @@ namespace Template4UTesting
             DateTime Date = DateTime.Now.Date;
             Date = Date.AddDays(-1);
             tstStartingDate = Date.ToString();
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
         }
 
@@ -247,7 +247,7 @@ namespace Template4UTesting
             DateTime Date = DateTime.Now.Date;
             Date = Date.AddDays(-1000);
             tstStartingDate = Date.ToString();
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
         }
 
@@ -259,7 +259,7 @@ namespace Template4UTesting
             DateTime Date = DateTime.Now.Date;
             Date = Date.AddDays(1);
             tstStartingDate = Date.ToString();
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid( tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
         }
 
@@ -271,7 +271,7 @@ namespace Template4UTesting
             DateTime Date = DateTime.Now.Date;
             Date = Date.AddDays(1000);
             tstStartingDate = Date.ToString();
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
         }
 
@@ -282,7 +282,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstStartingDate = "Today";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
         }
 
@@ -293,7 +293,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstStartingDate = "";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
         }
 
@@ -304,7 +304,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstSalary = "";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
         }
 
@@ -315,7 +315,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstStaffRole = "";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
         }
 
@@ -326,7 +326,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstSalary = "1234567";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
 
         }
@@ -338,7 +338,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstSalary = "12345678";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
 
         }
@@ -350,7 +350,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstSalary = "1000000000000000000000000000000000";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
 
         }
@@ -362,7 +362,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstStaffRole = "handyman/designmans";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
 
         }
@@ -374,7 +374,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstStaffRole = "handyman/designmansa";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
 
         }
@@ -386,7 +386,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstStaffRole = "handyman/designmansaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarwrw";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
+            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
 
         }

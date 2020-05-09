@@ -99,23 +99,10 @@ namespace Template4UClassLib
 
         }
 
-        public string Valid(string staffID, string staffRole, string startingDate, string salary)
+        public string Valid(string staffRole, string startingDate, string salary)
         {
             String Error = "";
-            if (staffID.Length == 0)
-            {
-                Error = Error + "The Staff ID may not be blank : ";
-            }
-            Int32 num1;
-
-            if (!int.TryParse(staffID, out num1))
-            {
-                Error += " The Staff ID must be an interger";
-            }
-            if (staffID.Length > 5)
-            {
-                Error = Error + "The Staff ID must not be 5 characters or longer : ";
-            }
+           
 
             try
             {

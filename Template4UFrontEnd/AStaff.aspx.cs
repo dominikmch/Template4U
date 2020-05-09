@@ -24,12 +24,25 @@ namespace Template4UFrontEnd
 
         void DisplayStaff()
         {
-
+            Template4UClassLib.clsStaffCollection Staffs = new Template4UClassLib.clsStaffCollection();
+            Staffs.ThisStaff.Find(StaffID);
+            txtStaffID.Text = Staffs.ThisStaff.StaffID.ToString();
+            txtStaffRole.Text = Staffs.ThisStaff.StaffRole;
+            txtStartingDate.Text = Staffs.ThisStaff.StartingDate.ToString();
+            txtSalary.Text = Staffs.ThisStaff.Salary.ToString();
+            
         }
 
         protected void btnOK_Click(object sender, EventArgs e)
         {
-            
+            clsStaff AStaff = new clsStaff();
+
+            string StaffRole = txtStaffRole.Text;
+            string StartingDate = txtStartingDate.Text;
+            string Salary = txtSalary.Text;
+            string Error = "";
+
+            Error = AStaff.Valid(StaffID, StaffRole, StartingDate, Salary);
         }
     }
 }
