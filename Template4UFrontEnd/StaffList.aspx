@@ -11,13 +11,12 @@
         <div>
             <asp:ListBox ID="lstStaffList" runat="server" Height="445px" Width="561px"></asp:ListBox>
         </div>
-        <asp:Button ID="btnAdd" runat="server" Text="Add" />
-        <asp:Button ID="btnEdit" runat="server" Text="Edit" />
+        <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add" />
+        <asp:Button ID="btnUpdate" runat="server" Text="Edit" />
         <asp:Button ID="btnDelete" runat="server" Text="Delete" />
         <br />
         <br />
-        Enter a salary
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        Enter a salary <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <br />
         <asp:Button ID="btnApply" runat="server" Text="Apply" />
         <asp:Button ID="btnClear" runat="server" Text="Clear" />

@@ -100,11 +100,19 @@
     <Compile Include="StaffList.aspx.designer.cs">
       <DependentUpon>StaffList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="StaffViewer.aspx.cs">
+      <DependentUpon>StaffViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffViewer.aspx.designer.cs">
+      <DependentUpon>StaffViewer.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="DeleteStaff.aspx" />
     <Content Include="StaffList.aspx" />
+    <Content Include="StaffViewer.aspx" />
     <Content Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>

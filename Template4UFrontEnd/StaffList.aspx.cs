@@ -11,6 +11,19 @@ namespace Template4UFrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack == false)
+            {
+                DisplayStaff();
+            }
+        }
+        void DisplayStaff()
+        {
+            Template4UClassLib.clsStaffCollection Staffs = new Template4UClassLib.clsStaffCollection();
+            ListStaff
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
 
         }
     }
