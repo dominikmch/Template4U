@@ -42,7 +42,50 @@ namespace Template4UFrontEnd
             string Salary = txtSalary.Text;
             string Error = "";
 
-            Error = AStaff.Valid(StaffID, StaffRole, StartingDate, Salary);
+            Error = AStaff.Valid(StaffRole, StartingDate, Salary);
+            if (Error == "")
+            {
+                AStaff.StaffRole = StaffRole;
+                AStaff.StartingDate = Convert.ToDateTime(StartingDate);
+                AStaff.Salary = double.Parse(Salary);
+                AStaff.isEmployed = true;
+
+                clsStaffCollection StaffList = new clsStaffCollection();
+
+                if (StaffID == -1)
+                {
+                    StaffList.ThisStaff = AStaff;
+                    StaffList.Add();
+                }
+                else
+                {
+                    StaffList.ThisStaff.Find(StaffID);
+                    StaffList.ThisStaff = AStaff;
+                    StaffList.Update();
+                }
+                Response.Redirect("StaffList.aspx");
+            }
+            else
+            {
+                lblError.Text = Error;
+            }
+        }
+
+        protected void btnFind_Click(object sender, EventArgs e)
+        {
+            clsStaff AStaff = new clsStaff();
+            Int32 StaffID;
+            Boolean Found = false;
+            StaffID = Convert.ToInt32(txtStaffID.Text);
+            Found = AStaff.Find(StaffID);
+            if (Found)
+            {
+                txtStaffRole.Text = AStaff.StaffRole;
+                txtStartingDate.Text = AStaff.StartingDate.ToString();
+                txtSalary.Text = AStaff.Salary.ToString();
+
+            }
+            else { }
         }
     }
 }

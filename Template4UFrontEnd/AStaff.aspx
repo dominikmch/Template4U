@@ -11,10 +11,9 @@
         <div>
             Staff ID&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtStaffID" runat="server"></asp:TextBox>
-&nbsp;<asp:Button ID="btnFind" runat="server" Text="Find" />
+&nbsp;<asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
             <br />
-            Staff Role
-            <asp:TextBox ID="txtStaffRole" runat="server"></asp:TextBox>
+            Staff Role <asp:TextBox ID="txtStaffRole" runat="server"></asp:TextBox>
             <br />
             Starting Date
             <asp:TextBox ID="txtStartingDate" runat="server"></asp:TextBox>
@@ -26,7 +25,8 @@
             <asp:CheckBox ID="cbisEmployed" runat="server" Text="Employed" />
             <br />
             <br />
-            [lblError]<br />
+            <asp:Label ID="lblError" runat="server" Text="lblError"></asp:Label>
+            <br />
             <br />
             <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" Width="70px" />
             <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
