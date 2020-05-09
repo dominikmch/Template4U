@@ -93,57 +93,7 @@ namespace Template4UClassLib
 
             public string Valid(string staffID, string staffRole, string salary, string startingDate)
             {
-                String Error = "";
-                if (staffID.Length == 0)
-                {
-                    Error = Error + "The Staff ID may not be blank : ";
-                }
-                Int32 num1;
-
-                if (!int.TryParse(staffID, out num1))
-                {
-                    Error += " The Staff ID must be an interger";
-                }
-                if (staffID.Length > 5)
-                {
-                    Error = Error + "The Staff ID must not be longer than 5 characters : ";
-                }
-
-                try
-                {
-                    DateTime DateTemp = Convert.ToDateTime(startingDate);
-                    if (DateTemp < DateTime.Now.Date)
-                    {
-                        Error = Error + "The date cannot be in the past : ";
-                    }
-                    if (DateTemp > DateTime.Now.Date)
-                    {
-                        Error = Error + "The date cannot be in the future : ";
-                    }
-                }
-                catch
-                {
-                    Error = Error + "The date was not a valid date : ";
-                }
-                if (staffRole.Length == 0)
-                {
-                    Error = Error + "The Staff Role may not be blank : ";
-                }
-                if (staffRole.Length > 20)
-                {
-                    Error = Error + "The Staff Role may not be more than 20 characters : ";
-                }
-                if (salary.Length == 0)
-                {
-                    Error = Error + "The Salary field must not be left empty : ";
-
-                }
-                if (salary.Length > 8)
-                {
-                    Error = Error + "The salary field may not have this many characters : ";  
-                }
-                return Error;
-
+                
             }
 
 
@@ -157,5 +107,59 @@ namespace Template4UClassLib
 
         }
 
+        public string Valid(string staffID, string staffRole, string startingDate, string salary)
+        {
+            String Error = "";
+            if (staffID.Length == 0)
+            {
+                Error = Error + "The Staff ID may not be blank : ";
+            }
+            Int32 num1;
+
+            if (!int.TryParse(staffID, out num1))
+            {
+                Error += " The Staff ID must be an interger";
+            }
+            if (staffID.Length > 5)
+            {
+                Error = Error + "The Staff ID must not be longer than 5 characters : ";
+            }
+
+            try
+            {
+                DateTime DateTemp = Convert.ToDateTime(startingDate);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    Error = Error + "The date cannot be in the past : ";
+                }
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    Error = Error + "The date cannot be in the future : ";
+                }
+            }
+            catch
+            {
+                Error = Error + "The date was not a valid date : ";
+            }
+            if (staffRole.Length == 0)
+            {
+                Error = Error + "The Staff Role may not be blank : ";
+            }
+            if (staffRole.Length > 20)
+            {
+                Error = Error + "The Staff Role may not be more than 20 characters : ";
+            }
+            if (salary.Length == 0)
+            {
+                Error = Error + "The Salary field must not be left empty : ";
+
+            }
+            if (salary.Length > 8)
+            {
+                Error = Error + "The salary field may not have this many characters : ";
+            }
+            return Error;
+
+        }
     }
 }
