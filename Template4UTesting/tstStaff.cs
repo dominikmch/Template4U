@@ -154,65 +154,7 @@ namespace Template4UTesting
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.IsTrue(Error == "");
         }
-        /*
-        [TestMethod]
-
-        public void StaffIDEmpty()
-        {
-            clsStaff AStaff = new clsStaff();
-            String Error = "";
-            tstStaffID = "";
-            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
-        }
-
-        [TestMethod]
-
-        public void StaffIDWrongType()
-        {
-            clsStaff AStaff = new clsStaff();
-            String Error = "";
-            tstStaffID = "Fourteen";
-            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
-
-        }
-
-        [TestMethod]
-
-        public void StaffIDMax()
-        {
-            clsStaff AStaff = new clsStaff();
-            String Error = "";
-            tstStaffID = "1234";
-            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
-
-        }
-
-        [TestMethod]
-
-        public void StaffIDMaxPlusOne()
-        {
-            clsStaff AStaff = new clsStaff();
-            String Error = "";
-            tstStaffID = "12345";
-            Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
-
-        }
-
-        [TestMethod]
-
-        public void StaffIDExtremeMax()
-        {
-            clsStaff AStaff = new clsStaff();
-            String Error = "";
-            tstStaffID = "10000000000000000000000000000";
-            Error = AStaff.Valid(tstStaffID, tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
-
-        } */
+    
 
 
 
