@@ -122,7 +122,7 @@ namespace Template4UClassLib
             }
             if (staffID.Length > 5)
             {
-                Error = Error + "The Staff ID must not be longer than 5 characters : ";
+                Error = Error + "The Staff ID must not be 5 characters or longer : ";
             }
 
             try
