@@ -171,6 +171,24 @@ namespace Template4UTesting
           
         }
 
+        [TestMethod]
+
+        public void FilterBySalaryNotFound()
+        {
+            clsStaffCollection FilteredStaff = new clsStaffCollection();
+            FilteredStaff.FilterBySalary(1000000000);
+            Assert.AreEqual(0, FilteredStaff.Count);
+        }
+
+        [TestMethod]
+
+        public void FilterBySalaryFound()
+        {
+            clsStaffCollection FilteredStaff = new clsStaffCollection();
+            FilteredStaff.FilterBySalary(4);
+            Assert.AreEqual(3, FilteredStaff.Count);
+        }
+
 
 
     }
