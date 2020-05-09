@@ -10,7 +10,7 @@
 namespace Template4UFrontEnd {
     
     
-    public partial class ReviewList {
+    public partial class AStaff {
         
         /// <summary>
         /// form1 control.
@@ -22,84 +22,75 @@ namespace Template4UFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ListReviews control.
+        /// txtStaffID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListReviews;
+        protected global::System.Web.UI.WebControls.TextBox txtStaffID;
         
         /// <summary>
-        /// Button1 control.
+        /// btnFind control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnFind;
         
         /// <summary>
-        /// btnAdd control.
+        /// txtStaffRole control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.TextBox txtStaffRole;
         
         /// <summary>
-        /// btnUpdate control.
+        /// txtStartingDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
+        protected global::System.Web.UI.WebControls.TextBox txtStartingDate;
         
         /// <summary>
-        /// btnDelete control.
+        /// txtSalary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
+        protected global::System.Web.UI.WebControls.TextBox txtSalary;
         
         /// <summary>
-        /// txtFilter control.
+        /// cbisEmployed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFilter;
+        protected global::System.Web.UI.WebControls.CheckBox cbisEmployed;
         
         /// <summary>
-        /// btnApply control.
+        /// btnOK control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnApply;
+        protected global::System.Web.UI.WebControls.Button btnOK;
         
         /// <summary>
-        /// btnClear control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClear;
-        
-        /// <summary>
-        /// lblError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }

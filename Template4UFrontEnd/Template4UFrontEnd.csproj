@@ -67,13 +67,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AStaff.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="Review.aspx" />
-    <Content Include="ReviewList.aspx" />
-    <Content Include="ReviewViewer.aspx" />
-    <Content Include="DeleteReview.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AStaff.aspx.cs">
+      <DependentUpon>AStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AStaff.aspx.designer.cs">
+      <DependentUpon>AStaff.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -81,38 +85,18 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DeleteStaff.aspx.cs">
+      <DependentUpon>DeleteStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteStaff.aspx.designer.cs">
+      <DependentUpon>DeleteStaff.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Review.aspx.cs">
-      <DependentUpon>Review.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Review.aspx.designer.cs">
-      <DependentUpon>Review.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ReviewList.aspx.cs">
-      <DependentUpon>ReviewList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReviewList.aspx.designer.cs">
-      <DependentUpon>ReviewList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ReviewViewer.aspx.cs">
-      <DependentUpon>ReviewViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReviewViewer.aspx.designer.cs">
-      <DependentUpon>ReviewViewer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteReview.aspx.cs">
-      <DependentUpon>DeleteReview.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DeleteReview.aspx.designer.cs">
-      <DependentUpon>DeleteReview.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="DeleteStaff.aspx" />
     <Content Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
