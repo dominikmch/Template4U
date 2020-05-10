@@ -160,16 +160,7 @@ namespace Template4UTesting
 
         }
 
-        [TestMethod]
-
-        public void FilterBySalaryMethodOK()
-        {
-            clsStaffCollection AllStaff = new clsStaffCollection();
-            clsStaffCollection FilteredStaff = new clsStaffCollection();
-            FilteredStaff.FilterBySalary(0);
-            Assert.AreEqual(AllStaff.Count, FilteredStaff.Count);
-          
-        }
+       
 
         [TestMethod]
 
@@ -177,7 +168,7 @@ namespace Template4UTesting
         {
             clsStaffCollection FilteredStaff = new clsStaffCollection();
             FilteredStaff.FilterBySalary(1000000000);
-            Assert.AreNotEqual(0, FilteredStaff.Count);
+            Assert.AreEqual(0, FilteredStaff.Count);
         }
 
         [TestMethod]
@@ -185,8 +176,8 @@ namespace Template4UTesting
         public void FilterBySalaryFound()
         {
             clsStaffCollection FilteredStaff = new clsStaffCollection();
-            FilteredStaff.FilterBySalary(4);
-            Assert.AreEqual(100, FilteredStaff.Count);
+            FilteredStaff.FilterBySalary(25);
+            Assert.AreEqual(1, FilteredStaff.Count);
         }
 
 

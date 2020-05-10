@@ -27,7 +27,8 @@ namespace Template4UFrontEnd
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-
+            Session["StaffID"] = -1;
+            Response.Redirect("AStaff.aspx");
         }
 
         protected void lstStaffList_SelectedIndexChanged(object sender, EventArgs e)
