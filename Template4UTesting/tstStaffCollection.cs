@@ -84,7 +84,7 @@ namespace Template4UTesting
 
             clsStaff tstItem = new clsStaff();
 
-            tstItem.StaffID = 4;
+            
             tstItem.StaffRole = "Manager";
             tstItem.StartingDate = DateTime.Now.Date;
             tstItem.Salary = 10;
@@ -137,7 +137,7 @@ namespace Template4UTesting
             clsStaff tstItem = new clsStaff();
             Int32 PrimaryKey = 0;
 
-            tstItem.StaffID = 12;
+            
             tstItem.StaffRole = "Manager";
             tstItem.StartingDate = DateTime.Now.Date;
             tstItem.Salary = 10;
@@ -146,7 +146,7 @@ namespace Template4UTesting
             AllStaff.ThisStaff = tstItem;
             PrimaryKey = AllStaff.Add();
 
-            tstItem.StaffID = 10;
+            
             tstItem.StaffRole = "Technician";
             tstItem.StartingDate = DateTime.Now.Date;
             tstItem.Salary = 13;

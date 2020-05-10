@@ -44,7 +44,7 @@ namespace Template4UClassLib
         {
             clsDataConnection DB = new clsDataConnection();
 
-            DB.AddParameter("@StaffID", mThisStaff.StaffID);
+            
             DB.AddParameter("@StaffRole", mThisStaff.StaffRole);
             DB.AddParameter("@StartingDate", mThisStaff.StartingDate);
             DB.AddParameter("@Salary", mThisStaff.Salary);
