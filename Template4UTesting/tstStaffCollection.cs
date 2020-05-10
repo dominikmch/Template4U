@@ -84,7 +84,7 @@ namespace Template4UTesting
 
             clsStaff tstItem = new clsStaff();
 
-            tstItem.StaffID = 12;
+            tstItem.StaffID = 4;
             tstItem.StaffRole = "Manager";
             tstItem.StartingDate = DateTime.Now.Date;
             tstItem.Salary = 10;
@@ -185,8 +185,8 @@ namespace Template4UTesting
         public void FilterBySalaryFound()
         {
             clsStaffCollection FilteredStaff = new clsStaffCollection();
-            FilteredStaff.FilterBySalary(4);
-            Assert.AreEqual(3, FilteredStaff.Count);
+            FilteredStaff.FilterBySalary(25);
+            Assert.AreEqual(1, FilteredStaff.Count);
         }
 
 
