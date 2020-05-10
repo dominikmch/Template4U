@@ -88,7 +88,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 StaffID = 21;
+            Int32 StaffID = 3;
             Found = AStaff.Find(StaffID);
             if (AStaff.StaffID != 21)
             {
@@ -104,7 +104,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 StaffID = 21;
+            Int32 StaffID = 3;
             Found = AStaff.Find(StaffID);
             if (AStaff.StaffRole != "Manager")
             {
@@ -120,7 +120,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 StaffID = 21;
+            Int32 StaffID = 3;
             if (AStaff.StartingDate != Convert.ToDateTime("04/02/2020"))
             {
                 OK = false;
@@ -135,7 +135,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 StaffID = 21;
+            Int32 StaffID = 3;
             Found = AStaff.Find(StaffID);
             if(AStaff.Salary != 3)
             {
