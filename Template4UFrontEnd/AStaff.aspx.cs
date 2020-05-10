@@ -51,29 +51,15 @@ namespace Template4UFrontEnd
                 AStaff.Salary = double.Parse(Salary);
                 AStaff.isEmployed = cbisEmployed.Checked;
                 clsStaffCollection StaffList = new clsStaffCollection();
-
-                if (StaffID == -1)
-                {
-                    StaffList.ThisStaff = AStaff;
-                    StaffList.Add();
-                    Response.Redirect("StaffList.aspx");
-                }
-                else
-                {
-                    StaffList.ThisStaff.Find(StaffID);
-                    StaffList.ThisStaff = AStaff;
-                    StaffList.Update();
-                    Response.Redirect("StaffList.aspx");
-                }
-                
-                 else
+                StaffList.ThisStaff = AStaff;
+                StaffList.Add();
+                Response.Redirect("StaffList.aspx");
+                                            
+                           }
+            else
             {
-                    lblError.Text = Error;
-                }
-
-
+                lblError.Text = Error;
             }
-           
            
         }
 
@@ -92,6 +78,11 @@ namespace Template4UFrontEnd
 
             }
             else { }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("StaffList.aspx");
         }
     }
 }
