@@ -19,9 +19,18 @@ namespace Template4UFrontEnd
         void DisplayStaff()
         {
             Template4UClassLib.clsStaffCollection Staffs = new Template4UClassLib.clsStaffCollection();
+            lstStaffList.DataSource = Staffs.StaffList;
+            lstStaffList.DataValueField = "StaffID";
+            lstStaffList.DataTextField = "StaffRole";
+            lstStaffList.DataBind();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lstStaffList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

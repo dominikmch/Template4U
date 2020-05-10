@@ -40,6 +40,17 @@ namespace Template4UClassLib
             }
         }
 
+        public clsStaffCollection()
+        {
+            Int32 Index = 0;
+            Int32 RecordCount = 0;
+            clsDataConnection DB = new clsDataConnection();
+            DB.Execute("sproc_tblStaff_SelectAll");
+            RecordCount = DB.Count;
+            PopulateArray(DB);
+        }
+
+
         public int Add()
         {
             clsDataConnection DB = new clsDataConnection();
