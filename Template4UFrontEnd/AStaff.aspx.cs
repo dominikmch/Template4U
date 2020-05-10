@@ -30,6 +30,7 @@ namespace Template4UFrontEnd
             txtStaffRole.Text = Staffs.ThisStaff.StaffRole;
             txtStartingDate.Text = Staffs.ThisStaff.StartingDate.ToString();
             txtSalary.Text = Staffs.ThisStaff.Salary.ToString();
+            cbisEmployed.Checked = Staffs.ThisStaff.isEmployed;
             
         }
 
@@ -48,15 +49,31 @@ namespace Template4UFrontEnd
                 AStaff.StaffRole = StaffRole;
                 AStaff.StartingDate = Convert.ToDateTime(StartingDate);
                 AStaff.Salary = double.Parse(Salary);
-                Session["AStaff"] = AStaff;
-                Response.Write("StaffViewer.aspx");
-                lblError.Text = "Confirmed!";
-                            
-                           }
-            else
+                AStaff.isEmployed = cbisEmployed.Checked;
+                clsStaffCollection StaffList = new clsStaffCollection();
+
+                if (StaffID == -1)
+                {
+                    StaffList.ThisStaff = AStaff;
+                    StaffList.Add();
+                    Response.Redirect("StaffList.aspx");
+                }
+                else
+                {
+                    StaffList.ThisStaff.Find(StaffID);
+                    StaffList.ThisStaff = AStaff;
+                    StaffList.Update();
+                    Response.Redirect("StaffList.aspx");
+                }
+                
+                 else
             {
-                lblError.Text = Error;
+                    lblError.Text = Error;
+                }
+
+
             }
+           
            
         }
 

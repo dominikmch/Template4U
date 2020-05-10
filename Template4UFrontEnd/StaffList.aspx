@@ -12,8 +12,8 @@
             <asp:ListBox ID="lstStaffList" runat="server" Height="445px" Width="561px" OnSelectedIndexChanged="lstStaffList_SelectedIndexChanged"></asp:ListBox>
         </div>
         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add" />
-        <asp:Button ID="btnUpdate" runat="server" Text="Edit" />
-        <asp:Button ID="btnDelete" runat="server" Text="Delete" />
+        <asp:Button ID="btnUpdate" runat="server" Text="Edit" OnClick="btnUpdate_Click" />
+        <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
         <br />
         <br />
         Enter a salary <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -22,6 +22,8 @@
         <asp:Button ID="btnClear" runat="server" Text="Clear" />
         <br />
         <br />
-        [lblError]</form>
+        <br />
+        <asp:Label ID="lblError" runat="server" Text="lblError"></asp:Label>
+    </form>
 </body>
 </html>
