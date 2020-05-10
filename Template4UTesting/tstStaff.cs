@@ -7,7 +7,7 @@ namespace Template4UTesting
     [TestClass]
     public class tstStaff
     {
-        String tstStaffID = "12";
+        
         String tstStaffRole = "Manager";
         String tstStartingDate = DateTime.Now.Date.ToString();
         String tstSalary = "4";
@@ -36,7 +36,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             string TestData = "Manager";
             AStaff.StaffRole = TestData;
-            Assert.AreEqual(AStaff.StaffID, TestData);
+            Assert.AreEqual(AStaff.StaffRole, TestData);
         }
 
         [TestMethod]
@@ -152,7 +152,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreEqual(Error,"");
         }
     
 
@@ -166,7 +166,7 @@ namespace Template4UTesting
             DateTime Date = DateTime.Now.Date;
             tstStartingDate = Date.ToString();
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreEqual(Error,"");
         }
 
         [TestMethod]
@@ -178,7 +178,7 @@ namespace Template4UTesting
             Date = Date.AddDays(-1);
             tstStartingDate = Date.ToString();
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -190,7 +190,7 @@ namespace Template4UTesting
             Date = Date.AddDays(-1000);
             tstStartingDate = Date.ToString();
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -202,11 +202,11 @@ namespace Template4UTesting
             Date = Date.AddDays(1);
             tstStartingDate = Date.ToString();
             Error = AStaff.Valid( tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
-        public void StartingDateExtemeMax()
+        public void StartingDateExtremeMax()
         {
             clsStaff AStaff = new clsStaff();
             String Error = "";
@@ -214,7 +214,7 @@ namespace Template4UTesting
             Date = Date.AddDays(1000);
             tstStartingDate = Date.ToString();
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -225,7 +225,7 @@ namespace Template4UTesting
             String Error = "";
             tstStartingDate = "Today";
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -236,7 +236,7 @@ namespace Template4UTesting
             String Error = "";
             tstStartingDate = "";
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreNotEqual(Error,"");
         }
 
         [TestMethod]
@@ -247,18 +247,18 @@ namespace Template4UTesting
             String Error = "";
             tstSalary = "";
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreNotEqual(Error,"");
         }
 
         [TestMethod]
 
-        public void StaffRoleEmpty()
+        public void StaffRoleMinLessOne()
         {
             clsStaff AStaff = new clsStaff();
             String Error = "";
             tstStaffRole = "";
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -269,7 +269,7 @@ namespace Template4UTesting
             String Error = "";
             tstSalary = "1234567";
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreEqual(Error, "");
 
         }
 
@@ -279,9 +279,9 @@ namespace Template4UTesting
         {
             clsStaff AStaff = new clsStaff();
             String Error = "";
-            tstSalary = "12345678";
+            tstSalary = "123456789";
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreNotEqual(Error, "");
 
         }
 
@@ -293,7 +293,7 @@ namespace Template4UTesting
             String Error = "";
             tstSalary = "1000000000000000000000000000000000";
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreNotEqual(Error,"");
 
         }
 
@@ -303,9 +303,9 @@ namespace Template4UTesting
         {
             clsStaff AStaff = new clsStaff();
             String Error = "";
-            tstStaffRole = "handyman/designmans";
+            tstStaffRole = "ssssssssssssssssssssssssssssssssssssssssssssssssss";
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreEqual(Error, "");
 
         }
 
@@ -315,9 +315,9 @@ namespace Template4UTesting
         {
             clsStaff AStaff = new clsStaff();
             String Error = "";
-            tstStaffRole = "handyman/designmansa";
+            tstStaffRole = "sssssssssssssssssssssssssssssssssssssssssssssssssss";
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreNotEqual(Error,"");
 
         }
 
@@ -329,7 +329,7 @@ namespace Template4UTesting
             String Error = "";
             tstStaffRole = "handyman/designmansaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarwrw";
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
-            Assert.IsTrue(Error == "");
+            Assert.AreNotEqual(Error, "");
 
         }
 

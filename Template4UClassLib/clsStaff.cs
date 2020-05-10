@@ -124,7 +124,7 @@ namespace Template4UClassLib
             {
                 Error = Error + "The Staff Role may not be blank : ";
             }
-            if (staffRole.Length > 20)
+            if (staffRole.Length > 50)
             {
                 Error = Error + "The Staff Role may not be more than 20 characters : ";
             }
