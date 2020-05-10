@@ -152,11 +152,11 @@ namespace Template4UTesting
             tstItem.Salary = 13;
             tstItem.isEmployed = false;
 
-            AllStaff.ThisStaff.Find(PrimaryKey);
+            AllStaff.ThisStaff = tstItem;
             AllStaff.Update();
-            Boolean Found = AllStaff.ThisStaff.Find(PrimaryKey);
-            Assert.IsFalse(Found);
+            AllStaff.ThisStaff.Find(PrimaryKey);
 
+            Assert.AreEqual(AllStaff.ThisStaff, tstItem);
 
         }
 
