@@ -19,7 +19,6 @@ namespace Template4UFrontEnd
         void DisplayStaff()
         {
             Template4UClassLib.clsStaffCollection Staffs = new Template4UClassLib.clsStaffCollection();
-            ListStaff
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

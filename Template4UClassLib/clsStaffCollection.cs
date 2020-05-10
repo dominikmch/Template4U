@@ -7,7 +7,8 @@ namespace Template4UClassLib
     {
         List<clsStaff> mStaffList = new List<clsStaff>();
         clsStaff mThisStaff = new clsStaff();
-        public List<clsStaff> StaffList {
+        public List<clsStaff> StaffList
+        {
             get
             {
                 return mStaffList;
@@ -16,6 +17,7 @@ namespace Template4UClassLib
             {
                 mStaffList = value;
             }
+        }
 
             public int Count
         {
@@ -105,4 +107,3 @@ namespace Template4UClassLib
         }
     }
     }
-}
