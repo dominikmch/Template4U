@@ -48,27 +48,16 @@ namespace Template4UFrontEnd
                 AStaff.StaffRole = StaffRole;
                 AStaff.StartingDate = Convert.ToDateTime(StartingDate);
                 AStaff.Salary = double.Parse(Salary);
-                AStaff.isEmployed = true;
-
-                clsStaffCollection StaffList = new clsStaffCollection();
-
-                if (StaffID == -1)
-                {
-                    StaffList.ThisStaff = AStaff;
-                    StaffList.Add();
-                }
-                else
-                {
-                    StaffList.ThisStaff.Find(StaffID);
-                    StaffList.ThisStaff = AStaff;
-                    StaffList.Update();
-                }
-                Response.Redirect("StaffList.aspx");
-            }
+                Session["AStaff"] = AStaff;
+                Response.Write("StaffViewer.aspx");
+                lblError.Text = "Confirmed!";
+                            
+                           }
             else
             {
                 lblError.Text = Error;
             }
+           
         }
 
         protected void btnFind_Click(object sender, EventArgs e)
