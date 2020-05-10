@@ -76,7 +76,7 @@ namespace Template4UTesting
         {
             clsStaff AStaff = new clsStaff();
             Boolean Found = false;
-            Int32 StaffID = 21;
+            Int32 StaffID = 3;
             Found = AStaff.Find(StaffID);
             Assert.IsTrue(Found);
         }
