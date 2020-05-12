@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Template4UClassLib;
 
 namespace Template4UFrontEnd
 {
@@ -66,6 +67,28 @@ namespace Template4UFrontEnd
             }
 
             
+        }
+
+        protected void btnApply_Click(object sender, EventArgs e)
+        {
+            clsStaffCollection Staffs = new clsStaffCollection();
+                        Staffs.FilterBySalary(double.Parse(txtSalary.Text));
+            lstStaffList.DataSource = Staffs.StaffList;
+            lstStaffList.DataValueField = "StaffID";
+            lstStaffList.DataTextField = "Salary";
+            lstStaffList.DataBind();
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            clsStaffCollection Staffs = new clsStaffCollection();
+            Staffs.FilterBySalary(0);
+            txtSalary.Text = "0";
+            lstStaffList.DataSource = Staffs.StaffList;
+            lstStaffList.DataValueField = "StaffID";
+            lstStaffList.DataTextField = "Salary";
+            lstStaffList.DataBind();
+
         }
     }
 }

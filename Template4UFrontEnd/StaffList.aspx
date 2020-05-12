@@ -16,10 +16,10 @@
         <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
         <br />
         <br />
-        Enter a salary <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        Enter a salary <asp:TextBox ID="txtSalary" runat="server"></asp:TextBox>
         <br />
-        <asp:Button ID="btnApply" runat="server" Text="Apply" />
-        <asp:Button ID="btnClear" runat="server" Text="Clear" />
+        <asp:Button ID="btnApply" runat="server" Text="Apply" OnClick="btnApply_Click" />
+        <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" />
         <br />
         <br />
         <br />

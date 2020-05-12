@@ -166,27 +166,35 @@ namespace Template4UTesting
 
         [TestMethod]
 
-        public void FilterBySalaryFound()
+        public void FilterBySalaryMethodOK()
+        {
+            clsStaffCollection AllStaff = new clsStaffCollection();
+            clsStaffCollection FilteredStaff = new clsStaffCollection();
+
+            FilteredStaff.FilterBySalary(1000);
+            Assert.AreEqual(AllStaff.Count, FilteredStaff.Count);
+        }
+
+        [TestMethod]
+
+        public void FilterBySalaryNotFound()
         {
             clsStaffCollection FilteredStaff = new clsStaffCollection();
-            Boolean OK = true;
-            FilteredStaff.FilterBySalary(1000);
-            if (FilteredStaff.Count == 1)
-            {
-                if (FilteredStaff.StaffList[0].StaffID != 1)
-                {
-                    OK = false;
-                }
-            }
-            else
-            {
-                OK = true;
+            FilteredStaff.FilterBySalary(1000000);
+            Assert.AreEqual(3, FilteredStaff.Count);
+        }
 
-            }
-            Assert.IsTrue(OK);
+        [TestMethod]
+
+        public void FilterBySalaryDataFound()
+        {
+            clsStaffCollection FilteredStaff = new clsStaffCollection();
+            FilteredStaff.FilterBySalary(100);
+            Assert.AreEqual(4, FilteredStaff.Count);
+        }
 
 
 
         }
     }
-}
+
