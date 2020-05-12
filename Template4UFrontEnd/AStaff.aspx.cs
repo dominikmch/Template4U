@@ -46,13 +46,26 @@ namespace Template4UFrontEnd
             Error = AStaff.Valid(StaffRole, StartingDate, Salary);
             if (Error == "")
             {
+                AStaff.StaffID = StaffID;
                 AStaff.StaffRole = StaffRole;
                 AStaff.StartingDate = Convert.ToDateTime(StartingDate);
                 AStaff.Salary = double.Parse(Salary);
                 AStaff.isEmployed = cbisEmployed.Checked;
                 clsStaffCollection StaffList = new clsStaffCollection();
-                StaffList.ThisStaff = AStaff;
-                StaffList.Add();
+
+                
+                if (StaffID == -1)
+                {
+                    StaffList.ThisStaff = AStaff;
+                    StaffList.Add();
+                }
+                else
+                {
+                    StaffList.ThisStaff.Find(StaffID);
+                    StaffList.ThisStaff = AStaff;
+                    StaffList.Update();
+                }
+               
                 Response.Redirect("StaffList.aspx");
                                             
                            }

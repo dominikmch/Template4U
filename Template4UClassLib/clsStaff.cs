@@ -107,9 +107,12 @@ namespace Template4UClassLib
             try
             {
                 DateTime DateTemp = Convert.ToDateTime(startingDate);
-                if (DateTemp < DateTime.Now.Date)
+                DateTime DateMin = DateTime.Now.Date;
+                 DateMin = DateMin.AddYears(-2);
+
+                if (DateTemp < DateMin)
                 {
-                    Error = Error + "The date cannot be in the past : ";
+                    Error = Error + "The date cannot be 2 years ago : ";
                 }
                 if (DateTemp > DateTime.Now.Date)
                 {

@@ -32,7 +32,7 @@ namespace Template4UTesting
             tstList.Add(tstItem);
             AllStaff.StaffList = tstList;
             Assert.AreEqual(AllStaff.StaffList, tstList);
-        
+
         }
 
         [TestMethod]
@@ -84,7 +84,7 @@ namespace Template4UTesting
 
             clsStaff tstItem = new clsStaff();
 
-            
+
             tstItem.StaffRole = "Manager";
             tstItem.StartingDate = DateTime.Now.Date;
             tstItem.Salary = 10;
@@ -137,7 +137,7 @@ namespace Template4UTesting
             clsStaff tstItem = new clsStaff();
             Int32 PrimaryKey = 0;
 
-            
+
             tstItem.StaffRole = "Manager";
             tstItem.StartingDate = DateTime.Now.Date;
             tstItem.Salary = 10;
@@ -146,7 +146,7 @@ namespace Template4UTesting
             AllStaff.ThisStaff = tstItem;
             PrimaryKey = AllStaff.Add();
 
-            
+
             tstItem.StaffRole = "Technician";
             tstItem.StartingDate = DateTime.Now.Date;
             tstItem.Salary = 13;
@@ -160,9 +160,9 @@ namespace Template4UTesting
 
         }
 
-    
-   
-      
+
+
+
 
         [TestMethod]
 
@@ -178,13 +178,15 @@ namespace Template4UTesting
                     OK = false;
                 }
             }
-            else {
+            else
+            {
                 OK = true;
 
-        }
+            }
             Assert.IsTrue(OK);
 
 
 
+        }
     }
 }

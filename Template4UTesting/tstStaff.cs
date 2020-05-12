@@ -159,7 +159,7 @@ namespace Template4UTesting
 
 
         [TestMethod]
-        public void StartingDateMinAndMax()
+        public void StartingDateMax()
         {
             clsStaff AStaff = new clsStaff();
             String Error = "";
@@ -175,7 +175,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             DateTime Date = DateTime.Now.Date;
-            Date = Date.AddDays(-1);
+            Date = Date.AddYears(-3);
             tstStartingDate = Date.ToString();
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.AreNotEqual(Error, "");
@@ -187,7 +187,7 @@ namespace Template4UTesting
             clsStaff AStaff = new clsStaff();
             String Error = "";
             DateTime Date = DateTime.Now.Date;
-            Date = Date.AddDays(-1000);
+            Date = Date.AddYears(-1000);
             tstStartingDate = Date.ToString();
             Error = AStaff.Valid(tstStaffRole, tstStartingDate, tstSalary);
             Assert.AreNotEqual(Error, "");
