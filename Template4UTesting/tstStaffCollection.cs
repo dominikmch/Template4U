@@ -180,7 +180,7 @@ namespace Template4UTesting
         public void FilterBySalaryNotFound()
         {
             clsStaffCollection FilteredStaff = new clsStaffCollection();
-            FilteredStaff.FilterBySalary(1000000);
+            FilteredStaff.FilterBySalary(1000);
             Assert.AreEqual(3, FilteredStaff.Count);
         }
 
@@ -190,7 +190,7 @@ namespace Template4UTesting
         {
             clsStaffCollection FilteredStaff = new clsStaffCollection();
             FilteredStaff.FilterBySalary(100);
-            Assert.AreEqual(4, FilteredStaff.Count);
+            Assert.AreEqual(1, FilteredStaff.Count);
         }
 
 
