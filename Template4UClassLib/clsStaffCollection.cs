@@ -25,7 +25,7 @@ namespace Template4UClassLib
             {
                 return mStaffList.Count;
             }
-            set { }
+            set { Count = value; }
         }
 
         public clsStaff ThisStaff

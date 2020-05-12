@@ -161,17 +161,13 @@ namespace Template4UTesting
         }
 
 
-
-
-
         [TestMethod]
 
         public void FilterBySalaryMethodOK()
         {
             clsStaffCollection AllStaff = new clsStaffCollection();
             clsStaffCollection FilteredStaff = new clsStaffCollection();
-
-            FilteredStaff.FilterBySalary(1000);
+            FilteredStaff.FilterBySalary(0);
             Assert.AreEqual(AllStaff.Count, FilteredStaff.Count);
         }
 
