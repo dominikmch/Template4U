@@ -177,7 +177,7 @@ namespace Template4UTesting
         {
             clsStaffCollection FilteredStaff = new clsStaffCollection();
             FilteredStaff.FilterBySalary(1000);
-            Assert.AreEqual(3, FilteredStaff.Count);
+            Assert.AreEqual(0,FilteredStaff.Count);
         }
 
         [TestMethod]

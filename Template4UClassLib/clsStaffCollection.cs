@@ -89,11 +89,13 @@ namespace Template4UClassLib
 
 
         public void FilterBySalary(double Salary )
-        {
-            clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@Salary", Salary);
-            DB.Execute("sproc_tblStaff_FilterBySalary");
-            PopulateArray(DB);
+        {if (Salary != 0)
+            {
+                clsDataConnection DB = new clsDataConnection();
+                DB.AddParameter("@Salary", Salary);
+                DB.Execute("sproc_tblStaff_FilterBySalary");
+                PopulateArray(DB);
+            }
         }
 
         private void PopulateArray(clsDataConnection DB)
