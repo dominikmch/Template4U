@@ -86,6 +86,8 @@ namespace Template4UClassLib
 
         }
 
+
+
         public void FilterBySalary(double Salary )
         {
             clsDataConnection DB = new clsDataConnection();
@@ -99,6 +101,7 @@ namespace Template4UClassLib
             int index = 0;
             int recordCount = 0;
             recordCount = DB.Count;
+            mStaffList = new List<clsStaff>();
 
             while (index < recordCount)
             {
