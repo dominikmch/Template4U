@@ -129,7 +129,7 @@ namespace Template4UTesting
             Boolean OK = true;
             int ReviewId = 6;
             Found = Review.find(ReviewId);
-            if (Review.DateAdded != Convert.ToDateTime("03/04/2020"))
+            if (Review.DateAdded != Convert.ToDateTime("26/03/2020"))
             {
                 OK = false;
             }
@@ -145,7 +145,7 @@ namespace Template4UTesting
             Boolean OK = true;
             int ReviewId = 6;
             Found = Review.find(ReviewId);
-            if (Review.Grade != 4)
+            if (Review.Grade != 3)
             {
                 OK = false;
             }
@@ -160,7 +160,7 @@ namespace Template4UTesting
             Boolean OK = true;
             int ReviewId = 6;
             Found = Review.find(ReviewId);
-            if (Review.ReviewComment != "Very good template")
+            if (Review.ReviewComment != "very good template")
             {
                 OK = false;
             }
@@ -206,7 +206,7 @@ namespace Template4UTesting
             Boolean OK = true;
             int ReviewId = 6;
             Found = Review.find(ReviewId);
-            if (Review.UserId != 10)
+            if (Review.UserId != 111514)
             {
                 OK = false;
             }
