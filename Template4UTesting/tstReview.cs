@@ -344,7 +344,7 @@ namespace Template4UTesting
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
-        public void DateAddedMin()
+        public void DateAddedCorrect()
         {
             clsReview AnReview = new clsReview();
 
@@ -384,7 +384,7 @@ namespace Template4UTesting
             clsReview AnReview = new clsReview();
 
             String Error = "";
-            tstDateAdded = "Definately not a date";
+            tstDateAdded = "Definitely not a date";
             Error = AnReview.valid(tstGrade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
@@ -405,14 +405,23 @@ namespace Template4UTesting
 
             String Error = "";
             tstReviewComment = "";
-            for (int i=0; i < 201; i++)
-            {
-                tstReviewComment += "Test ";
-            }
+
+            tstReviewComment += "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test " +
+                "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test"; 
+
             
             Error = AnReview.valid(tstGrade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
         }
+
         [TestMethod]
         public void ReviewCommentMaxMinusOne()
         {
@@ -420,10 +429,17 @@ namespace Template4UTesting
 
             String Error = "";
             tstReviewComment = "";
-            for (int i = 0; i < 200; i++)
-            {
-                tstReviewComment += "Test ";
-            }
+            tstReviewComment += "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test " +
+                      "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                      "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                      "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                      "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                      "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                      "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                      "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                      "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" +
+                      "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test";
+
 
             Error = AnReview.valid(tstGrade, tstReviewComment, tstDateAdded, tstUserId, tstProductId);
             Assert.IsTrue(Error == "");
