@@ -83,7 +83,7 @@ namespace Template4UClassLib
         {
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@ProductId", ProductId);
-            DB.Execute("sproc_tblProductList_SelectId");
+            DB.Execute("sproc_tblProductList_SelectProduct");
             if (DB.Count == 1)
             {
                 mProductId = Convert.ToInt32(DB.DataTable.Rows[0]["ProductId"]);
