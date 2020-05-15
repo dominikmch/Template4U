@@ -2,20 +2,15 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Template4UClassLib;
 
-
 namespace Template4UTesting
 {
     [TestClass]
     public class tstProductList
     {
-
         [TestMethod]
-        public void InstanceOK()
+        public void TestMethod1()
         {
-            clsProductList Product = new clsProductList();
-            Assert.IsNotNull(Product);
+            clsProductList products = new clsProductList();
         }
-
     }
 }
-
