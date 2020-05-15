@@ -7,7 +7,7 @@ namespace Template4UClassLib
         private int mProductId;
         private String mProductName;
         private String mProductDescription;
-        private double mPrice;
+        private int mPrice;
         private DateTime mDateAdded;
         private Boolean misAvailable;
 
@@ -44,7 +44,7 @@ namespace Template4UClassLib
                 mProductDescription = value;
             }
         }
-        public double Price
+        public int Price
         {
             get
             {
@@ -78,12 +78,11 @@ namespace Template4UClassLib
                 misAvailable = value;
             }
         }
-
-        public bool Find(int ProductId)
+        public bool Find(int ReviewId)
         {
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@ProductId", ProductId);
-            DB.Execute("sproc_tblProductList_SelectProduct");
+            DB.Execute("sproc_tblProductList_SelectId");
             if (DB.Count == 1)
             {
                 mProductId = Convert.ToInt32(DB.DataTable.Rows[0]["ProductId"]);
@@ -95,6 +94,7 @@ namespace Template4UClassLib
 
                 return true;
             }
+
             else
             {
                 return false;
