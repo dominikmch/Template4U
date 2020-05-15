@@ -26,6 +26,8 @@ namespace Template4UClassLib
         public clsDataConnection()
         {
             connectionString = GetConnectionString();
+
+
         }
 
         private string GetConnectionString()

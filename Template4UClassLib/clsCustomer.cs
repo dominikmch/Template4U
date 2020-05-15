@@ -40,38 +40,46 @@ namespace Template4UClassLib
         {
             var error = "";
 
-            if (customerEmail.Length == 0)
-            { error += "Email cannot be empty"; }
-            if (customerEmail.Length > 32)
+            try
             {
-                error += "Email cannot be longer than 32 characters";
-            }
+                if (customerEmail.Length == 0)
+                { error += "Email cannot be empty"; }
+                if (customerEmail.Length > 32)
+                {
+                    error += "Email cannot be longer than 32 characters";
+                }
 
-            if (customerName.Length == 0)
-            { error += "Name cannot be empty"; }
-            if (customerName.Length > 32)
-            {
-                error += "Name cannot be longer than 32 characters";
-            }
+                if (customerName.Length == 0)
+                { error += "Name cannot be empty"; }
+                if (customerName.Length > 32)
+                {
+                    error += "Name cannot be longer than 32 characters";
+                }
 
-            if (customerPassword.Length == 0)
-            { error += "Password cannot be empty"; }
-            if (customerPassword.Length > 32)
-            {
-                error += "Password cannot be longer than 32 characters";
-            }
+                if (customerPassword.Length == 0)
+                { error += "Password cannot be empty"; }
+                if (customerPassword.Length > 32)
+                {
+                    error += "Password cannot be longer than 32 characters";
+                }
 
-            if (customerPassword.Length == 0)
-            { error += "Business must be either true or false. Empty"; }
-            if (customerPassword.Length > 9)
-            {
-                error += "Business must be either true or false. Too long";
-            }
+                if (customerPassword.Length == 0)
+                { error += "Business must be either true or false. Empty"; }
+                if (customerPassword.Length > 9)
+                {
+                    error += "Business must be either true or false. Too long";
+                }
 
-            if (customerId.Length <= 0)
-            {
-                error += "Id length cannot be less than 0";
+                if (customerId.Length <= 0)
+                {
+                    error += "Id length cannot be less than 0";
+                }
             }
+            catch (Exception e)
+            {
+                error += e;
+            }
+            
 
             return error;
         }

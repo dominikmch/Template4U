@@ -12,8 +12,28 @@ namespace Template4UFrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var anCustomer = (clsCustomer)Session["anCustomer"];
-            Response.Write(anCustomer);
+            var anCustomer = Convert.ToInt32(Session["CustomerId"]);
+            if (!IsPostBack)
+            {
+                if (anCustomer != -1)
+                {
+                    ShowCustomers(anCustomer);
+                }
+            }
+        }
+
+        void ShowCustomers(int cId)
+        {
+            var customers = new clsCustomerCollection();
+
+            customers.ThisCustomer.Find(cId);
+
+            customerId.Text = "Customer ID: " + customers.ThisCustomer.CustomerId;
+            customerName.Text = "Customer name: " + customers.ThisCustomer.CustomerName;
+            customerEmail.Text = "Customer email: " + customers.ThisCustomer.CustomerEmail;
+            customerRegistrationDate.Text = "Customer registration date: " + customers.ThisCustomer.RegistrationDate;
+            customerPassword.Text = "Customer ID: " + customers.ThisCustomer.CustomerPassword;
+            customerIsBusiness.Text = "Customer ID: " + customers.ThisCustomer.IsBusinessCustomer;
         }
     }
 }

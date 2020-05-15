@@ -7,22 +7,22 @@ namespace Template4UClassLib
     public class clsCustomerCollection
     {
         // Fields
-        List<clsCustomer> mCustomerList = new List<clsCustomer>();
-        clsCustomer mThisCustomer = new clsCustomer();
+        List<clsCustomer> _mCustomerList = new List<clsCustomer>();
+        clsCustomer _mThisCustomer = new clsCustomer();
 
         // Properties
         public List<clsCustomer> CustomersList
         {
-            get => mCustomerList;
-            set => mCustomerList = value;
+            get => _mCustomerList;
+            set => _mCustomerList = value;
         }
 
-        public int Count => mCustomerList.Count;
+        public int Count => _mCustomerList.Count;
 
         public clsCustomer ThisCustomer
         {
-            get => mThisCustomer;
-            set => mThisCustomer = value;
+            get => _mThisCustomer;
+            set => _mThisCustomer = value;
         }
 
         // Constructors
@@ -43,63 +43,63 @@ namespace Template4UClassLib
             //get the count of records
             recordCount = db.Count;
             //clear the private array list
-            mCustomerList = new List<clsCustomer>();
+            _mCustomerList = new List<clsCustomer>();
             //while there are records to process
             while (index < recordCount)
             {
                 //create a blank address
                 clsCustomer anCustomer = new clsCustomer();
                 //read in the fields from the current record
-                anCustomer.CustomerId = Convert.ToInt32(db.DataTable.Rows[0]["CustomerId"]);
-                anCustomer.CustomerEmail = Convert.ToString(db.DataTable.Rows[0]["CustomerEmail"]);
-                anCustomer.CustomerPassword = Convert.ToString(db.DataTable.Rows[0]["CustomerPassword"]);
-                anCustomer.CustomerName = Convert.ToString(db.DataTable.Rows[0]["CustomerName"]);
-                anCustomer.RegistrationDate = Convert.ToDateTime(db.DataTable.Rows[0]["CustomerRegDate"]);
-                anCustomer.IsBusinessCustomer = Convert.ToBoolean(db.DataTable.Rows[0]["CustomerIsBussinessClient"]);
+                anCustomer.CustomerId = Convert.ToInt32(db.DataTable.Rows[index]["CustomerId"]);
+                anCustomer.CustomerEmail = Convert.ToString(db.DataTable.Rows[index]["CustomerEmail"]);
+                anCustomer.CustomerPassword = Convert.ToString(db.DataTable.Rows[index]["CustomerPassword"]);
+                anCustomer.CustomerName = Convert.ToString(db.DataTable.Rows[index]["CustomerName"]);
+                anCustomer.RegistrationDate = Convert.ToDateTime(db.DataTable.Rows[index]["CustomerRegDate"]);
+                anCustomer.IsBusinessCustomer = Convert.ToBoolean(db.DataTable.Rows[index]["CustomerIsBussinessClient"]);
                 //add the record to the private data mamber
-                mCustomerList.Add(anCustomer);
+                _mCustomerList.Add(anCustomer);
                 //point at the next record
                 index++;
             }
 
         }
 
-        public void Add(string name, string password, string email, bool isBusiness)
+        public void Add()
         {
             clsDataConnection DB = new clsDataConnection();
 
             //Set parameters
-            DB.AddParameter("@CustomerEmail", email);
-            DB.AddParameter("@CustomerPassword", password);
-            DB.AddParameter("@CustomerName", name);
-            DB.AddParameter("@CustomerIsBussinessClient", isBusiness);
-            DB.AddParameter("@CustomerRegDate", DateTime.Today);
+            DB.AddParameter("@CustomerEmail", _mThisCustomer.CustomerEmail);
+            DB.AddParameter("@CustomerPassword", _mThisCustomer.CustomerPassword);
+            DB.AddParameter("@CustomerName", _mThisCustomer.CustomerName);
+            DB.AddParameter("@CustomerIsBussinessClient", _mThisCustomer.IsBusinessCustomer);
+            DB.AddParameter("@CustomerRegDate", _mThisCustomer.RegistrationDate);
 
             //Execute
             DB.Execute("sproc_tblCustomer_Insert");
         }
 
-        public void Update(int id, string name, string password, string email, bool isBusiness)
+        public void Update()
         {
             clsDataConnection DB = new clsDataConnection();
 
             //Set parameters
-            DB.AddParameter("@CustomerId", id);
-            DB.AddParameter("@CustomerEmail", email);
-            DB.AddParameter("@CustomerPassword", password);
-            DB.AddParameter("@CustomerName", name);
-            DB.AddParameter("@CustomerIsBussinessClient", isBusiness);
+            DB.AddParameter("@CustomerId", _mThisCustomer.CustomerId);
+            DB.AddParameter("@CustomerEmail", _mThisCustomer.CustomerEmail);
+            DB.AddParameter("@CustomerPassword", _mThisCustomer.CustomerPassword);
+            DB.AddParameter("@CustomerName", _mThisCustomer.CustomerName);
+            DB.AddParameter("@CustomerIsBussinessClient", _mThisCustomer.IsBusinessCustomer);
 
             //Execute
             DB.Execute("sproc_tblCustomer_UpdateCustomerDetails");
         }
 
-        public void Delete(int id)
+        public void Delete()
         {
             clsDataConnection DB = new clsDataConnection();
 
             //Set parameters
-            DB.AddParameter("@CustomerId", id);
+            DB.AddParameter("@CustomerID", _mThisCustomer.CustomerId);
 
             //Execute
             DB.Execute("sproc_tblCustomer_Delete");
@@ -110,7 +110,7 @@ namespace Template4UClassLib
             clsDataConnection DB = new clsDataConnection();
 
             //Set parameters
-            DB.AddParameter("@CustomerIsBussinessClient", isBusiness);
+            DB.AddParameter("@CustomerIsBussinessClient", _mThisCustomer.IsBusinessCustomer);
 
             //Execute
             DB.Execute("sproc_tblCustomer_FilterByType");

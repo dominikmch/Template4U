@@ -10,126 +10,103 @@ namespace Template4UFrontEnd
 {
     public partial class AnCustomer : System.Web.UI.Page
     {
+        private int _customerId;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            var anCustomer = new clsCustomer();
-            anCustomer = (clsCustomer)Session["anCustomer"];
+            _customerId = Convert.ToInt32(Session["CustomerId"]);
+
+            if (!IsPostBack)
+            {
+                if (_customerId != -1)
+                {
+                    ShowCustomer();
+                }
+            }
         }
 
 
         protected void ButtonOk_Click(object sender, EventArgs e)
         {
+            Submit();
+        }
+
+        private void ShowCustomer()
+        {
+            var customerCollection = new clsCustomerCollection();
+
+            customerCollection.ThisCustomer.Find(_customerId);
+
+            TextCustomerName.Text = customerCollection.ThisCustomer.CustomerName;
+            TextCustomerEmail.Text = customerCollection.ThisCustomer.CustomerEmail;
+            TextCustomerPassword.Text = customerCollection.ThisCustomer.CustomerPassword;
+            CustomerBusiness.Checked = customerCollection.ThisCustomer.IsBusinessCustomer;
+            CustomerDateTime.Text = customerCollection.ThisCustomer.RegistrationDate.ToShortDateString();
+            TextCustomerID.Text = customerCollection.ThisCustomer.CustomerId.ToString();
+        }
+
+        private void Submit()
+        {
             var customer = new clsCustomer();
-            if (Editable.Checked)
-            {
-                AdminMode(customer);
-            }
-            else
-            {
-                Find(customer, int.Parse(TextCustomerID.Text));
-            }
-            
-        }
 
-        private void Find(clsCustomer customer, int CId)
-        {
-            var customerClass = customer;
 
-            
-            var found = false;
+            var customerName = TextCustomerName.Text;
+            var customerEmail = TextCustomerEmail.Text;
+            var customerPassword = TextCustomerPassword.Text;
+            var customerIsBusiness = CustomerBusiness.Checked.ToString();
+            var customerRegistrationDate = CustomerDateTime.Text;
+            var customerId = TextCustomerID.Text;
 
-            found = customerClass.Find(Convert.ToInt32(CId));
-            if (found)
-            {
-                TextCustomerName.Text = customerClass.CustomerName;
-                TextCustomerEmail.Text = customerClass.CustomerEmail;
-                TextCustomerPassword.Text = customerClass.CustomerPassword;
-                CustomerBusiness.Checked = customerClass.IsBusinessCustomer;
-                CustomerDateTime.Text = customerClass.RegistrationDate.ToShortDateString();
-                TextCustomerID.Text = customerClass.CustomerId.ToString();
-            }
-            else { }
-        }
-
-        private void AdminMode(clsCustomer customer)
-        {
-            clsCustomerCollection customerCollection = new clsCustomerCollection();
-
-            var tstCustomerId = TextCustomerID.Text;
-            var tstCustomerEmail = TextCustomerEmail.Text;
-            var tstCustomerName = TextCustomerName.Text;
-            var tstCustomerPassword = TextCustomerPassword.Text;
-            var tstCustomerIsBusiness = CustomerBusiness.Checked;
-
-            var error = customer.ValidateFields(tstCustomerId, tstCustomerEmail, tstCustomerName, tstCustomerPassword,  tstCustomerIsBusiness.ToString());
+            var error = customer.ValidateFields(customerId, customerEmail, customerName, customerPassword, customerIsBusiness);
 
             if (string.IsNullOrWhiteSpace(error))
             {
-                if (!customer.Find(int.Parse(tstCustomerId)))
+                customer.CustomerId = int.Parse(customerId);
+                customer.CustomerEmail = customerEmail;
+                customer.CustomerName = customerName;
+                customer.CustomerPassword = customerPassword;
+                customer.IsBusinessCustomer = bool.Parse(customerIsBusiness);
+                customer.RegistrationDate = DateTime.Parse(customerRegistrationDate);
+
+                var customerList = new clsCustomerCollection();       
+
+                if (_customerId == -1)
                 {
-                    customerCollection.Add(tstCustomerName, tstCustomerPassword, tstCustomerEmail, tstCustomerIsBusiness);
+                    customerList.ThisCustomer = customer;
+                    customerList.Add();
                 }
                 else
                 {
-                    customerCollection.Update(int.Parse(tstCustomerId), tstCustomerName, tstCustomerPassword, tstCustomerEmail, tstCustomerIsBusiness);
+                    customerList.ThisCustomer.Find(_customerId);
+                    customerList.ThisCustomer = customer;
+                    customerList.Update();
                 }
 
-                
-                Session["anCustomer"] = customer;
-                Response.Redirect("CustomerViewer.aspx");
+
+                Response.Redirect("CustomerList.aspx");
             }
             else
             {
-
-            }
-        }
-
-        protected void Editable_OnCheckedChanged(object sender, EventArgs e)
-        {
-            var customer = new clsCustomer();
-            var error = customer.ValidateId(TextCustomerID.Text);
-            var editable = false;
-
-            warningID.Text = "";
-
-            if (string.IsNullOrWhiteSpace(error))
-            {
-                if (customer.Find(int.Parse(TextCustomerID.Text)))
-                {
-                    editable = Editable.Checked;
-
-
-                    //To be changed or removed when update function added...
-                    CustomerDateTime.Text = customer.RegistrationDate.ToShortDateString();
-                }
-            }
-            else
-            {
-                Editable.Checked = false;
-                CustomerDateTime.Text = "";
                 warningID.Text = error;
             }
-            
-          
-            TextCustomerID.Enabled = !editable;
-            TextCustomerEmail.Enabled = editable;
-            TextCustomerName.Enabled = editable;
-            TextCustomerPassword.Enabled = editable;
-            CustomerBusiness.Enabled = editable;
-
-        }
-
-        protected void TextCustomerID_OnTextChanged(object sender, EventArgs e)
-        {
-            var customer = new clsCustomer();
-            var error = customer.ValidateId(TextCustomerID.Text);
-
-            Find(customer, int.Parse(TextCustomerID.Text));
         }
 
         protected void ButtonDelete_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var customer = new clsCustomer();
+            int CustomerId;
+            bool Found = false;
+            _customerId = Convert.ToInt32(TextCustomerID.Text);
+            Found = customer.Find(_customerId);
+            if (Found)
+            {
+                TextCustomerName.Text = customer.CustomerName;
+                TextCustomerEmail.Text = customer.CustomerEmail;
+                TextCustomerPassword.Text = customer.CustomerPassword;
+                CustomerBusiness.Checked = customer.IsBusinessCustomer;
+                CustomerDateTime.Text = customer.RegistrationDate.ToShortDateString();
+                TextCustomerID.Text = customer.CustomerId.ToString();
+            }
         }
     }
 }

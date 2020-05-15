@@ -14,7 +14,7 @@
                 <label>CustomerID:</label>
             </div>
             <div class="col" style="margin: 10px">
-                <asp:TextBox ID="TextCustomerID" runat="server" placeholder="Customer ID number" TextMode="Number" AutoPostBack="True" OnTextChanged="TextCustomerID_OnTextChanged"></asp:TextBox>
+                <asp:TextBox ID="TextCustomerID" runat="server" placeholder="Customer ID number" TextMode="Number" AutoPostBack="True"></asp:TextBox>
             </div>
         </div>
         <div class="form-row">
@@ -22,7 +22,7 @@
                 <label>Email: </label>
             </div>
             <div class="col" style="margin: 10px">
-                <asp:TextBox ID="TextCustomerEmail" runat="server" Enabled="False" placeholder="Customer email address" TextMode="Email"></asp:TextBox>
+                <asp:TextBox ID="TextCustomerEmail" runat="server" placeholder="Customer email address" TextMode="Email"></asp:TextBox>
             </div>
         </div>
         <div class="form-row">
@@ -30,7 +30,7 @@
                 <label>Name:</label>
             </div>
             <div class="col" style="margin: 10px">
-                <asp:TextBox ID="TextCustomerName" runat="server" Enabled="False" placeholder="Customer name" TextMode="SingleLine"></asp:TextBox>
+                <asp:TextBox ID="TextCustomerName" runat="server"  placeholder="Customer name" TextMode="SingleLine"></asp:TextBox>
             </div>
         </div>
         <div class="form-row">
@@ -38,7 +38,7 @@
                 <label>Password:</label>
             </div>
             <div class="col" style="margin: 10px">
-                <asp:TextBox ID="TextCustomerPassword" runat="server" Enabled="False" placeholder="Customer password" TextMode="Password"></asp:TextBox>
+                <asp:TextBox ID="TextCustomerPassword" runat="server"  placeholder="Customer password" TextMode="Password"></asp:TextBox>
             </div>
         </div>
         <div class="form-row">
@@ -54,25 +54,17 @@
                 <label>Business client</label>
             </div>
             <div class="col" style="margin: 10px">
-                <asp:CheckBox ID="CustomerBusiness" runat="server" Enabled="False"/>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="col" style="margin: 10px">
-                <label><b>Admin mode: </b></label>
-            </div>
-            <div class="col" style="margin: 10px">
-                <asp:CheckBox ID="Editable" runat="server" Enabled="True" AutoPostBack="True" OnCheckedChanged="Editable_OnCheckedChanged"/>
+                <asp:CheckBox ID="CustomerBusiness" runat="server" />
             </div>
         </div>
         <div class="form-row" align="right">
             <div class="col" style="margin: 10px">
-                <asp:Button runat="server" class="btn btn-primary" OnClick="ButtonDelete_Click" Text="Delete"/>
+                <asp:Button runat="server" class="btn btn-primary" OnClick="ButtonDelete_Click" Text="Find"/>
             </div>
         </div>
         <div class="form-row" align="right">
             <div class="col" style="margin: 10px">
-                <asp:Button runat="server" class="btn btn-primary" OnClick="ButtonOk_Click" Text="Add/Update"/>
+                <asp:Button runat="server" class="btn btn-primary" OnClick="ButtonOk_Click" Text="Submit"/>
             </div>
         </div>
         <div class="form-row" align="center" >

@@ -11,7 +11,7 @@ namespace Template4UFrontEnd
 {
 
 
-    public partial class CustomerViewer
+    public partial class CustomerList
     {
 
         /// <summary>
@@ -24,57 +24,84 @@ namespace Template4UFrontEnd
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// customerId control.
+        /// ListCustomers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label customerId;
+        protected global::System.Web.UI.WebControls.ListBox ListCustomers;
 
         /// <summary>
-        /// customerEmail control.
+        /// ViewCustomer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label customerEmail;
+        protected global::System.Web.UI.WebControls.Button ViewCustomer;
 
         /// <summary>
-        /// customerPassword control.
+        /// btnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label customerPassword;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
 
         /// <summary>
-        /// customerName control.
+        /// btnUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label customerName;
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
 
         /// <summary>
-        /// customerRegistrationDate control.
+        /// btnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label customerRegistrationDate;
+        protected global::System.Web.UI.WebControls.Button btnDelete;
 
         /// <summary>
-        /// customerIsBusiness control.
+        /// txtFilter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label customerIsBusiness;
+        protected global::System.Web.UI.WebControls.TextBox txtFilter;
+
+        /// <summary>
+        /// btnApply control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnApply;
+
+        /// <summary>
+        /// btnClear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClear;
+
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

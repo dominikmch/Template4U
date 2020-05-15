@@ -68,8 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AnCustomer.aspx" />
+    <Content Include="CustomerList.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="DeleteCustomer.aspx" />
     <Content Include="Review.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +81,13 @@
     </Compile>
     <Compile Include="AnCustomer.aspx.designer.cs">
       <DependentUpon>AnCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerList.aspx.cs">
+      <DependentUpon>CustomerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerList.aspx.designer.cs">
+      <DependentUpon>CustomerList.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerViewer.aspx.cs">
       <DependentUpon>CustomerViewer.aspx</DependentUpon>
@@ -93,6 +102,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteCustomer.aspx.cs">
+      <DependentUpon>DeleteCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteCustomer.aspx.designer.cs">
+      <DependentUpon>DeleteCustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review.aspx.cs">
