@@ -5,14 +5,14 @@ using Template4UClassLib;
 namespace Template4UTesting
 {
     [TestClass]
-    public class tstProductList
+    public class tstProductListCollection
     {
-
         [TestMethod]
         public void InstanceOK()
         {
-            clsProductList Product = new clsProductList();
-            Assert.IsNotNull(Product);
+            clsProductListCollection Products = new clsProductListCollection();
+
+            Assert.IsNotNull(Products);
         }
     }
 }
