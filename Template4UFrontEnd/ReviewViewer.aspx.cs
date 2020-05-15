@@ -25,12 +25,11 @@ namespace Template4UFrontEnd
             {
                 Template4UClassLib.clsReviewCollection Reviews = new Template4UClassLib.clsReviewCollection();
                 Reviews.ThisReview.find(ReviewId);
-                productId.Text ="Product Id : "+ Reviews.ThisReview.ReviewId.ToString();
+                productId.Text ="Product Id : "+ Reviews.ThisReview.ProductId.ToString();
                 grade.Text = "Grade : "+Reviews.ThisReview.Grade.ToString();
                 description.Text = "Comment : "+Reviews.ThisReview.ReviewComment;
                 date.Text = "Date Added: "+Reviews.ThisReview.DateAdded.ToString();
                 userId.Text = "User Id : "+ Reviews.ThisReview.UserId.ToString();
-
             }
 
 

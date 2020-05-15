@@ -105,7 +105,7 @@ namespace Template4UFrontEnd
             }
             else
             {
-                lblError.Text = "Please select a record to delete from the list";
+                lblError.Text = "Please select a record to view from the list";
             }
         }
     }
