@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -26,7 +27,6 @@ namespace Template4UFrontEnd
 
             ListCustomers.DataSource = customers.CustomersList;
             ListCustomers.DataValueField = "CustomerId";
-            //ListCustomers.DataTextField = "CustomerEmail";
             ListCustomers.DataTextField = "CustomerName";
 
             ListCustomers.DataBind();
@@ -34,7 +34,6 @@ namespace Template4UFrontEnd
 
         protected void ViewCustomer_OnClick(object sender, EventArgs e)
         {
-            //int _customerId;
 
             if (ListCustomers.SelectedIndex != -1)
             {
@@ -51,7 +50,6 @@ namespace Template4UFrontEnd
 
         protected void btnDelete_OnClick(object sender, EventArgs e)
         {
-            //int _customerId;
 
             if (ListCustomers.SelectedIndex != -1)
             {
@@ -67,7 +65,6 @@ namespace Template4UFrontEnd
 
         protected void btnUpdate_OnClick(object sender, EventArgs e)
         {
-            //int _customerId;
 
             if (ListCustomers.SelectedIndex != -1)
             {
@@ -95,7 +92,6 @@ namespace Template4UFrontEnd
 
             ListCustomers.DataSource = customers.CustomersList;
             ListCustomers.DataValueField = "CustomerId";
-            //ListCustomers.DataTextField = "CustomerEmail";
             ListCustomers.DataTextField = "CustomerName";
             ListCustomers.DataBind();
         }
@@ -110,7 +106,6 @@ namespace Template4UFrontEnd
 
             ListCustomers.DataSource = customers.CustomersList;
             ListCustomers.DataValueField = "CustomerId";
-            //ListCustomers.DataTextField = "CustomerEmail";
             ListCustomers.DataTextField = "CustomerName";
             ListCustomers.DataBind();
         }

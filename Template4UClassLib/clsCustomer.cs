@@ -11,6 +11,7 @@ namespace Template4UClassLib
         public DateTime RegistrationDate { get; set; }
         public bool IsBusinessCustomer { get; set; }
 
+
         public clsCustomer()
         {
         }
