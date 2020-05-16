@@ -65,7 +65,6 @@ namespace Template4UClassLib
             DB.AddParameter("@ProductName", mThisProduct.ProductName);
             DB.AddParameter("@ProductDescription", mThisProduct.ProductDescription);
             DB.AddParameter("@Price", mThisProduct.Price);
-            DB.AddParameter("@DateAdded", mThisProduct.DateAdded);
             DB.AddParameter("@isAvailable", mThisProduct.isAvailable);
 
             DB.Execute("sproc_tblProductList_UpdateProductDetails");

@@ -174,7 +174,6 @@ namespace Template4UTesting
             TestItem.ReviewId = PrimaryKey;
             TestItem.Grade = 5;
             TestItem.Edited = true;
-            TestItem.ReviewId = 7;
             TestItem.UserId = 101;
             TestItem.DateAdded = DateTime.Now.Date;
             TestItem.ReviewComment = "very nice";

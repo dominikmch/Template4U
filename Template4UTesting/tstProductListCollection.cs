@@ -155,7 +155,7 @@ namespace Template4UTesting
 
             Int32 PrimaryKey = 0;
 
-            TestItem.ProductId = 64;
+            TestItem.ProductId = 73;
             TestItem.ProductName = "GamingTemplate";
             TestItem.ProductDescription = "This is best template for gaming websistes.";
             TestItem.Price = 129;
@@ -167,7 +167,6 @@ namespace Template4UTesting
             PrimaryKey = Products.Add();
 
             TestItem.ProductId = PrimaryKey;
-            TestItem.ProductId = 64;
             TestItem.ProductName = "TradeForU";
             TestItem.ProductDescription = "This is another best template for trading websistes.";
             TestItem.Price = 130;
@@ -180,7 +179,7 @@ namespace Template4UTesting
 
             Boolean Found = Products.ThisProductList.Find(PrimaryKey);
 
-            Assert.IsFalse(Found);
+            Assert.IsTrue(Found);
 
         }
 
