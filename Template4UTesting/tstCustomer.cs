@@ -91,7 +91,7 @@ namespace Template4UTesting
             clsCustomer customer = new clsCustomer();
 
             var found = false;
-            var customerId = 8;
+            var customerId = 35;
             found = customer.Find(customerId);
             Assert.IsTrue(found);
         }
@@ -125,9 +125,9 @@ namespace Template4UTesting
         {
             clsCustomer customer = new clsCustomer();
 
-            customer.Find(1);
+            customer.Find(35);
 
-            Assert.IsTrue(customer.CustomerId == 1);
+            Assert.IsTrue(customer.CustomerId == 35);
         }
 
         [TestMethod]
@@ -135,9 +135,9 @@ namespace Template4UTesting
         {
             clsCustomer customer = new clsCustomer();
 
-            customer.Find(1);
+            customer.Find(35);
 
-            Assert.AreEqual("test@test.co.uk", customer.CustomerEmail);
+            Assert.AreEqual("TestUser@TestMail.com", customer.CustomerEmail);
         }
 
         [TestMethod]
@@ -145,9 +145,9 @@ namespace Template4UTesting
         {
             clsCustomer customer = new clsCustomer();
 
-            customer.Find(1);
+            customer.Find(35);
 
-            Assert.AreEqual("TestPassword", customer.CustomerPassword );
+            Assert.AreEqual("test123", customer.CustomerPassword );
         }
 
         [TestMethod]
@@ -155,9 +155,9 @@ namespace Template4UTesting
         {
             clsCustomer customer = new clsCustomer();
 
-            customer.Find(1);
+            customer.Find(35);
 
-            Assert.AreEqual("TestUser", customer.CustomerName );
+            Assert.AreEqual("Max Tester", customer.CustomerName );
         }
 
         [TestMethod]
@@ -165,7 +165,7 @@ namespace Template4UTesting
         {
             clsCustomer customer = new clsCustomer();
 
-            customer.Find(1);
+            customer.Find(35);
 
             Assert.AreNotEqual(DateTime.Now, customer.RegistrationDate);
         }
@@ -175,7 +175,7 @@ namespace Template4UTesting
         {
             clsCustomer customer = new clsCustomer();
 
-            customer.Find(1);
+            customer.Find(35);
 
             Assert.AreEqual(true,customer.IsBusinessCustomer);
         }

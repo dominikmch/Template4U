@@ -69,7 +69,7 @@ namespace Template4UClassLib
 
         }
 
-        public void Add()
+        public int Add()
         {
             clsDataConnection DB = new clsDataConnection();
 
@@ -81,7 +81,7 @@ namespace Template4UClassLib
             DB.AddParameter("@CustomerRegDate", _mThisCustomer.RegistrationDate);
 
             //Execute
-            DB.Execute("sproc_tblCustomer_Insert");
+            return DB.Execute("sproc_tblCustomer_Insert");
         }
 
         public void Update()
