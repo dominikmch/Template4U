@@ -32,8 +32,8 @@ namespace Template4UFrontEnd
             customerName.Text = "Customer name: " + customers.ThisCustomer.CustomerName;
             customerEmail.Text = "Customer email: " + customers.ThisCustomer.CustomerEmail;
             customerRegistrationDate.Text = "Customer registration date: " + customers.ThisCustomer.RegistrationDate;
-            customerPassword.Text = "Customer ID: " + customers.ThisCustomer.CustomerPassword;
-            customerIsBusiness.Text = "Customer ID: " + customers.ThisCustomer.IsBusinessCustomer;
+            customerPassword.Text = "Customer Password: " + customers.ThisCustomer.CustomerPassword;
+            customerIsBusiness.Text = "Customer is business client: " + customers.ThisCustomer.IsBusinessCustomer;
         }
     }
 }

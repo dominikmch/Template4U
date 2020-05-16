@@ -63,12 +63,8 @@ namespace Template4UClassLib
                     error += "Password cannot be longer than 32 characters";
                 }
 
-                if (customerPassword.Length == 0)
+                if (customerIsBusiness.Length == 0)
                 { error += "Business must be either true or false. Empty"; }
-                if (customerPassword.Length > 9)
-                {
-                    error += "Business must be either true or false. Too long";
-                }
 
                 if (customerId.Length <= 0)
                 {

@@ -28,7 +28,12 @@ namespace Template4UClassLib
         // Constructors
         public clsCustomerCollection()
         {
-            clsDataConnection DB = new clsDataConnection();
+            SelectAllCustomers();
+        }
+
+        public void SelectAllCustomers()
+        {
+            var DB = new clsDataConnection();
             DB.Execute("sproc_tblCustomer_SelectAll");
             PopulateArray(DB);
         }
@@ -110,7 +115,7 @@ namespace Template4UClassLib
             clsDataConnection DB = new clsDataConnection();
 
             //Set parameters
-            DB.AddParameter("@CustomerIsBussinessClient", _mThisCustomer.IsBusinessCustomer);
+            DB.AddParameter("@CustomerIsBussinessClient", isBusiness);
 
             //Execute
             DB.Execute("sproc_tblCustomer_FilterByType");

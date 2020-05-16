@@ -53,11 +53,28 @@ namespace Template4UFrontEnd
             var customerName = TextCustomerName.Text;
             var customerEmail = TextCustomerEmail.Text;
             var customerPassword = TextCustomerPassword.Text;
-            var customerIsBusiness = CustomerBusiness.Checked.ToString();
-            var customerRegistrationDate = CustomerDateTime.Text;
+            var customerIsBusiness = CustomerBusiness.Checked;
+            var customerRegistrationDate = "";
+            if (string.IsNullOrWhiteSpace(CustomerDateTime.Text))
+            {
+                customerRegistrationDate = DateTime.Now.Date.ToShortDateString();
+                CustomerDateTime.Text = DateTime.Now.Date.ToShortDateString();
+            }
+            if (DateTime.Parse(CustomerDateTime.Text) < DateTime.Parse("01/01/1999"))
+            {
+                customerRegistrationDate = DateTime.Now.Date.ToShortDateString();
+            }
+            else
+            {
+                customerRegistrationDate = CustomerDateTime.Text;
+            }
             var customerId = TextCustomerID.Text;
+            if (string.IsNullOrWhiteSpace(customerId))
+            {
+                customerId = "0";
+            }
 
-            var error = customer.ValidateFields(customerId, customerEmail, customerName, customerPassword, customerIsBusiness);
+            var error = customer.ValidateFields(customerId, customerEmail, customerName, customerPassword, customerIsBusiness.ToString());
 
             if (string.IsNullOrWhiteSpace(error))
             {
@@ -65,12 +82,12 @@ namespace Template4UFrontEnd
                 customer.CustomerEmail = customerEmail;
                 customer.CustomerName = customerName;
                 customer.CustomerPassword = customerPassword;
-                customer.IsBusinessCustomer = bool.Parse(customerIsBusiness);
+                customer.IsBusinessCustomer = customerIsBusiness;
                 customer.RegistrationDate = DateTime.Parse(customerRegistrationDate);
 
                 var customerList = new clsCustomerCollection();       
 
-                if (_customerId == -1)
+                if (_customerId <= 0)
                 {
                     customerList.ThisCustomer = customer;
                     customerList.Add();
@@ -94,7 +111,7 @@ namespace Template4UFrontEnd
         protected void ButtonDelete_Click(object sender, EventArgs e)
         {
             var customer = new clsCustomer();
-            int CustomerId;
+            int customerId;
             bool Found = false;
             _customerId = Convert.ToInt32(TextCustomerID.Text);
             Found = customer.Find(_customerId);
