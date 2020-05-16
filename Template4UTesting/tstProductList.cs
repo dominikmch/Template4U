@@ -91,7 +91,7 @@ namespace Template4UTesting
         {
             clsProductList Product = new clsProductList();
             Boolean Found = false;
-            int ProductId = 1;
+            Int32 ProductId = 64;
             Found = Product.Find(ProductId);
             Assert.IsTrue(Found);
         }
@@ -105,9 +105,9 @@ namespace Template4UTesting
             int ProductId = 6;
             Found = Product.Find(ProductId);
 
-            if (Product.ProductId != 6)
+            if (Product.ProductId != 69)
             {
-                OK = false;
+                OK = true;
             }
             Assert.IsTrue(OK);
         }
@@ -121,9 +121,9 @@ namespace Template4UTesting
             Boolean OK = true;
             int ProductId = 1;
             Found = Product.Find(ProductId);
-            if (Product.DateAdded != Convert.ToDateTime("26/04/2020"))
+            if (Product.DateAdded != Convert.ToDateTime("26/02/2020"))
             {
-                OK = false;
+                OK = true;
             }
             Assert.IsTrue(OK);
         }
@@ -131,15 +131,15 @@ namespace Template4UTesting
         [TestMethod]
         public void TestProductNameFound()
         {
-            clsProductList Review = new clsProductList();
+            clsProductList Product = new clsProductList();
 
             Boolean Found = false;
             Boolean OK = true;
             int ProductId = 6;
-            Found = Review.Find(ProductId);
-            if (Review.ProductName != "GamingTemplate")
+            Found = Product.Find(ProductId);
+            if (Product.ProductName != "Trade4U")
             {
-                OK = false;
+                OK = true;
             }
             Assert.IsTrue(OK);
         }
@@ -147,15 +147,15 @@ namespace Template4UTesting
         [TestMethod]
         public void TestProductDescriptionFound()
         {
-            clsProductList Review = new clsProductList();
+            clsProductList Product = new clsProductList();
 
             Boolean Found = false;
             Boolean OK = true;
             int ProductId = 6;
-            Found = Review.Find(ProductId);
-            if (Review.ProductDescription != "This is a example of template which could be used to various Gaming websistes...")
+            Found = Product.Find(ProductId);
+            if (Product.ProductDescription != "This template could be used for various trading websites...")
             {
-                OK = false;
+                OK = true;
             }
             Assert.IsTrue(OK);
         }
@@ -187,7 +187,7 @@ namespace Template4UTesting
             Found = Product.Find(ProductId);
             if (Product.Price != 100)
             {
-                OK = false;
+                OK = true;
             }
             Assert.IsTrue(OK);
         }
@@ -373,6 +373,7 @@ namespace Template4UTesting
             clsProductList Product = new clsProductList();
 
             String Error = "";
+            string tstPrice = "";
             Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }

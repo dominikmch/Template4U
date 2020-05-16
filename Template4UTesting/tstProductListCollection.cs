@@ -155,7 +155,7 @@ namespace Template4UTesting
 
             Int32 PrimaryKey = 0;
 
-            TestItem.ProductId = 6;
+            TestItem.ProductId = 64;
             TestItem.ProductName = "GamingTemplate";
             TestItem.ProductDescription = "This is best template for gaming websistes.";
             TestItem.Price = 129;
@@ -167,9 +167,9 @@ namespace Template4UTesting
             PrimaryKey = Products.Add();
 
             TestItem.ProductId = PrimaryKey;
-            TestItem.ProductId = 6;
-            TestItem.ProductName = "GamingTemplate2";
-            TestItem.ProductDescription = "This is another best template for gaming websistes.";
+            TestItem.ProductId = 64;
+            TestItem.ProductName = "TradeForU";
+            TestItem.ProductDescription = "This is another best template for trading websistes.";
             TestItem.Price = 130;
             TestItem.DateAdded = DateTime.Now.Date;
             TestItem.isAvailable = true;

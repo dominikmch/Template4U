@@ -78,7 +78,7 @@ namespace Template4UClassLib
                 misAvailable = value;
             }
         }
-        public bool Find(int ReviewId)
+        public bool Find(int ProductId)
         {
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@ProductId", ProductId);
