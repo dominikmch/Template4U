@@ -7,6 +7,10 @@ namespace Template4UTesting
     [TestClass]
     public class tstOrder
     {
+        String tstOrderId = "1";
+        String tstOrderlineId = "1";
+        String tstPromoCode = "HOLIDAYS";
+        String tstDatePlaced = DateTime.Now.ToString();
         [TestMethod]
         public void InstanceOK()
         {
@@ -53,7 +57,7 @@ namespace Template4UTesting
             clsOrder Order = new clsOrder();
 
             Boolean Found = false;
-            int OrderId = 2;
+            int OrderId = 1;
             Found = Order.find(OrderId);
             Assert.IsTrue(Found);
         }
@@ -65,9 +69,9 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int OrderId = 2;
+            int OrderId = 1;
             Found = Order.find(OrderId);
-            if (Order.OrderId != 2)
+            if (Order.OrderId != 1)
             {
                 OK = false;
             }
@@ -80,9 +84,9 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int OrderId = 2;
+            int OrderId = 1;
             Found = Order.find(OrderId);
-            if (Order.PromoCode != "VALENTINES")
+            if (Order.PromoCode != "HOLIDAYS")
             {
                 OK = false;
             }
@@ -95,9 +99,9 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int OrderId = 2;
+            int OrderId = 5;
             Found = Order.find(OrderId);
-            if (Order.OrderlineId != 2)
+            if (Order.OrderlineId != 123)
             {
                 OK = false;
             }
@@ -110,9 +114,9 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int OrderId = 2;
+            int OrderId = 1;
             Found = Order.find(OrderId);
-            if (!Order.IsCompleted)
+            if (Order.IsCompleted)
             {
                 OK = false;
             }
@@ -126,9 +130,9 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int OrderId = 2;
+            int OrderId = 5;
             Found = Order.find(OrderId);
-            if (Order.DatePlaced != Convert.ToDateTime("19/03/2020"))
+            if (Order.DatePlaced != Convert.ToDateTime("16/05/2020"))
             {
                 OK = false;
             }
@@ -140,9 +144,7 @@ namespace Template4UTesting
             clsOrder Order = new clsOrder();
 
             String Error = "";
-            string tstOrderId = "1";
-            String tstPromoCode = "VALENTINES";
-            String tstDatePlaced = Convert.ToString(DateTime.Now);
+            tstPromoCode = "VALENTINES";
             Error = Order.validate(tstOrderId, tstPromoCode, tstDatePlaced);
             Assert.IsTrue(Error == "");
         }

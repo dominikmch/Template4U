@@ -11,7 +11,7 @@ namespace Template4UFrontEnd
 {
 
 
-    public partial class Default
+    public partial class OrderList
     {
 
         /// <summary>
@@ -24,84 +24,84 @@ namespace Template4UFrontEnd
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// TextOrderId control.
+        /// lstOrders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextOrderId;
+        protected global::System.Web.UI.WebControls.ListBox lstOrders;
 
         /// <summary>
-        /// ButtonFind control.
+        /// viewOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonFind;
+        protected global::System.Web.UI.WebControls.Button viewOrder;
 
         /// <summary>
-        /// TextOrderlineId control.
+        /// btnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextOrderlineId;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
 
         /// <summary>
-        /// TextPromoCode control.
+        /// btnUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextPromoCode;
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
 
         /// <summary>
-        /// TextDatePlaced control.
+        /// btnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextDatePlaced;
+        protected global::System.Web.UI.WebControls.Button btnDelete;
 
         /// <summary>
-        /// chkIsCompleted control.
+        /// OrderCompleted control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkIsCompleted;
+        protected global::System.Web.UI.WebControls.CheckBox OrderCompleted;
 
         /// <summary>
-        /// ErrorLabel control.
+        /// btnApply control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorLabel;
+        protected global::System.Web.UI.WebControls.Button btnApply;
 
         /// <summary>
-        /// ButtonOk control.
+        /// btnClear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonOk;
+        protected global::System.Web.UI.WebControls.Button btnClear;
 
         /// <summary>
-        /// ButtonCancel control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCancel;
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

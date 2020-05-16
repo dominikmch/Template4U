@@ -12,11 +12,28 @@ namespace Template4UFrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            clsOrder AnOrder = new clsOrder();
-            AnOrder = (clsOrder)Session["AnOrder"];
-            Response.Write(AnOrder.OrderId);
+            Int32 OrderId;
+            OrderId = Convert.ToInt32(Session["OrderId"]);
+            if (!IsPostBack)
+            {
+                if (OrderId != -1)
+                {
+                    DisplayReview();
+                }
+            }
+            void DisplayReview()
+            {
+                Template4UClassLib.clsOrderCollection Orders = new Template4UClassLib.clsOrderCollection();
+                Orders.ThisOrder.find(OrderId);
+                lblOrderId.Text = "Order ID: " + Orders.ThisOrder.OrderId.ToString();
+                PromoCode.Text = "Promo code : " + Orders.ThisOrder.PromoCode;
+                DatePlaced.Text = "Date placed : " + Orders.ThisOrder.DatePlaced.ToString();
+                OrderlineId.Text = "OrderlineId : " + Orders.ThisOrder.OrderlineId.ToString();
+                IsCompleted.Text = "Is order completed: " + Orders.ThisOrder.IsCompleted.ToString();
+            }
 
 
         }
     }
+
 }

@@ -67,16 +67,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DeleteOrder.aspx" />
     <Content Include="Order.aspx" />
+    <Content Include="OrderList.aspx" />
     <Content Include="OrderViewer.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeleteOrder.aspx.cs">
+      <DependentUpon>DeleteOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteOrder.aspx.designer.cs">
+      <DependentUpon>DeleteOrder.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Order.aspx.cs">
       <DependentUpon>Order.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Order.aspx.designer.cs">
       <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderList.aspx.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderList.aspx.designer.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OrderViewer.aspx.cs">
@@ -89,6 +105,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Template4UClassLib\Template4UClassLib.csproj">

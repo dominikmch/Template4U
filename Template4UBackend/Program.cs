@@ -16,7 +16,7 @@ namespace Template4UBackend
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AnOrder());
+            Application.Run(new Form1());
             
         }
     }

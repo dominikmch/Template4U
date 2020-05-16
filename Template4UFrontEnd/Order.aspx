@@ -13,13 +13,16 @@
             <asp:TextBox ID="TextOrderId" runat="server" ></asp:TextBox>
             <asp:Button ID="ButtonFind" runat="server" OnClick="ButtonFind_Click" Text="Find" />
             <br />
+            OrderlineId&nbsp;
+            <asp:TextBox ID="TextOrderlineId" runat="server" ></asp:TextBox>
+            <br />
             Promo Code&nbsp;
             <asp:TextBox ID="TextPromoCode" runat="server" ></asp:TextBox>
             <br />
             Date Placed&nbsp;&nbsp;
             <asp:TextBox ID="TextDatePlaced" runat="server" ></asp:TextBox>
             <br />
-            <asp:CheckBox ID="IsCompleted" runat="server"/>
+            <asp:CheckBox ID="chkIsCompleted" runat="server"/>
             <br />
             <br />
             <br />
@@ -28,7 +31,7 @@
             <br />
             <br />
             <asp:Button ID="ButtonOk" runat="server" style="margin-top: 0px" OnClick="ButtonOK_Click" Text="OK" Width="56px" />
-            <asp:Button ID="ButtonCancel" runat="server" Text="Cancel" />
+            <asp:Button ID="ButtonCancel" runat="server" OnClick="ButtonOK_Click" Text="Cancel" />
 
 
         </div>

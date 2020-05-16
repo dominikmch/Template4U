@@ -97,7 +97,7 @@ namespace Template4UClassLib
                 Error += "OrderId can only contain digits";
             }
             //promoCode validation
-            if (promoCode.Length > 0 && promoCode.Length < 4)
+            if (promoCode.Length < 4)
             {
                 Error += "PromoCode has to be at least 4 characters long";
             }
