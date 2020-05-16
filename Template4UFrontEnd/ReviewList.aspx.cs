@@ -25,7 +25,6 @@ namespace Template4UFrontEnd
             ListReviews.DataValueField = "ReviewId";
             ListReviews.DataTextField = "ReviewComment";
             ListReviews.DataBind();
-
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

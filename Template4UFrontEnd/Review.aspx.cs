@@ -19,6 +19,11 @@ namespace Template4UFrontEnd
                 {
                     DisplayReview();
                 }
+                else
+                {
+                    TextDateAdded.Text = DateTime.Today.ToShortDateString().ToString();
+
+                }
             }
 
 
@@ -34,35 +39,6 @@ namespace Template4UFrontEnd
             TextDateAdded.Text = Reviews.ThisReview.DateAdded.ToString();
             TextUserId.Text = Reviews.ThisReview.UserId.ToString();
             TextProductId.Text = Reviews.ThisReview.ProductId.ToString();
-
-        }
-        protected void TextReviewId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        protected void TextGrade_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        protected void TextReviewComment_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        protected void TextDateAdded_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        protected void TextUserId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        protected void Edited_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
 
         }
 

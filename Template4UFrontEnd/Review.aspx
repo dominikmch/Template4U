@@ -11,29 +11,33 @@
     <form id="form1" runat="server">
         <h1 style="color: blue; text-align:center;">Add or search for review here!</h1>
         <div style="text-align:center ;">
-        <div style="height: 260px; width: 402px; position: center; display:inline-block">
+        <div style="height: 150px; width: 402px; position: center; display:inline-block; ">
             ReviewId&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextReviewId" runat="server" OnTextChanged="TextReviewId_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="TextReviewId" runat="server" ></asp:TextBox>
             <asp:Button ID="ButtonFind" runat="server" OnClick="ButtonFind_Click" Text="Find" style="margin-left:5px;"/>
+            </div>
+            </div>
+
+            <div style="margin-left: 25px;">
+            <h3>Add a review below.</h3>
             <br />
             <br />
-            Add a review below.<br />
+         
+            Grade
             <br />
-            Grade&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
-            <asp:TextBox ID="TextGrade" runat="server" OnTextChanged="TextGrade_TextChanged" style="margin-left: 14px" Width="111px"></asp:TextBox>
+            <asp:TextBox ID="TextGrade" runat="server"  Width="111px"></asp:TextBox>
 
             <br />
             Description<br />
 
-            <asp:TextBox ID="TextReviewComment" runat="server" OnTextChanged="TextReviewComment_TextChanged" Height="126px" Width="185px"></asp:TextBox>
+            <asp:TextBox ID="TextReviewComment" runat="server"  Height="126px" Width="185px" TextMode="MultiLine"></asp:TextBox>
             <br />
             <br />
             Date Added
-            <asp:TextBox ID="TextDateAdded" runat="server" Height="22px" Width="128px" OnTextChanged="TextDateAdded_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="TextDateAdded" runat="server" Height="22px" Width="128px" ></asp:TextBox>
             <br />
             UserId&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextUserId" runat="server" Height="19px" Width="126px" OnTextChanged="TextUserId_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="TextUserId" runat="server" Height="19px" Width="126px" ></asp:TextBox>
             <br />
             ProductId&nbsp;&nbsp;
             <asp:TextBox ID="TextProductId" runat="server"></asp:TextBox>
@@ -45,7 +49,8 @@
             <br />
             <asp:Label ID="ErrorLabel" runat="server"></asp:Label>
         </div>
-            </div>
+          
+
     </form>
 </body>
 </html>
