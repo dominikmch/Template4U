@@ -91,7 +91,7 @@ namespace Template4UTesting
         {
             clsProductList Product = new clsProductList();
             Boolean Found = false;
-            Int32 ProductId = 99;
+            Int32 ProductId = 30;
             Found = Product.Find(ProductId);
             Assert.IsTrue(Found);
         }
@@ -198,7 +198,7 @@ namespace Template4UTesting
             clsProductList Product = new clsProductList();
 
             String Error = "";
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
 
@@ -208,7 +208,7 @@ namespace Template4UTesting
             clsProductList Product = new clsProductList();
             String Error = "";
             string tstPrice = "";
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
@@ -218,7 +218,7 @@ namespace Template4UTesting
 
             String Error = "";
             string tstPrice = "-1";
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
 
@@ -229,7 +229,7 @@ namespace Template4UTesting
 
             String Error = "";
             string tstPrice = "0";
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
 
@@ -240,7 +240,7 @@ namespace Template4UTesting
 
             String Error = "";
             string tstPrice = "1";
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
 
@@ -251,7 +251,7 @@ namespace Template4UTesting
 
             String Error = "";
             string tstPrice = "499";
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
 
@@ -262,7 +262,7 @@ namespace Template4UTesting
 
             String Error = "";
             string tstPrice = "250";
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
 
@@ -274,7 +274,7 @@ namespace Template4UTesting
 
             String Error = "";
             string tstPrice = "500";
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -284,7 +284,7 @@ namespace Template4UTesting
 
             String Error = "";
             string tstPrice = "501";
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -294,7 +294,7 @@ namespace Template4UTesting
 
             String Error = "";
             string tstPrice = "20b";
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
 
@@ -307,7 +307,7 @@ namespace Template4UTesting
             DateTime Date = DateTime.Now.Date;
             Date = Date.AddYears(-100);
             tstDateAdded = Date.ToString();
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -319,7 +319,7 @@ namespace Template4UTesting
             DateTime Date = DateTime.Now.Date;
             Date = Date.AddYears(-1);
             tstDateAdded = Date.ToString();
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -330,7 +330,7 @@ namespace Template4UTesting
             String Error = "";
             DateTime Date = DateTime.Now.Date;
             tstDateAdded = Date.ToString();
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -342,7 +342,7 @@ namespace Template4UTesting
             DateTime Date = DateTime.Now.Date;
             Date = Date.AddYears(1);
             tstDateAdded = Date.ToString();
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -354,7 +354,7 @@ namespace Template4UTesting
             DateTime Date = DateTime.Now.Date;
             Date = Date.AddYears(100);
             tstDateAdded = Date.ToString();
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -364,7 +364,7 @@ namespace Template4UTesting
 
             String Error = "";
             tstDateAdded = "Definitely not a date";
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -374,7 +374,7 @@ namespace Template4UTesting
 
             String Error = "";
             string tstPrice = "";
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -397,7 +397,7 @@ namespace Template4UTesting
                 "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test";
 
 
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
 
@@ -420,7 +420,7 @@ namespace Template4UTesting
                       "Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test";
 
 
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
         }
         [TestMethod]
@@ -435,7 +435,7 @@ namespace Template4UTesting
                 tstProductDescription += "Test ";
             }
 
-            Error = Product.Valid(tstProductId, tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
+            Error = Product.Valid(tstProductName, tstProductDescription, tstPrice, tstDateAdded, tstisAvailable);
             Assert.IsTrue(Error == "");
 
         }

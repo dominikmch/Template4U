@@ -15,8 +15,6 @@
 
         <h1 style="color:blue; text-align: center;">Product List Viewer</h1>
 
-            <asp:Label ID="ProductId" runat="server" Text="ProductId"></asp:Label><br /><br />
-
             <asp:Label ID="ProductName" runat="server" Text="ProductName"></asp:Label><br /><br />
 
             <asp:Label ID="ProductDescription" runat="server" Text="ProductDescription"></asp:Label><br /><br />

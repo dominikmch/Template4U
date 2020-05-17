@@ -6,10 +6,39 @@
 <head runat="server">
     <title>Template4U ProductList</title>
 </head>
-<body>
+<body style="background-color:lightsteelblue">
     <form id="form1" runat="server">
-        <div>
-             <asp:Button ID="ButtonFind" runat="server" OnClick="ButtonFind_Click" Text="Find" style="margin-left:5px;"/>
+        <h1 style="color: blue; text-align:center;">Search product:</h1>
+        <div style="text-align:center ;">
+        <div style="height: 150px; width: 402px; position: center; display:inline-block; ">
+            Enter an ID of the product:<br /><br />
+            <asp:TextBox ID="TextProductId" runat="server" ></asp:TextBox>
+            <asp:Button ID="ButtonFind" runat="server" OnClick="ButtonFind_Click" Text="Find" style="margin-left:5px;"/>
+            <div style="margin-left: 25px;">
+        <h1 style="color: blue; text-align:center;">Add or edit product:</h1>
+            <br />
+            Product Name (Max. 50 chars):
+            <br /><br />
+            <asp:TextBox ID="TextProductName" runat="server"></asp:TextBox>            <br />
+            <br />
+            Product Description (Max. 500 words):
+            <br /><br />
+            <asp:TextBox ID="TextProductDescription" runat="server"  Height="126px" Width="185px" TextMode="MultiLine"></asp:TextBox>       
+            <br /><br />
+            Price (Max. 500):
+            <asp:TextBox ID="TextPrice" runat="server" Height="22px" Width="128px" ></asp:TextBox>
+            <br /><br />
+            Date Added (DD/MM/YYYY):
+            <asp:TextBox ID="TextDateAdded" runat="server" Height="22px" Width="128px" ></asp:TextBox>
+            <br /><br />
+            Availability (True or False):
+            <asp:TextBox ID="TextisAvailable" runat="server"></asp:TextBox>
+            <br /><br />
+            <asp:Button ID="OkButton" runat="server" OnClick="ButtonOK_Click" style="margin-top: 0px" Text="OK" Width="56px" />
+            <asp:Button ID="Button1" runat="server" Text="Cancel" />
+            <br />
+            <br />
+            <asp:Label ID="ErrorLabel" runat="server"></asp:Label>
         </div>
     </form>
 </body>

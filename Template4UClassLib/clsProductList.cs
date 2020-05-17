@@ -102,7 +102,7 @@ namespace Template4UClassLib
 
         }
 
-        public string Valid(string ProductId, string ProductName, string ProductDescription, string Price, string DateAdded, string isAvailable)
+        public string Valid(string ProductName, string ProductDescription, string Price, string DateAdded, string isAvailable)
         {
             String Error = "";
             DateTime DateTemp;

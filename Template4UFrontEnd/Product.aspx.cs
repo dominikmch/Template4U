@@ -40,7 +40,7 @@ namespace Template4UFrontEnd
             AnProduct.ThisProductList.Find(ProductId);
             TextProductId.Text = AnProduct.ThisProductList.ProductId.ToString();
             TextProductName.Text = AnProduct.ThisProductList.ProductName.ToString();
-            TextProductDescription.Text = AnProduct.ThisProductList.ProductDescription;
+            TextProductDescription.Text = AnProduct.ThisProductList.ProductDescription.ToString();
             TextPrice.Text = AnProduct.ThisProductList.Price.ToString();
             TextDateAdded.Text = AnProduct.ThisProductList.DateAdded.ToString();
             TextisAvailable.Text = AnProduct.ThisProductList.isAvailable.ToString();
@@ -96,6 +96,11 @@ namespace Template4UFrontEnd
             {
                 ErrorLabel.Text = Error;
             }
+        }
+
+        protected void ButtonFind_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
