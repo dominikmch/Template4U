@@ -139,5 +139,10 @@ namespace Template4UClassLib
                 Error += "Product's description cannot be longer than 200 words, soory.";
             return Error;
         }
+
+        public void Find(string productId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -10,7 +10,7 @@
 namespace Template4UFrontEnd {
     
     
-    public partial class Delete {
+    public partial class DeleteProduct {
         
         /// <summary>
         /// form1 control.

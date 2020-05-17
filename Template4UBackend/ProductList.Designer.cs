@@ -1,6 +1,6 @@
 ﻿namespace Template4UBackend
 {
-    partial class Review
+    partial class ProductList
     {
         /// <summary>
         /// Required designer variable.

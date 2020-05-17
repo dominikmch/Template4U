@@ -156,7 +156,8 @@ namespace Template4UClassLib
             connectionToDB = new SqlConnection(connectionString);
             //open the database
             connectionToDB.Open();
-            //initialise the command builder for this connection
+            //initialise the command builder for 
+
             SqlCommand dataCommand = new SqlCommand(SProcName, connectionToDB);
             //add the parameters to the command builder
             //loop through each parameter

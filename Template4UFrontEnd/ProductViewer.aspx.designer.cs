@@ -10,7 +10,7 @@
 namespace Template4UFrontEnd {
     
     
-    public partial class Review {
+    public partial class ProductViewer {
         
         /// <summary>
         /// form1 control.
@@ -22,93 +22,57 @@ namespace Template4UFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// TextReviewId control.
+        /// ProductId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextReviewId;
+        protected global::System.Web.UI.WebControls.Label ProductId;
         
         /// <summary>
-        /// ButtonFind control.
+        /// ProductName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonFind;
+        protected global::System.Web.UI.WebControls.Label ProductName;
         
         /// <summary>
-        /// TextGrade control.
+        /// ProductDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextGrade;
+        protected global::System.Web.UI.WebControls.Label ProductDescription;
         
         /// <summary>
-        /// TextReviewComment control.
+        /// Price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextReviewComment;
+        protected global::System.Web.UI.WebControls.Label Price;
         
         /// <summary>
-        /// TextDateAdded control.
+        /// DateAdded control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextDateAdded;
+        protected global::System.Web.UI.WebControls.Label DateAdded;
         
         /// <summary>
-        /// TextUserId control.
+        /// isAvailable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextUserId;
-        
-        /// <summary>
-        /// TextProductId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextProductId;
-        
-        /// <summary>
-        /// OkButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button OkButton;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// ErrorLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorLabel;
+        protected global::System.Web.UI.WebControls.Label isAvailable;
     }
 }

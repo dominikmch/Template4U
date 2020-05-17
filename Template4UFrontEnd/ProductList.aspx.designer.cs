@@ -10,7 +10,7 @@
 namespace Template4UFrontEnd {
     
     
-    public partial class ReviewList {
+    public partial class ProductList {
         
         /// <summary>
         /// form1 control.
@@ -22,22 +22,22 @@ namespace Template4UFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ListReviews control.
+        /// ListProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListReviews;
+        protected global::System.Web.UI.WebControls.ListBox ListProducts;
         
         /// <summary>
-        /// viewReview control.
+        /// viewproduct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button viewReview;
+        protected global::System.Web.UI.WebControls.Button viewproduct;
         
         /// <summary>
         /// btnAdd control.

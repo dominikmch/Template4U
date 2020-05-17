@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeleteReview.aspx.cs" Inherits="Template4UFrontEnd.Delete" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeleteProduct.aspx.cs" Inherits="Template4UFrontEnd.DeleteProduct" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Are you sure you want to delete this record?
+            Are you sure you want to delete this product?
             <br />
         </div>
         <asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" Text="yes" />
