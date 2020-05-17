@@ -225,7 +225,7 @@ namespace Template4UTesting
 
             FilteredReviews.ReportByProductId(11);
 
-            Assert.AreEqual(2, FilteredReviews.Count);
+            Assert.AreEqual(3, FilteredReviews.Count);
 
         }
 
