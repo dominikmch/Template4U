@@ -27,7 +27,7 @@ namespace Template4UFrontEnd
 
                 ListProducts.DataValueField = "ProductId";
 
-                ListProducts.DataTextField = "ProductDescription";
+                ListProducts.DataTextField = "ProductName";
 
                 ListProducts.DataBind();
 
@@ -60,7 +60,7 @@ namespace Template4UFrontEnd
             else
 
             {
-                lblError.Text = "Please select a record to delete from the list";
+                lblError.Text = "Please select a record first!";
             }
         }
 
@@ -82,7 +82,7 @@ namespace Template4UFrontEnd
             else
 
             {
-                lblError.Text = "Please select a record to delete from the list";
+                lblError.Text = "Please select a record first!";
             }
         }
 
@@ -136,7 +136,7 @@ namespace Template4UFrontEnd
                 else
 
                 {
-                    lblError.Text = "Please select a record to view from the list";
+                    lblError.Text = "Please select a record first!";
                 }
         }
     }

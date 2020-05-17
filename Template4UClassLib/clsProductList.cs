@@ -109,11 +109,11 @@ namespace Template4UClassLib
             try
             {
                 if (Price.ToString().Length == 0)
-                { Error += "Price cannot be empty!"; }
+                { Error += "Price cannot be empty! "; }
                 Int32 value;
                 if (!int.TryParse(Price, out value))
                 {
-                    Error += "Wrong value, price must be a number!";
+                    Error += "Wrong value, price must be a number! ";
 
                 }
                 if (int.Parse(Price) < 0)

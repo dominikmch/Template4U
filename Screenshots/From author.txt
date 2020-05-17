@@ -1,0 +1,5 @@
+Hi, in case of some problem with my system, I attached screenshots to show how my system works.
+To avoid any problem, please first open "ProductList.aspx" web file and then you can follow by any option.
+
+Thank you,
+Dawid
