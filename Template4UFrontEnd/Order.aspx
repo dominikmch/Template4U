@@ -22,6 +22,7 @@
             Date Placed&nbsp;&nbsp;
             <asp:TextBox ID="TextDatePlaced" runat="server" ></asp:TextBox>
             <br />
+            Is order completed:&nbsp;
             <asp:CheckBox ID="chkIsCompleted" runat="server"/>
             <br />
             <br />
@@ -31,7 +32,7 @@
             <br />
             <br />
             <asp:Button ID="ButtonOk" runat="server" style="margin-top: 0px" OnClick="ButtonOK_Click" Text="OK" Width="56px" />
-            <asp:Button ID="ButtonCancel" runat="server" OnClick="ButtonOK_Click" Text="Cancel" />
+            <asp:Button ID="ButtonCancel" runat="server" OnClick="ButtonCancel_Click" Text="Cancel" />
 
 
         </div>

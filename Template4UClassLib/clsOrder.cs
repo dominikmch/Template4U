@@ -118,15 +118,16 @@ namespace Template4UClassLib
             try
             {
                 DateTime DateTest = Convert.ToDateTime(datePlaced);
+                if (Convert.ToDateTime(datePlaced) < DateTime.Now.Date)
+                { Error += "The date appears to be in the past. It has to be today's date"; }
+                if (Convert.ToDateTime(datePlaced) > DateTime.Now.Date)
+                { Error += "The date appears to be in the future. It has to be today's date"; }
             }
             catch
             {
                 Error += "This is not a valid date";
             }
-            if (Convert.ToDateTime(datePlaced) < DateTime.Now.Date)
-            { Error += "The date appears to be in the past. It has to be today's date"; }
-            if (Convert.ToDateTime(datePlaced) > DateTime.Now.Date)
-            { Error += "The date appears to be in the future. It has to be today's date"; }
+          
             return Error;
         }
         public void Add(string orderlineId, string promoCode, bool isCompleted)
