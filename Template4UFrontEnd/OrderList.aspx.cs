@@ -23,7 +23,7 @@ namespace Template4UFrontEnd
             Template4UClassLib.clsOrderCollection Orders = new Template4UClassLib.clsOrderCollection();
             lstOrders.DataSource = Orders.OrderList;
             lstOrders.DataValueField = "OrderId";
-            lstOrders.DataTextField = "PromoCode";
+            lstOrders.DataTextField = "OrderlineId";
             lstOrders.DataBind();
         }
 
@@ -70,7 +70,7 @@ namespace Template4UFrontEnd
             Orders.ReportByIsCompleted(OrderCompleted.Checked);
             lstOrders.DataSource = Orders.OrderList;
             lstOrders.DataValueField = "OrderId";
-            lstOrders.DataTextField = "PromoCode";
+            lstOrders.DataTextField = "OrderlineId";
             lstOrders.DataBind();
         }
 
@@ -81,7 +81,7 @@ namespace Template4UFrontEnd
             OrderCompleted.Checked = false;
             lstOrders.DataSource = Orders.OrderList;
             lstOrders.DataValueField = "OrderId";
-            lstOrders.DataTextField = "PromoCode";
+            lstOrders.DataTextField = "OrderlineId";
             lstOrders.DataBind();
         }
 

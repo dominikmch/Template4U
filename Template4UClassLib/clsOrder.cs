@@ -88,7 +88,7 @@ namespace Template4UClassLib
             }
 
         }
-        public string validate(String orderId, String promoCode, String datePlaced)
+        public string validate(String orderId, string orderlineId, String promoCode, String datePlaced)
         {
             String Error = "";
             //checking if order Id contains only allowed characters
@@ -96,12 +96,33 @@ namespace Template4UClassLib
             {
                 Error += "OrderId can only contain digits";
             }
-            //promoCode validation
-            if (promoCode.Length < 4)
+            if(orderId.ToString().Length == 0)
             {
-                Error += "PromoCode has to be at least 4 characters long";
+                Error += "OrderId cannot be empty";
+            }
+            //orderlineId validation
+            if(!orderlineId.All(Char.IsDigit))
+            {
+                Error += "OrderlineId can only contain digits";
+            }
+            if(orderlineId.ToString().Length == 0)
+            {
+               Error += "OrderlineId cannot be empty";
+            }
+            //promoCode validation
+            if (promoCode.Length < 4 || promoCode.Length > 20)
+            {
+                Error += "PromoCode has to be between 4 and 20 characters long";
             }
             //datePlaced validation
+            try
+            {
+                DateTime DateTest = Convert.ToDateTime(datePlaced);
+            }
+            catch
+            {
+                Error += "This is not a valid date";
+            }
             if (Convert.ToDateTime(datePlaced) < DateTime.Now.Date)
             { Error += "The date appears to be in the past. It has to be today's date"; }
             if (Convert.ToDateTime(datePlaced) > DateTime.Now.Date)

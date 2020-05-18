@@ -31,9 +31,12 @@ namespace Template4UFrontEnd
                 OrderlineId.Text = "OrderlineId : " + Orders.ThisOrder.OrderlineId.ToString();
                 IsCompleted.Text = "Is order completed: " + Orders.ThisOrder.IsCompleted.ToString();
             }
-
-
         }
+        protected void ButtonBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OrderList.aspx");
+        }
+
     }
 
 }

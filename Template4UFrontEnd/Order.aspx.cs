@@ -31,7 +31,7 @@ namespace Template4UFrontEnd
             string tstDatePlaced = TextDatePlaced.Text.Trim();
             string tstOrderlineId = TextOrderlineId.Text.Trim();
             bool tstIsCompleted = chkIsCompleted.Checked;
-            String error = AnOrder.validate(tstOrderId, tstPromoCode, tstDatePlaced);
+            String error = AnOrder.validate(tstOrderId, tstOrderlineId, tstPromoCode, tstDatePlaced);
             if (error == "")
             {
                 AnOrder.OrderId = int.Parse(tstOrderId);

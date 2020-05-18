@@ -79,6 +79,102 @@ namespace Template4UTesting
             Assert.AreEqual(AllOrders.Count, TestList.Count);
 
         }
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            clsOrderCollection AllOrders = new clsOrderCollection();
+
+            Int32 PrimaryKey = 0;
+
+            clsOrder TestItem = new clsOrder();
+
+            TestItem.OrderId = 222;
+            TestItem.OrderlineId = 20;
+            TestItem.PromoCode = "MONDAY";
+            TestItem.DatePlaced = DateTime.Now.Date;
+            TestItem.IsCompleted = false;
+            AllOrders.ThisOrder = TestItem;
+
+            PrimaryKey = AllOrders.Add();
+
+            TestItem.OrderId = PrimaryKey;
+
+            AllOrders.ThisOrder.find(PrimaryKey);
+
+            Assert.AreEqual(AllOrders.ThisOrder, TestItem);
+
+        }
+
+        [TestMethod]
+        public void DeletMethodOK()
+        {
+            clsOrderCollection AllOrders = new clsOrderCollection();
+
+            Int32 PrimaryKey = 0;
+
+            clsOrder TestItem = new clsOrder();
+
+            TestItem.OrderId = 222;
+            TestItem.OrderlineId = 20;
+            TestItem.PromoCode = "MONDAY";
+            TestItem.DatePlaced = DateTime.Now.Date;
+            TestItem.IsCompleted = false;
+            AllOrders.ThisOrder = TestItem;
+
+            PrimaryKey = AllOrders.Add();
+
+            TestItem.OrderId = PrimaryKey;
+
+            AllOrders.ThisOrder.find(PrimaryKey);
+            AllOrders.Delete();
+
+            Boolean Found = AllOrders.ThisOrder.find(PrimaryKey);
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            clsOrderCollection AllOrders = new clsOrderCollection();
+            Int32 PrimaryKey = 0;
+
+            clsOrder TestItem = new clsOrder();
+
+            TestItem.OrderId = 222;
+            TestItem.OrderlineId = 20;
+            TestItem.PromoCode = "MONDAY";
+            TestItem.DatePlaced = DateTime.Now.Date;
+            TestItem.IsCompleted = false;
+            AllOrders.ThisOrder = TestItem;
+
+            PrimaryKey = AllOrders.Add();
+
+            TestItem.OrderId = PrimaryKey;
+
+            TestItem.OrderId = 222;
+            TestItem.OrderlineId = 96;
+            TestItem.PromoCode = "WEDNESDAY";
+            TestItem.DatePlaced = DateTime.Now.Date;
+            TestItem.IsCompleted = true;
+
+            AllOrders.ThisOrder.find(PrimaryKey);
+            AllOrders.Update();
+
+            Boolean Found = AllOrders.ThisOrder.find(PrimaryKey);
+
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void ReportByIsCompletedMethodOK()
+        {
+            clsOrderCollection AllOrders = new clsOrderCollection();
+            clsOrderCollection FilteredOrders = new clsOrderCollection();
+
+            FilteredOrders.ReportByIsCompleted(true);
+
+            Assert.AreNotEqual(FilteredOrders.Count, AllOrders.Count);
+        }
 
     }
 }

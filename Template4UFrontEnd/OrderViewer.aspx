@@ -15,6 +15,7 @@
             <asp:Label ID="PromoCode" runat="server" Text="Label"></asp:Label><br /><br />
             <asp:Label ID="DatePlaced" runat="server" Text="Label"></asp:Label><br /><br />
             <asp:Label ID="IsCompleted" runat="server" Text="Label"></asp:Label><br /><br />
+            <asp:Button ID="ButtonBack" runat="server" OnClick="ButtonBack_Click" Text="Go Back" />
         </div>
     </form>
 </body>
