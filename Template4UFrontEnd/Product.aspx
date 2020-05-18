@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Template4U ProductList</title>
+    <title>Template4u ProductList</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
 </head>
 <body style="background-color:lightsteelblue">
     <form id="form1" runat="server">
@@ -40,6 +41,7 @@
             <br />
             <asp:Label ID="ErrorLabel" runat="server"></asp:Label>
         </div>
+            </div>
     </form>
 </body>
 </html>

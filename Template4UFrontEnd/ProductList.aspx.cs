@@ -24,12 +24,10 @@ namespace Template4UFrontEnd
                 Template4UClassLib.clsProductListCollection AnProduct = new Template4UClassLib.clsProductListCollection();
 
                 ListProducts.DataSource = AnProduct.ProductLists;
-
                 ListProducts.DataValueField = "ProductId";
-
                 ListProducts.DataTextField = "ProductName";
 
-                ListProducts.DataBind();
+            ListProducts.DataBind();
 
             }
 

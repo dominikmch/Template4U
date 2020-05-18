@@ -35,7 +35,7 @@
 
             <br />
 
-            Enter a Product Id&nbsp;&nbsp;
+            Filter by Price (Please enter real price of the product):<br /><br />
 
         <asp:TextBox ID="txtFilter" runat="server" Height="20px">0</asp:TextBox>
 

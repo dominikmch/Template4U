@@ -91,7 +91,7 @@ namespace Template4UTesting
         {
             clsProductList Product = new clsProductList();
             Boolean Found = false;
-            Int32 ProductId = 30;
+            Int32 ProductId = 54;
             Found = Product.Find(ProductId);
             Assert.IsTrue(Found);
         }
@@ -151,7 +151,7 @@ namespace Template4UTesting
 
             Boolean Found = false;
             Boolean OK = true;
-            int ProductId = 6;
+            int ProductId = 48;
             Found = Product.Find(ProductId);
             if (Product.ProductDescription != "This template could be used for various trading websites...")
             {
